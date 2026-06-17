@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Galáctico — Corpo, Mente e Espírito | Tata Vidal</title>
+    <meta name="description" content="Plataforma de Yoga online com Tata Vidal. Metodologia completa para Corpo, Mente e Espírito. Iniciantes ao avançado, yoga imersivo de Bali e Tailândia, programa de 21 dias.">
+    <meta property="og:title" content="Yoga Galáctico — Corpo, Mente e Espírito">
+    <meta property="og:description" content="Transforme as três dimensões do seu ser com o Yoga Galáctico. Planos a partir de R$79/mês. Garantia de 7 dias.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://yogagalactico.com.br">
+
+    <!-- Preconnect & Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. CSS VARIABLES & BASE TYPOGRAPHY
+           ========================================================================== */
+        @font-face {
+            font-family: 'Belgan Aesthetic';
+            src: url('Belgant Aesthetic.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            /* Fundos escuros */
+            --cor-escura:        #1A1208;   /* Noite Profunda */
+            --cor-escura-2:      #2E1A06;   /* Castanha Terra */
+
+            /* Cores de marca */
+            --cor-primaria:      #2E1A06;   
+            --cor-secundaria:    #8B4A3C;   
+            --cor-acento:        #C8A96E;   
+            --cor-acento-soft:   #E0D0A8;   
+
+            /* Texto */
+            --cor-texto:         #3D2A1A;   
+            --cor-texto-suave:   #7A6050;   
+
+            /* Fundos claros */
+            --cor-fundo-claro:   #FAF7F2;   
+            --cor-fundo-medio:   #F0E8D5;   
+            --cor-fundo-palha:   #E8DFC8;   
+
+            /* CTA */
+            --cor-cta:           #1A1208;   
+            --cor-cta-texto:     #C8A96E;   
+            --cor-cta-hover-bg:  #C8A96E;   
+            --cor-cta-hover-txt: #1A1208;   
+
+            /* Acentos pontuais */
+            --cor-lilac:         #7A5C8A;   
+            --cor-garantia:      #5C7A3E;   
+
+            /* Fontes */
+            --font-display: 'Belgan Aesthetic', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-italic: 'Cormorant Garamond', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--cor-texto);
+            background-color: var(--cor-fundo-claro);
+            line-height: 1.75;
+            font-size: 16px;
+            font-weight: 400;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        /* ==========================================================================
+           2. TYPOGRAPHIC HIERARCHY
+           ========================================================================== */
+        h1, h2 {
+            font-family: var(--font-display);
+            font-weight: normal;
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 96px);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 48px);
+            letter-spacing: 0.3px;
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-family: var(--font-italic);
+            font-weight: 700;
+            font-size: clamp(18px, 2.5vw, 26px);
+            font-style: normal;
+        }
+
+        .tag-label {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: var(--cor-acento);
+        }
+
+        .italic-text {
+            font-family: var(--font-italic);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+        .gradient-text-gold {
+            background: linear-gradient(90deg, var(--cor-acento), var(--cor-acento-soft));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ==========================================================================
+           3. UI ELEMENTS (BUTTONS & SVGS)
+           ========================================================================== */
+        .btn-cta {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: var(--cor-cta);
+            color: var(--cor-cta-texto);
+            border: 1px solid var(--cor-acento);
+            border-radius: 50px;
+            padding: 18px 48px;
+            box-shadow: 0 6px 30px rgba(200,169,110,0.35);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .btn-cta:hover, .btn-cta:focus-visible {
+            background: var(--cor-cta-hover-bg);
+            color: var(--cor-cta-hover-txt);
+            box-shadow: 0 8px 40px rgba(200,169,110,0.50);
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        .btn-cta-gold {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 17px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: var(--cor-acento);
+            color: var(--cor-cta);
+            border: 1px solid transparent;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 20px 48px;
+            box-shadow: 0 6px 30px rgba(200,169,110,0.35);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+        .btn-cta-gold:hover, .btn-cta-gold:focus-visible {
+            background: var(--cor-cta);
+            color: var(--cor-acento);
+            border: 1px solid var(--cor-acento);
+            outline: none;
+        }
+
+        .list-custom { list-style: none; }
+        .list-custom li { 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 12px; 
+            margin-bottom: 12px; 
+        }
+        .list-custom .svg-bullet { flex-shrink: 0; transform: translateY(6px); }
+
+        .wave-divider {
+            width: 100%;
+            line-height: 0;
+            display: block;
+        }
+        .wave-divider svg { width: 100%; height: auto; display: block; }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
+        .text-center { text-align: center; }
+
+        /* ==========================================================================
+           4. STICKY NAVBAR
+           ========================================================================== */
+        .sticky-nav {
+            position: fixed;
+            top: -100px; left: 0; width: 100%;
+            background: rgba(26,18,8,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(200,169,110,0.2);
+            z-index: 1000;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 24px;
+            transition: top 0.4s ease;
+        }
+        .sticky-nav.visible { top: 0; }
+        .sticky-logo { font-family: var(--font-display); color: #FFF; font-size: 20px; display: flex; align-items: center; gap: 4px; text-transform: uppercase;}
+        .sticky-btn {
+            font-family: var(--font-body); font-weight: 500; font-size: 11px; text-transform: uppercase;
+            letter-spacing: 1px; background: var(--cor-acento); color: var(--cor-escura);
+            padding: 10px 20px; border-radius: 50px; transition: all 0.3s;
+        }
+        .sticky-btn:hover { background: #FFF; }
+
+        /* ==========================================================================
+           5. ANIMATIONS
+           ========================================================================== */
+        .anim-fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; will-change: transform, opacity; }
+        .anim-fade-up.active { opacity: 1; transform: translateY(0); }
+        .anim-fade { opacity: 0; transition: opacity 1.2s ease; will-change: opacity; }
+        .anim-fade.active { opacity: 1; }
+        .anim-slide-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.6s ease, transform 0.6s ease; will-change: transform, opacity; }
+        .anim-slide-left.active { opacity: 1; transform: translateX(0); }
+        .anim-zoom { opacity: 0; transform: scale(0.92); transition: opacity 0.6s ease, transform 0.6s ease; will-change: transform, opacity; }
+        .anim-zoom.active { opacity: 1; transform: scale(1); }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* ==========================================================================
+           6. SECTIONS
+           ========================================================================== */
+        
+        .o-star {
+            position: relative;
+            display: inline-block;
+        }
+
+        .o-star svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0.45em; /* Tamanho proporcional perfeito para a letra */
+            height: 0.45em;
+            fill: var(--cor-acento); /* Estrela dourada dentro do O branco */
+        }
+        /* Modificador para deixar a estrela branca dentro do "O" dourado */
+        .o-star.white-star svg {
+            fill: #FFFFFF;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative; background-color: var(--cor-escura); color: #FFF;
+            min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding-top: 40px;
+        }
+        #starCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        
+        .hero-logo { margin-bottom: 24px; display: inline-block; }
+        .hero-logo img { max-height: 48px; }
+        .logo-fallback { font-family: var(--font-display); font-size: clamp(24px, 4vw, 36px); text-transform: uppercase; color: #FFF; display: flex; align-items: center; }
+        .logo-fallback svg { margin: 0 2px; }
+
+        .hero-sub {
+            font-size: 18px; color: rgba(255,255,255,0.82); margin-top: 24px; margin-bottom: 24px;
+        }
+        .hero-sub strong { color: var(--cor-acento); font-weight: 700; }
+
+        .triad-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+        .badge-triad {
+            background: rgba(200,169,110,0.12); border: 1px solid rgba(200,169,110,0.3);
+            border-radius: 20px; padding: 6px 16px; font-family: var(--font-body);
+            font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--cor-acento);
+            display: inline-flex; align-items: center; gap: 6px;
+        }
+
+        .hero-visual {
+            width: 100%; aspect-ratio: 1; border-radius: 50%;
+            background: radial-gradient(circle, rgba(200,169,110,0.15) 0%, rgba(26,18,8,0) 70%);
+            animation: float 4s infinite ease-in-out; display: flex; align-items: center; justify-content: center;
+            border: 1px dashed rgba(200,169,110,0.2); position: relative;
+        }
+
+        /* ENCANTAMENTO E OBJEÇÕES */
+        .objections { background-color: var(--cor-fundo-claro); }
+        .objections .wrapper { max-width: 760px; margin: 0 auto; }
+        .objections h2 { color: var(--cor-primaria); }
+        
+        .obj-card {
+            background-color: var(--cor-fundo-medio); border-radius: 14px; padding: 20px 24px;
+            border-left: 4px solid var(--cor-acento); margin-bottom: 16px;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .obj-card .icon { font-size: 24px; }
+        .obj-card h4 { color: var(--cor-secundaria); font-family: var(--font-italic); font-style: italic; font-weight: 600; font-size: 20px; margin-bottom: 4px; }
+        .obj-card p { font-size: 15px; }
+
+        /* A TRÍADE (DORES) */
+        .triad-dores { background-color: var(--cor-escura); color: #FFF; position: relative; }
+        .triad-dores::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at 50% 50%, rgba(200,169,110,0.03) 0%, transparent 60%); pointer-events: none;}
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 48px; margin-bottom: 40px; position: relative; z-index: 2;}
+        
+        .card-dor {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(200,169,110,0.22);
+            border-radius: 20px; padding: 32px 28px; backdrop-filter: blur(4px);
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex; flex-direction: column;
+        }
+        .card-dor:hover { transform: scale(1.02); border-color: var(--cor-acento); }
+        .card-dor h3 { font-family: var(--font-display); color: var(--cor-acento); font-size: 28px; margin-bottom: 24px; text-transform: uppercase; font-style: normal; }
+        .card-dor ul { margin-bottom: 24px; flex-grow: 1; }
+        .card-dor li { color: rgba(255,255,255,0.85); font-size: 15px; }
+        .card-dor .promessa {
+            border-top: 1px solid rgba(200,169,110,0.2); padding-top: 20px;
+            color: var(--cor-acento-soft); font-size: 18px;
+        }
+
+        /* QUEM VAI TE ENSINAR (BIO - MOVIDA PARA CIMA) */
+        .bio { background-color: var(--cor-fundo-claro); }
+        .bio .container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .bio h2 { color: var(--cor-primaria); }
+        .bio-img {
+            width: 100%; aspect-ratio: 4/5; border-radius: 24px; border: 2px solid var(--cor-acento);
+            background: var(--cor-fundo-palha); box-shadow: 0 20px 60px rgba(26,18,8,0.20);
+            display: flex; align-items: center; justify-content: center; color: var(--cor-texto-suave); overflow: hidden;
+        }
+        .bio-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ENTREGÁVEIS */
+        .deliverables { background-color: var(--cor-fundo-medio); }
+        .deliverables h2 { color: var(--cor-primaria); }
+        .deliv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 48px; }
+        
+        .card-modulo {
+            background: #FFFFFF; border: 1px solid var(--cor-fundo-palha); border-radius: 16px;
+            padding: 32px 28px; box-shadow: 0 4px 24px rgba(26,18,8,0.08); position: relative;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .card-modulo:hover { box-shadow: 0 8px 40px rgba(26,18,8,0.18); transform: translateY(-4px); }
+        
+        .mod-icon-wrapper {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--cor-escura), var(--cor-primaria));
+            border: 2px solid var(--cor-acento); display: flex; align-items: center;
+            justify-content: center; font-size: 24px; margin-bottom: 20px;
+        }
+        .mod-author { font-family: var(--font-body); font-weight: 500; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #8B6A3E; margin-bottom: 8px; }
+        .mod-title { font-family: var(--font-display); font-size: 22px; color: var(--cor-primaria); text-transform: uppercase; margin-bottom: 12px; line-height: 1.2; }
+        .mod-tag {
+            display: inline-block; font-size: 11px; background: rgba(139, 74, 60, 0.1); color: var(--cor-secundaria);
+            padding: 4px 10px; border-radius: 12px; margin-bottom: 20px; font-weight: 500;
+        }
+        .card-modulo li { color: var(--cor-texto); font-size: 14px; }
+
+        .card-destaque {
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--cor-fundo-claro) 100%);
+            border: 2px solid var(--cor-acento);
+        }
+        .badge-popular {
+            position: absolute; top: -14px; right: 24px; background: var(--cor-acento);
+            color: var(--cor-escura); font-family: var(--font-body); font-size: 11px;
+            font-weight: 600; padding: 6px 16px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1.5px;
+        }
+
+        /* GARANTIA */
+        .guarantee { background-color: var(--cor-fundo-claro); }
+        .guarantee .container { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: center; }
+        
+        .seal-container { position: relative; width: 200px; height: 200px; margin: 0 auto; }
+        .seal-bg {
+            position: absolute; width: 100%; height: 100%; border-radius: 50%;
+            background: linear-gradient(135deg, var(--cor-escura), var(--cor-primaria));
+            box-shadow: 0 0 50px rgba(200,169,110,0.30);
+        }
+        .seal-border {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            border: 4px dashed var(--cor-acento); border-radius: 50%;
+            animation: rotateSlow 20s linear infinite; box-sizing: border-box;
+        }
+        .seal-content {
+            position: absolute; width: 100%; height: 100%; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; color: #FFF; text-align: center; z-index: 2;
+        }
+        .seal-line1, .seal-line3 { font-family: var(--font-body); font-size: 9px; text-transform: uppercase; letter-spacing: 2px; }
+        .seal-line3 { font-size: 10px; margin-bottom: 4px;}
+        .seal-line2 { font-family: var(--font-display); font-size: 42px; line-height: 1; margin: 4px 0; }
+
+        /* PREÇO */
+        .price-section { background: linear-gradient(160deg, #1A1208 0%, #2E1A06 60%, #1A1208 100%); color: #FFF; }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            max-width: 960px;
+            margin: 40px auto 0;
+        }
+        @media(min-width: 768px) {
+            .pricing-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+        }
+
+        .price-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(200,169,110,0.45);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .price-card.destaque {
+            border: 2px solid var(--cor-acento);
+            background: rgba(200,169,110,0.08);
+            box-shadow: 0 10px 50px rgba(200,169,110,0.15);
+        }
+
+        .price-badge {
+            display: inline-block; font-family: var(--font-body); font-size: 10px; text-transform: uppercase; color: var(--cor-acento);
+            background: rgba(200,169,110,0.12); padding: 6px 14px; border-radius: 20px; margin-bottom: 16px; font-weight: 600; letter-spacing: 1px;
+        }
+        .price-value { font-family: var(--font-display); line-height: 1; margin-bottom: 4px; }
+        .price-month { font-family: var(--font-body); font-size: 22px; color: rgba(255,255,255,0.6); }
+        .price-anchor { display: block; margin-bottom: 24px; color: var(--cor-acento); }
+        .price-sep { width: 100%; height: 1px; background: rgba(200,169,110,0.25); margin-bottom: 24px; }
+        .price-list li { color: #FFF; font-size: 15px; text-align: left; }
+        .secure-text { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 16px; }
+
+        /* FAQ */
+        .faq { background-color: var(--cor-fundo-claro); }
+        .faq .wrapper { max-width: 800px; margin: 0 auto; text-align: left; }
+        .faq h2 { color: var(--cor-primaria); text-align: center;}
+        
+        .accordion {
+            border: 1px solid var(--cor-fundo-palha); border-radius: 14px; margin-bottom: 16px;
+            overflow: hidden; transition: border-color 0.3s; background: #FFF;
+        }
+        .accordion:hover { border-left: 3px solid var(--cor-acento); }
+        .acc-header {
+            padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between;
+            align-items: center; font-family: var(--font-body); font-weight: 500; font-size: 16px; color: var(--cor-primaria);
+        }
+        .acc-icon { transition: transform 0.3s; font-size: 20px; color: var(--cor-acento); }
+        .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .acc-content { padding: 0 24px 20px 24px; font-size: 15px; color: var(--cor-texto-suave); line-height: 1.75; }
+        .accordion.active .acc-body { max-height: 400px; }
+        .accordion.active .acc-icon { transform: rotate(45deg); }
+
+        /* CTA FINAL */
+        .cta-final { background: linear-gradient(160deg, #1A1208, #2E1A06); color: #FFF; padding-bottom: 100px; }
+        
+        /* FOOTER */
+        .footer { background-color: var(--cor-escura); color: rgba(255,255,255,0.5); padding: 40px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-logo { font-family: var(--font-display); color: var(--cor-acento); font-size: 24px; margin-bottom: 8px; text-transform: uppercase; }
+        .footer-triad { font-size: 12px; color: rgba(200,169,110,0.6); margin-bottom: 16px; letter-spacing: 1px;}
+        .footer a { text-decoration: underline; margin: 0 10px; font-size: 14px; }
+
+        /* ==========================================================================
+           7. RESPONSIVE
+           ========================================================================== */
+        @media(max-width: 1024px) {
+            .hero .container, .bio .container { grid-template-columns: 1fr; text-align: center; }
+            .hero-visual, .bio-img { max-width: 450px; margin: 0 auto; }
+            .triad-badges { justify-content: center; }
+            .bio .container { display: flex; flex-direction: column-reverse; }
+        }
+        @media(max-width: 768px) {
+            .deliv-grid { grid-template-columns: 1fr; }
+            .guarantee .container { grid-template-columns: 1fr; text-align: center; }
+            .seal-container { margin-bottom: 32px; }
+            .list-custom li { text-align: left; }
+            .obj-card { flex-direction: column; align-items: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAVBAR -->
+    <nav class="sticky-nav" id="stickyNav">
+        <div class="sticky-logo" style="font-family: var(--font-display); font-size: 20px; color: #FFF; text-transform: uppercase; white-space: nowrap;">
+            Y<span class="o-star">O<svg viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span>GA 
+            <span style="color: var(--cor-acento); margin-left: 6px;">GALÁCTIC<span class="o-star white-star">O<svg viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span></span>
+        </div>
+        <a href="#preco" class="sticky-btn">Assinar Agora</a>
+    </nav>
+
+    <!-- 1. HERO -->
+    <header class="hero">
+        <canvas id="starCanvas"></canvas>
+        <div class="container">
+            <div class="hero-content">
+
+                <div class="hero-logo anim-fade-up" style="animation-delay: 0.1s; margin-bottom: 24px;">
+                    <div style="font-family: var(--font-display); font-size: clamp(32px, 5vw, 64px); color: #FFF; text-transform: uppercase; white-space: nowrap;">
+                        Y<span class="o-star">O<svg viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span>GA 
+                        <span style="color: var(--cor-acento); margin-left: 12px;">GALÁCTIC<span class="o-star white-star">O<svg viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span></span>
+                    </div>
+                </div>
+
+                <h1 class="anim-fade-up" style="animation-delay: 0.2s;">
+                    Desperte o <span class="gradient-text-gold">Universo</span><br>que Vive em Você.
+                </h1>
+
+                <p class="hero-sub anim-fade-up" style="animation-delay: 0.4s;">
+                    A única plataforma de Yoga que transforma simultaneamente seu <strong>Corpo</strong>, sua <strong>Mente</strong> e seu <strong>Espírito</strong> — de onde você estiver.
+                </p>
+
+                <div class="triad-badges anim-fade-up" style="animation-delay: 0.5s;">
+                    <div class="badge-triad">[ 🫀 CORPO ]</div>
+                    <div class="badge-triad">[ 🧠 MENTE ]</div>
+                    <div class="badge-triad">[ ✨ ESPÍRITO ]</div>
+                </div>
+
+                <div class="anim-fade-up" style="animation-delay: 0.6s;">
+                    <a href="#preco" class="btn-cta">✦ QUERO COMEÇAR MINHA JORNADA</a>
+                </div>
+            </div>
+
+            <div class="hero-visual anim-fade" style="animation-delay: 0.3s; overflow: hidden;">
+                <img src="tata-hero.png" alt="Tata Vidal em postura de yoga" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+        </div>
+    </header>
+
+<!-- ==========================================
+         DESTAQUES PREMIUM (MUITO MAIS QUE AULAS)
+         ========================================== -->
+    <section style="background: linear-gradient(180deg, var(--cor-escura) 0%, var(--cor-escura-2) 100%); padding: 40px 24px 80px; position: relative; z-index: 10;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            
+            <h2 class="anim-fade-up" style="color: #FFF; font-size: clamp(24px, 4vw, 40px); margin-bottom: 48px;">
+                Muito mais que aulas gravadas.<br>
+                <span class="italic-text" style="font-size: 1.1em; color: var(--cor-acento);">Uma experiência viva e contínua.</span>
+            </h2>
+
+            <!-- Ajuste no Grid e nos tamanhos para evitar quebras indesejadas -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; text-align: left;">
+                
+                <!-- Destaque 1 -->
+                <div class="anim-fade-up" style="background: var(--cor-acento); border-radius: 20px; padding: 28px 24px; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 15px 40px rgba(0,0,0,0.4);">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                        <div style="font-size: 36px; line-height: 1; flex-shrink: 0;">📡</div>
+                        <h3 style="font-family: var(--font-display); color: var(--cor-escura); font-size: 22px; margin: 0; text-transform: uppercase; font-weight: bold; line-height: 1.1;">Aulas Ao Vivo Quinzenais</h3>
+                    </div>
+                    <p style="color: var(--cor-primaria); font-size: 15px; margin: 0; font-weight: 600; line-height: 1.6;">Sinta a energia de praticar em grupo! A cada 15 dias temos um encontro marcado ao vivo com a Tatá. Se não puder participar, não se preocupe: tudo fica gravado e disponível na plataforma.</p>
+                </div>
+
+                <!-- Destaque 2 -->
+                <div class="anim-fade-up" style="background: var(--cor-acento); border-radius: 20px; padding: 28px 24px; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 15px 40px rgba(0,0,0,0.4); animation-delay: 0.2s;">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                        <div style="font-size: 36px; line-height: 1; flex-shrink: 0;">💬</div>
+                        <h3 style="font-family: var(--font-display); color: var(--cor-escura); font-size: 22px; margin: 0; text-transform: uppercase; font-weight: bold; line-height: 1.1;">Suporte Direto da Guia</h3>
+                    </div>
+                    <p style="color: var(--cor-primaria); font-size: 15px; margin: 0; font-weight: 600; line-height: 1.6;">Você nunca estará sozinha na sua evolução. Teremos um canal direto para você enviar suas dúvidas, compartilhar suas dificuldades e receber orientações reais sobre as suas práticas.</p>
+                </div>
+
+                <!-- Destaque 3 -->
+                <div class="anim-fade-up" style="background: var(--cor-acento); border-radius: 20px; padding: 28px 24px; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 15px 40px rgba(0,0,0,0.4); animation-delay: 0.4s;">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                        <div style="font-size: 36px; line-height: 1; flex-shrink: 0;">✨</div>
+                        <h3 style="font-family: var(--font-display); color: var(--cor-escura); font-size: 22px; margin: 0; text-transform: uppercase; font-weight: bold; line-height: 1.1;">Novos Conteúdos Todo Mês</h3>
+                    </div>
+                    <p style="color: var(--cor-primaria); font-size: 15px; margin: 0; font-weight: 600; line-height: 1.6;">Sua jornada não tem fim. A plataforma cresce junto com você, recebendo novas aulas, meditações e ferramentas todos os meses nos diferentes módulos.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Transição: Escuro -> Claro -->
+    <div class="wave-divider" style="background-color: var(--cor-escura);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-top:-1px;">
+            <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#FAF7F2"/>
+        </svg>
+    </div>
+
+    <!-- 2. ENCANTAMENTO + OBJEÇÕES -->
+    <section class="objections container text-center">
+        <div class="wrapper">
+            <span class="tag-label anim-fade-up">
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                PARA VOCÊ QUE CHEGOU ATÉ AQUI
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+            </span>
+            <h2 class="anim-fade-up">Você não precisa ser flexível.<br>Você só precisa começar.</h2>
+            
+            <p class="anim-fade-up" style="margin-bottom: 24px; text-align: left;">
+                Se você já sentiu que o yoga não é para você — que seu corpo está rígido, que sua mente não para, que você não tem tempo ou não sabe por onde começar — saiba que você chegou exatamente ao lugar certo.
+            </p>
+            <p class="anim-fade-up" style="margin-bottom: 40px; text-align: left;">
+                O Yoga Galáctico não é sobre perfeição nas posturas. É uma metodologia completa que age nas três dimensões do seu ser: fortalece e liberta o Corpo, acalma e clareia a Mente, reconecta e desperta o Espírito. Tudo ao mesmo tempo, em cada prática.
+            </p>
+            
+            <p class="anim-fade-up" style="margin-bottom: 32px; font-weight: 500;">
+                Mas sabemos que algumas dúvidas aparecem antes de dar o primeiro passo. Então vamos ser diretos:
+            </p>
+
+            <div class="obj-card anim-slide-left" style="transition-delay: 0.15s;">
+                <div class="icon">🔄</div>
+                <div style="text-align: left;">
+                    <h4>"Não tenho flexibilidade nenhuma."</h4>
+                    <p>Ótimo — este é exatamente o lugar para começar. Tata criou trilhas do zero, com movimentos suaves e progressivos que respeitam o seu corpo hoje, não o que você imagina que deveria ser.</p>
+                </div>
+            </div>
+            <div class="obj-card anim-slide-left" style="transition-delay: 0.30s;">
+                <div class="icon">⏱️</div>
+                <div style="text-align: left;">
+                    <h4>"Não tenho tempo."</h4>
+                    <p>As aulas têm formatos curtos e objetivos. Você pode praticar 15 minutos antes de dormir, ao acordar, ou em qualquer intervalo do seu dia. O Yoga Galáctico foi feito para se encaixar na sua vida real.</p>
+                </div>
+            </div>
+            <div class="obj-card anim-slide-left" style="transition-delay: 0.45s;">
+                <div class="icon">🧘</div>
+                <div style="text-align: left;">
+                    <h4>"Já tentei yoga antes e não funcionou para mim."</h4>
+                    <p>O que você praticou antes pode não ter sido o yoga certo para você. Aqui a abordagem é intuitiva e sensitiva — você sente antes de agir, e trabalha corpo, mente e espírito em harmonia.</p>
+                </div>
+            </div>
+            <div class="obj-card anim-slide-left" style="transition-delay: 0.60s;">
+                <div class="icon">🧠</div>
+                <div style="text-align: left;">
+                    <h4>"Não sei meditar, minha cabeça não para."</h4>
+                    <p>Aqui a meditação começa pelo movimento. O corpo entra primeiro, e a mente segue. Você não precisa silenciar seus pensamentos — você vai aprender a atravessá-los.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transição: Claro -> Escuro -->
+    <div class="wave-divider" style="background-color: var(--cor-fundo-claro);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-bottom:-1px;">
+            <path d="M0,60 C360,0 1080,0 1440,60 L1440,0 L0,0 Z" fill="#1A1208"/>
+        </svg>
+    </div>
+
+    <!-- 3. A TRÍADE (DORES) -->
+    <section class="triad-dores container text-center">
+        <span class="tag-label anim-fade-up">
+            <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+            A METODOLOGIA
+            <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+        </span>
+        <h2 class="anim-fade-up">Três dimensões. Uma prática. Transformação completa.</h2>
+        <p class="anim-fade-up" style="font-size: 17px; color: rgba(255,255,255,0.75); max-width: 700px; margin: 0 auto;">
+            A maioria das pessoas vive desequilibrada em pelo menos uma dessas áreas. Você se reconhece?
+        </p>
+        
+        <div class="pain-grid">
+            <div class="card-dor anim-fade-up">
+                <h3>🫀 Corpo</h3>
+                <ul class="list-custom">
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Tensão crônica nos ombros, pescoço e lombar</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Cansaço que o sono não consegue resolver</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sensação de estar desconectado do próprio corpo</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Falta de energia para as atividades do dia a dia</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Postura comprometida por horas na frente de tela</li>
+                </ul>
+                <div class="promessa italic-text">"O Yoga Galáctico devolve força, leveza e consciência ao seu corpo."</div>
+            </div>
+
+            <div class="card-dor anim-fade-up" style="transition-delay: 0.2s;">
+                <h3>🧠 Mente</h3>
+                <ul class="list-custom">
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Ansiedade constante sem razão aparente</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Dificuldade para desacelerar e estar presente</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Pensamentos em loop que não deixam você dormir</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sensação de estar no automático, sem sentido</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Falta de clareza nas decisões e nos propósitos</li>
+                </ul>
+                <div class="promessa italic-text">"Cada aula é uma pausa que silencia o ruído e afia sua clareza mental."</div>
+            </div>
+
+            <div class="card-dor anim-fade-up" style="transition-delay: 0.4s;">
+                <h3>✨ Espírito</h3>
+                <ul class="list-custom">
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sentimento de vazio mesmo quando tudo "parece" bem</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Distância de si mesmo e dos seus valores mais profundos</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Falta de conexão com algo maior do que a rotina</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Vontade de mudar, mas sem saber como nem por onde</li>
+                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sensação de que falta algo que você não consegue nomear</li>
+                </ul>
+                <div class="promessa italic-text">"O Yoga Galáctico reconecta você com quem você realmente é."</div>
+            </div>
+        </div>
+
+        <p class="anim-fade-up" style="font-size: 18px; margin-top: 24px;">
+            Se você se identificou com pelo menos um desses pontos —<br>
+            <span style="font-family: var(--font-display); color: var(--cor-acento); font-size: 32px; display:inline-block; margin-top:8px;">o Yoga Galáctico foi criado para você.</span>
+        </p>
+    </section>
+
+    <!-- Transição: Escuro -> Claro (Para a Bio movida) -->
+    <div class="wave-divider" style="background-color: var(--cor-escura);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-top:-1px;">
+            <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#FAF7F2"/>
+        </svg>
+    </div>
+
+    <!-- 4. QUEM VAI TE ENSINAR (MOVIDO COMO "A PONTE") -->
+    <section class="bio">
+        <div class="container">
+            <div class="anim-slide-left">
+                <span class="tag-label">
+                    <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                    SUA GUIA GALÁCTICA
+                    <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                </span>
+                <div class="italic-text" style="color:var(--cor-acento); font-size:36px; margin-bottom: 8px;">Tata Vidal</div>
+                <h2>A professora que transformou a própria vida através do yoga e agora compartilha esse caminho com você.</h2>
+                
+                <p style="margin-bottom: 16px;">Sou Tatá Vidal e, antes de viver do yoga, construí uma carreira de mais de 20 anos no mundo corporativo, passando por grandes multinacionais e dedicando mais de uma década à indústria farmacêutica.</p>
+                <p style="margin-bottom: 16px;">Por muito tempo segui um caminho que fazia sentido naquele momento da minha vida. Mas, aos poucos, comecei a sentir que algo dentro de mim pedia mais presença, mais propósito e mais conexão.</p>
+                <p style="margin-bottom: 16px;">Foi através de algumas crises que encontrei o yoga. O que começou como uma prática física rapidamente se tornou uma jornada profunda de autoconhecimento e transformação.</p>
+                <p style="margin-bottom: 16px;">Ao longo de mais de 10 anos, mergulhei em formações, variadas especializações, retiros, imersões e experiências em diferentes partes do mundo, incluindo Bali e Tailândia, buscando compreender o yoga para além das posturas: como uma filosofia capaz de transformar a forma como vivemos, sentimos e nos relacionamos com a vida.</p>
+                <p style="margin-bottom: 16px;">Foi o yoga que me deu a coragem de fazer uma das maiores mudanças da minha trajetória: deixar uma carreira consolidada para seguir aquilo que realmente ressoava com o meu coração.</p>
+                <p style="margin-bottom: 16px;">E foi dessa caminhada que nasceu o Yoga Galáctico. Uma metodologia inspirada na integração entre Corpo, Mente e Espírito, criada para ajudar pessoas a desenvolverem força, equilíbrio, consciência e conexão interior.</p>
+                <p style="margin-bottom: 16px;">Cada aula, meditação e prática disponível aqui carrega mais de uma década de estudos, experiências, aprendizados e vivências reais. Porque acredito que o verdadeiro papel de um professor não é mostrar o caminho perfeito, mas iluminar o caminho que já percorreu.</p>
+                <p style="margin-bottom: 16px;">Hoje, meu propósito é compartilhar tudo aquilo que o yoga me ensinou, para que você também possa encontrar mais saúde, presença, confiança e coragem para viver uma vida alinhada com quem realmente é.</p>
+                
+                <p style="font-family: var(--font-display); font-size: 24px; color: var(--cor-acento); margin-top: 24px;">Seja bem-vindo ao Yoga Galáctico.</p>
+            </div>
+            <div class="bio-img anim-zoom">
+                <img src="foto-tata-vidal.jpg" alt="Tata Vidal — professora de yoga" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Transição: Claro -> Areia (Para os Entregáveis) -->
+    <div class="wave-divider" style="background-color: var(--cor-fundo-claro);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-top:-1px;">
+            <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#F0E8D5"/>
+        </svg>
+    </div>
+
+    <!-- 5. ENTREGÁVEIS -->
+    <section class="deliverables container text-center">
+        <span class="tag-label anim-fade-up">
+            <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+            TUDO INCLUÍDO NA ASSINATURA
+            <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+        </span>
+        <h2 class="anim-fade-up">Uma jornada completa para Corpo, Mente e Espírito:</h2>
+        <p class="anim-fade-up" style="color: var(--cor-texto-suave); max-width: 700px; margin: 0 auto;">
+            Cada módulo foi desenhado para trabalhar uma das dimensões da tríade — e todos juntos formam a transformação mais completa que o yoga pode oferecer.
+        </p>
+
+        <div class="deliv-grid text-left">
+            <div class="card-modulo anim-fade-up">
+                <div class="mod-icon-wrapper">🌟</div>
+                <div class="mod-author">TATA VIDAL</div>
+                <div class="mod-title">Módulo 1 — Boas-Vindas</div>
+                <div class="mod-tag">✨ ESPÍRITO + 🫀 CORPO + 🧠 MENTE</div>
+                <ul class="list-custom">
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> A origem e o propósito único do Yoga Galáctico</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Os 3 pilares da tríade que sustentam toda a sua prática</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Como criar sua jornada personalizada na plataforma</li>
+                </ul>
+            </div>
+            
+            <div class="card-modulo anim-fade-up">
+                <div class="mod-icon-wrapper">🌱</div>
+                <div class="mod-author">TATA VIDAL</div>
+                <div class="mod-title">Módulo 2 — Yoga para Iniciantes</div>
+                <div class="mod-tag">🫀 CORPO + 🧠 MENTE</div>
+                <p style="font-size: 13px; margin-top:-10px; margin-bottom:16px; color:var(--cor-texto-suave);">(8 aulas + aula especial lombar)</p>
+                <ul class="list-custom">
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Como criar seu espaço sagrado para a prática</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Técnicas de respiração que guiam e ancoram o movimento</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sequências progressivas: do movimento leve ao flow consciente</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aula dedicada ao fortalecimento e alívio da região lombar</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Uma jornada completa do despertar ao recomeço</li>
+                </ul>
+            </div>
+
+            <div class="card-modulo anim-fade-up">
+                <div class="mod-icon-wrapper">🌴</div>
+                <div class="mod-author">TATA VIDAL</div>
+                <div class="mod-title">Módulo 3 — Yoga Imersiva:<br>Bali e Tailândia</div>
+                <div class="mod-tag">✨ ESPÍRITO + 🫀 CORPO</div>
+                <ul class="list-custom">
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aulas gravadas em locações reais de Bali e Tailândia</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Saudação ao Sol em ambiente natural de alta vibração</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sequências para abrir o peito e liberar energia bloqueada</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Flow completo de Bali para reconectar corpo e espírito</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Abertura de quadril para liberar emoções represadas (Tailândia)</li>
+                </ul>
+            </div>
+
+            <div class="card-modulo anim-fade-up">
+                <div class="mod-icon-wrapper">🧘</div>
+                <div class="mod-author">TATA VIDAL</div>
+                <div class="mod-title">Módulo 4 — Meditação Guiada <span style="font-size:14px; font-weight:normal; font-family:var(--font-body);">(Em Breve)</span></div>
+                <div class="mod-tag">🧠 MENTE + ✨ ESPÍRITO</div>
+                <ul class="list-custom">
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Novas aulas de meditação guiada chegando em breve</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Incluídas no seu plano — acesso automático ao lançar</li>
+                </ul>
+            </div>
+
+            <div class="card-modulo anim-fade-up">
+                <div class="mod-icon-wrapper">🌬️</div>
+                <div class="mod-author">TATA VIDAL</div>
+                <div class="mod-title">Módulo 5 — Pranayama</div>
+                <div class="mod-tag">🧠 MENTE + 🫀 CORPO</div>
+                <ul class="list-custom">
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Pranayama de Presença — para ancorar no momento atual</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Nadi Shodhana — respiração alternada para equilíbrio interior</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Kapalabhati — respiração de fogo para energia e clareza mental</li>
+                </ul>
+            </div>
+
+            <!-- NOVO MÓDULO 6: A Experiência Completa -->
+            <div class="card-modulo anim-fade-up">
+                <div class="mod-icon-wrapper">⭐</div>
+                <div class="mod-author">TATA VIDAL</div>
+                <div class="mod-title">A Experiência Completa</div>
+                <div class="mod-tag">AO VIVO + SUPORTE</div>
+                <ul class="list-custom">
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Novas aulas adicionadas todos os meses nos diferentes módulos.</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aula ao vivo com a professora a cada 15 dias (gravadas e disponíveis).</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Canal direto para envio de dúvidas e questionamentos sobre as práticas.</li>
+                </ul>
+            </div>
+
+            <!-- MODULO ESPECIAL - ORDER BUMP ATUALIZADO (Largura Total) -->
+            <div class="card-modulo card-destaque anim-fade-up" style="grid-column: 1 / -1; display: flex; flex-direction: column; text-align: left;">
+                <div class="badge-popular">✦ OFERTA ADICIONAL NO CHECKOUT</div>
+                <div class="mod-icon-wrapper" style="margin: 0 auto 20px;">🚀</div>
+                <div class="mod-author" style="text-align: center;">TATA VIDAL</div>
+                <div class="mod-title" style="text-align: center;">Módulo Especial — Despertar Galáctico (21 Dias)</div>
+                <div class="mod-tag" style="margin: 0 auto 24px;">🫀 CORPO + 🧠 MENTE + ✨ ESPÍRITO</div>
+                
+                <p style="font-size: 16px; margin-bottom: 16px; text-align: center; color: var(--cor-primaria);"><strong>Uma jornada de transformação para corpo, mente e espírito</strong></p>
+                <p style="color: var(--cor-texto-suave); font-size: 15px; margin-bottom: 16px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">Durante 21 dias, você será guiado por uma experiência profunda de autoconhecimento, cura e expansão da consciência. Através de meditações guiadas, reflexões, exercícios e desafios diários, você irá desenvolver hábitos que promovem mais equilíbrio, clareza mental, conexão espiritual e bem-estar.</p>
+                
+                <p style="font-size: 20px; color: var(--cor-secundaria); font-family: var(--font-italic); font-style: italic; text-align: center; margin-bottom: 32px;">Não é apenas um programa. É um convite para despertar uma nova versão de si mesmo.</p>
+                
+                <div style="width: 100%; height: 1px; background: rgba(200,169,110,0.2); margin-bottom: 24px;"></div>
+                
+                <p style="font-weight: 600; margin-bottom: 16px; color: var(--cor-primaria);">O que você vai trabalhar ao longo da jornada?</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+                    <ul class="list-custom" style="margin: 0;">
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Medos e bloqueios emocionais</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Autenticidade e amor-próprio</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Prosperidade e relação com o dinheiro</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Propósito e direção de vida</li>
+                    </ul>
+                    <ul class="list-custom" style="margin: 0;">
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Consciência dos padrões que limitam seu crescimento</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Equilíbrio entre corpo, mente e espírito</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Construção de hábitos que sustentam sua evolução</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transição: Areia -> Claro (Para Garantia) -->
+    <div class="wave-divider" style="background-color: var(--cor-fundo-medio);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-top:-1px;">
+            <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#FAF7F2"/>
+        </svg>
+    </div>
+
+    <!-- 6. GARANTIA -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="seal-container anim-zoom">
+                <div class="seal-bg"></div>
+                <div class="seal-border"></div>
+                <div class="seal-content">
+                    <div class="seal-line1">100% DINHEIRO DE VOLTA</div>
+                    <div class="seal-line2">7 DIAS</div>
+                    <div class="seal-line3">GARANTIDO</div>
+                    <svg width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                </div>
+            </div>
+            <div class="anim-slide-left">
+                <h2>Decida com calma...</h2>
+                <p style="margin-bottom: 16px;">Você não precisa decidir com certeza agora. Só precisa se permitir experimentar.</p>
+                <p style="margin-bottom: 16px;">Acreditamos tanto na transformação que o Yoga Galáctico traz — para o Corpo, para a Mente e para o Espírito — que oferecemos uma garantia completa de 7 dias.</p>
+                <p style="margin-bottom: 24px;">Se por qualquer motivo você entrar na plataforma e sentir que não é para você — é só nos avisar dentro dos primeiros 7 dias e devolveremos 100% do seu dinheiro. Sem perguntas, sem burocracia, sem julgamento.</p>
+                <p style="font-weight: 600; color: var(--cor-primaria);">Sem letras miúdas. Sem burocracia. Sem culpa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transição: Claro -> Escuro -->
+    <div class="wave-divider" style="background-color: var(--cor-fundo-claro);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-bottom:-1px;">
+            <path d="M0,60 C360,0 1080,0 1440,60 L1440,0 L0,0 Z" fill="#1A1208"/>
+        </svg>
+    </div>
+
+    <!-- 7. PREÇO ATUALIZADO -->
+    <section id="preco" class="price-section">
+        <div class="container text-center">
+            <span class="tag-label anim-fade-up">
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                ACESSO COMPLETO
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+            </span>
+            <h2 class="anim-fade-up">Uma assinatura. Três transformações.</h2>
+            <p class="anim-fade-up" style="font-size: 17px; color: rgba(255,255,255,0.78); max-width: 600px; margin: 0 auto;">
+                Corpo mais forte e livre. Mente mais clara e presente. Espírito mais conectado e desperto. Escolha o seu plano abaixo:
+            </p>
+
+            <!-- BANNER BÔNUS GALACTICA FIT WEAR -->
+            <div class="anim-fade-up" style="max-width: 960px; margin: 32px auto 40px; background: rgba(200,169,110,0.08); border: 1px solid rgba(200,169,110,0.4); border-radius: 20px; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <div style="flex: 1; min-width: 280px;">
+                    <div style="font-family: var(--font-body); font-size: 11px; font-weight: 700; color: var(--cor-acento); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">🎁 PRESENTE DE BOAS-VINDAS</div>
+                    <h3 style="font-family: var(--font-display); font-size: 28px; color: #FFF; margin-bottom: 8px; line-height: 1.1; text-transform: none;">20% OFF no seu "Uniforme Oficial"</h3>
+                    <p style="font-size: 15px; color: rgba(255,255,255,0.8); margin: 0; line-height: 1.6;">Ao assinar o Yoga Galáctico hoje, você ganha um cupom de uso único com <strong>20% de desconto</strong> para garantir seu look na loja oficial da marca <span style="color: var(--cor-acento); font-weight: 500;">Galáctica Fitwear</span>.</p>
+                </div>
+                <div style="flex-shrink: 0; text-align: center; background: rgba(26,18,8,0.5); padding: 16px 24px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                    <div style="font-family: var(--font-display); font-size: 16px; color: #FFF; text-transform: uppercase; white-space: nowrap;">
+                        Y<span class="o-star">O<svg viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span>GA 
+                        <span style="color: rgba(255,255,255,0.3); margin: 0 8px;">X</span> 
+                        <span style="color: var(--cor-acento);">GALÁCTICA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- PLANO MENSAL -->
+                <div class="price-card anim-zoom">
+                    <div>
+                        <span class="price-badge">PLANO MENSAL</span>
+                        <div class="price-value" style="font-size: 56px;">R$79,00<span class="price-month">/mês</span></div>
+                        <span class="price-anchor italic-text">Menos de R$3 por dia</span>
+                    </div>
+                    
+                    <div class="price-sep"></div>
+
+                    <ul class="list-custom price-list" style="margin-bottom: 32px; flex-grow: 1;">
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Acesso imediato à plataforma</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> <strong>BÔNUS:</strong> 20% OFF na Galáctica Fitwear</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aulas ao vivo quinzenais (gravadas)</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Canal direto para tirar dúvidas</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Novas aulas adicionadas todos os meses</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Cancele quando quiser, sem multas</li>
+                    </ul>
+
+                    <div style="margin-top: auto;">
+                        <a href="https://pay.kiwify.com.br/8YLBV7I" class="btn-cta" style="width: 100%; padding: 20px; font-weight: 600; border-radius: 50px; background: transparent; color: var(--cor-acento); border: 1px solid var(--cor-acento);">ASSINAR PLANO MENSAL</a>
+                        <div class="secure-text">🔒 Compra 100% segura</div>
+                    </div>
+                </div>
+
+                <!-- PLANO ANUAL -->
+                <div class="price-card destaque anim-zoom" style="transition-delay: 0.2s;">
+                    <div>
+                        <span class="price-badge" style="background: var(--cor-acento); color: var(--cor-escura);">PLANO ANUAL (MAIS VANTAJOSO)</span>
+                        <div class="price-value" style="font-size: 56px;">12x R$68<span style="font-size: 24px;">,98</span></div>
+                        <span class="price-anchor italic-text" style="color: #FFF;">ou R$ 667,00 à vista (Economia de R$ 281)</span>
+                    </div>
+                    
+                    <div class="price-sep"></div>
+
+                    <ul class="list-custom price-list" style="margin-bottom: 32px; flex-grow: 1;">
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> <strong>2 meses gratuitos</strong> inclusos</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> <strong>BÔNUS:</strong> 20% OFF na Galáctica Fitwear</li>                        
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Acesso imediato à plataforma completa</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aulas ao vivo quinzenais (gravadas)</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Canal direto para tirar dúvidas</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Novas aulas adicionadas todos os meses</li>
+                    </ul>
+
+                    <div style="margin-top: auto;">
+                        <a href="https://pay.kiwify.com.br/XkF0IBJ" class="btn-cta-gold">ASSINAR PLANO ANUAL</a>
+                        <div class="secure-text">🔒 Compra 100% segura</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transição: Escuro -> Claro -->
+    <div class="wave-divider" style="background-color: var(--cor-escura);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-top:-1px;">
+            <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#FAF7F2"/>
+        </svg>
+    </div>
+
+    <!-- 8. FAQ -->
+    <section class="faq container text-center">
+        <h2 class="anim-fade-up">Perguntas Frequentes</h2>
+        <div class="wrapper anim-fade-up">
+            
+            <div class="accordion">
+                <button class="acc-header" aria-expanded="false" style="width:100%; text-align:left; background:none; border:none; padding:20px 24px;">
+                    Preciso ter experiência com yoga para me inscrever? <span class="acc-icon">+</span>
+                </button>
+                <div class="acc-body"><div class="acc-content">Não. O Yoga Galáctico foi criado para receber pessoas em todos os níveis. O Módulo 2 começa do zero, com linguagem acessível e posturas adaptáveis a qualquer corpo.</div></div>
+            </div>
+
+            <div class="accordion">
+                <button class="acc-header" aria-expanded="false" style="width:100%; text-align:left; background:none; border:none; padding:20px 24px;">
+                    Em quanto tempo verei resultados? <span class="acc-icon">+</span>
+                </button>
+                <div class="acc-body"><div class="acc-content">Muitas alunas percebem diferença já na primeira semana — especialmente no sono, na tensão muscular e no estado emocional. Resultados mais profundos nas três dimensões (Corpo, Mente e Espírito) são sentidos a partir de 21 dias de prática consistente.</div></div>
+            </div>
+
+            <div class="accordion">
+                <button class="acc-header" aria-expanded="false" style="width:100%; text-align:left; background:none; border:none; padding:20px 24px;">
+                    Posso acessar pelo celular? <span class="acc-icon">+</span>
+                </button>
+                <div class="acc-body"><div class="acc-content">Sim! A plataforma funciona perfeitamente em smartphones, tablets e computadores. Você pratica onde e quando quiser.</div></div>
+            </div>
+
+            <div class="accordion">
+                <button class="acc-header" aria-expanded="false" style="width:100%; text-align:left; background:none; border:none; padding:20px 24px;">
+                    O acesso é vitalício? <span class="acc-icon">+</span>
+                </button>
+                <div class="acc-body"><div class="acc-content">O acesso é mensal — enquanto sua assinatura estiver ativa, você tem acesso a todo o conteúdo, incluindo os novos módulos adicionados regularmente.</div></div>
+            </div>
+
+            <div class="accordion">
+                <button class="acc-header" aria-expanded="false" style="width:100%; text-align:left; background:none; border:none; padding:20px 24px;">
+                    Posso cancelar quando quiser? <span class="acc-icon">+</span>
+                </button>
+                <div class="acc-body"><div class="acc-content">Sim. Sem fidelidade, sem multa. Você cancela diretamente na sua área de membros em menos de 1 minuto.</div></div>
+            </div>
+
+            <div class="accordion">
+                <button class="acc-header" aria-expanded="false" style="width:100%; text-align:left; background:none; border:none; padding:20px 24px;">
+                    Como funciona a garantia de 7 dias? <span class="acc-icon">+</span>
+                </button>
+                <div class="acc-body"><div class="acc-content">Simples: se nos primeiros 7 dias você sentir que não é para você, basta enviar um e-mail para suporte@yogagalactico.com.br e devolvemos 100% do valor. Sem perguntas, sem burocracia.</div></div>
+            </div>
+
+            <div class="accordion">
+                <button class="acc-header" aria-expanded="false" style="width:100%; text-align:left; background:none; border:none; padding:20px 24px;">
+                    As aulas têm horário fixo? <span class="acc-icon">+</span>
+                </button>
+                <div class="acc-body"><div class="acc-content">Não. Todas as aulas são gravadas e ficam disponíveis 24h por dia, 7 dias por semana. Você pratica no seu tempo, no seu ritmo, no seu espaço.</div></div>
+            </div>
+
+            <div class="accordion">
+                <button class="acc-header" aria-expanded="false" style="width:100%; text-align:left; background:none; border:none; padding:20px 24px;">
+                    Preciso de equipamentos especiais? <span class="acc-icon">+</span>
+                </button>
+                <div class="acc-body"><div class="acc-content">Não é obrigatório, mas um tapete de yoga aumenta o conforto. As aulas foram pensadas para o mínimo de recursos — seu corpo é a principal ferramenta.</div></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Transição: Claro -> Escuro (CTA Final) -->
+    <div class="wave-divider" style="background-color: var(--cor-fundo-claro);">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-bottom:-1px;">
+            <path d="M0,60 C360,0 1080,0 1440,60 L1440,0 L0,0 Z" fill="#1A1208"/>
+        </svg>
+    </div>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <div class="container text-center">
+            <h2 class="anim-fade-up" style="font-size: clamp(36px, 5vw, 56px);">Corpo, Mente e Espírito estão esperando por você.</h2>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <p class="anim-fade-up" style="margin-bottom: 16px;">Cada dia que passa é mais um dia longe do equilíbrio que você merece. Mais um dia com tensão que podia ter sido aliviada no corpo. Mais uma noite difícil que podia ter sido de paz na mente. Mais um momento de vazio que podia ter sido de conexão com o seu espírito.</p>
+                <p class="anim-fade-up" style="margin-bottom: 40px;">O Yoga Galáctico não promete milagres. Promete um caminho — guiado, amoroso e transformador nas três dimensões do seu ser. Tudo que você precisa fazer é dar o primeiro passo.</p>
+                
+                <div class="anim-fade-up">
+                    <a href="#preco" class="btn-cta-gold" style="max-width: 480px; margin: 0 auto 16px; display: block;">QUERO COMEÇAR AGORA</a>
+                    <div style="font-size: 14px; color: rgba(255,255,255,0.7); display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
+                        <span><svg width="11" height="11" viewBox="0 0 32 32" style="transform:translateY(1px);"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Garantia de 7 dias</span> · 
+                        <span><svg width="11" height="11" viewBox="0 0 32 32" style="transform:translateY(1px);"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Cancele quando quiser</span> · 
+                        <span><svg width="11" height="11" viewBox="0 0 32 32" style="transform:translateY(1px);"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Acesso imediato</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <!-- Logo Text Fallback in Footer -->
+        <div class="footer-logo" style="font-family: var(--font-display); font-size: 24px; color: #FFF; text-transform: uppercase; margin-bottom: 8px; white-space: nowrap;">
+            Y<span class="o-star">O<svg viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span>GA 
+            <span style="color: var(--cor-acento); margin-left: 8px;">GALÁCTIC<span class="o-star white-star">O<svg viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span></span>
+        </div>
+        <div class="footer-triad">🫀 Corpo · 🧠 Mente · ✨ Espírito</div>
+        <p style="font-size: 14px; margin-bottom:12px;">Yoga Galáctico © 2026 — Todos os direitos reservados</p>
+        <div>
+            <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Intersection Observer for Animations
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const animElements = document.querySelectorAll('.anim-fade-up, .anim-fade, .anim-slide-left, .anim-zoom');
+            animElements.forEach(el => observer.observe(el));
+
+            // 2. Accordion FAQ Logic
+            const accordions = document.querySelectorAll('.accordion');
+            accordions.forEach(acc => {
+                const header = acc.querySelector('.acc-header');
+                header.addEventListener('click', () => {
+                    const isActive = acc.classList.contains('active');
+                    
+                    // Close all
+                    accordions.forEach(a => {
+                        a.classList.remove('active');
+                        a.querySelector('.acc-header').setAttribute('aria-expanded', 'false');
+                        a.querySelector('.acc-icon').textContent = '+';
+                    });
+                    
+                    // Open clicked if it wasn't open
+                    if (!isActive) {
+                        acc.classList.add('active');
+                        header.setAttribute('aria-expanded', 'true');
+                        acc.querySelector('.acc-icon').textContent = '−';
+                    }
+                });
+            });
+
+            // 3. Canvas Star Particles (4-point stars)
+            const canvas = document.getElementById('starCanvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let width, height;
+                let stars = [];
+                const numStars = 60;
+
+                function initCanvas() {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = document.querySelector('.hero').offsetHeight;
+                    stars = [];
+                    for(let i = 0; i < numStars; i++) {
+                        stars.push({
+                            x: Math.random() * width,
+                            y: Math.random() * height,
+                            radius: Math.random() * 2.5 + 1.5,
+                            opacity: Math.random() * 0.5 + 0.1, // Opacity between 0.1 and 0.6
+                            speed: (Math.random() * 0.01) + 0.005,
+                            drift: (Math.random() * 0.2) - 0.1,
+                            direction: Math.random() > 0.5 ? 1 : -1
+                        });
+                    }
+                }
+
+                function draw4PointStar(ctx, x, y, radius, opacity) {
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.translate(x, y);
+                    ctx.fillStyle = `rgba(200, 169, 110, ${opacity})`;
+                    
+                    const spikes = 4;
+                    const outerRadius = radius;
+                    const innerRadius = radius * 0.25; 
+                    let rot = Math.PI / 2 * 3;
+                    let step = Math.PI / spikes;
+
+                    ctx.moveTo(0, -outerRadius);
+                    for (let i = 0; i < spikes; i++) {
+                        ctx.lineTo(Math.cos(rot) * outerRadius, Math.sin(rot) * outerRadius);
+                        rot += step;
+                        ctx.lineTo(Math.cos(rot) * innerRadius, Math.sin(rot) * innerRadius);
+                        rot += step;
+                    }
+                    ctx.lineTo(0, -outerRadius);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.restore();
+                }
+
+                function drawStars() {
+                    ctx.clearRect(0, 0, width, height);
+                    stars.forEach(star => {
+                        draw4PointStar(ctx, star.x, star.y, star.radius, star.opacity);
+                        
+                        // Animate opacity & drift
+                        star.opacity += star.speed * star.direction;
+                        star.y -= Math.abs(star.drift);
+                        star.x += star.drift;
+
+                        if (star.y < -10) star.y = height + 10;
+                        if (star.x < -10) star.x = width + 10;
+                        if (star.x > width + 10) star.x = -10;
+
+                        if(star.opacity >= 0.6) { star.opacity = 0.6; star.direction = -1; }
+                        else if(star.opacity <= 0.1) { star.opacity = 0.1; star.direction = 1; }
+                    });
+                    requestAnimationFrame(drawStars);
+                }
+
+                window.addEventListener('resize', initCanvas);
+                initCanvas();
+                drawStars();
+            }
+
+            // 4. Sticky Navbar Logic
+            const stickyNav = document.getElementById('stickyNav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > window.innerHeight) {
+                    stickyNav.classList.add('visible');
+                } else {
+                    stickyNav.classList.remove('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
