@@ -227,12 +227,17 @@
         }
         .sticky-nav.visible { top: 0; }
         .sticky-logo { font-family: var(--font-display); color: #FFF; font-size: 20px; display: flex; align-items: center; gap: 4px; text-transform: uppercase;}
-        .sticky-btn {
-            font-family: var(--font-body); font-weight: 500; font-size: 11px; text-transform: uppercase;
+	.sticky-btn {
+            font-family: var(--font-body); font-weight: 700; font-size: 11px; text-transform: uppercase;
             letter-spacing: 1px; background: var(--cor-acento); color: var(--cor-escura);
             padding: 10px 20px; border-radius: 50px; transition: all 0.3s;
+            animation: pulse-premium 2s infinite; /* Aqui o botão começa a pulsar */
         }
-        .sticky-btn:hover { background: #FFF; }
+        .sticky-btn:hover { 
+            background: #FFF; 
+            animation: none; /* Pausa o pulso quando a pessoa passa o mouse para clicar */
+            transform: scale(1.05);
+        }
 
         /* ==========================================================================
            5. ANIMATIONS
@@ -248,6 +253,21 @@
 
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
         @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+@keyframes pulse-premium {
+            0% {
+                box-shadow: 0 0 0 0 rgba(200, 169, 110, 0.7);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 0 12px rgba(200, 169, 110, 0);
+                transform: scale(1.05);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(200, 169, 110, 0);
+                transform: scale(1);
+            }
+        }
 
         /* ==========================================================================
            6. SECTIONS
