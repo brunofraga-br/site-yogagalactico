@@ -670,67 +670,134 @@
         </div>
     </section>
 
-    <!-- Transição: Claro -> Escuro -->
+<!-- Transição: Claro -> Escuro (CORRIGIDA) -->
     <div class="wave-divider" style="background-color: var(--cor-fundo-claro);">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-bottom:-1px;">
-            <path d="M0,60 C360,0 1080,0 1440,60 L1440,0 L0,0 Z" fill="#1A1208"/>
+            <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#1A1208"/>
         </svg>
     </div>
 
-    <!-- 3. A TRÍADE (DORES) -->
-    <section class="triad-dores container text-center">
-        <span class="tag-label anim-fade-up">
-            <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
-            A METODOLOGIA
-            <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
-        </span>
-        <h2 class="anim-fade-up">Três dimensões. Uma prática. Transformação completa.</h2>
-        <p class="anim-fade-up" style="font-size: 17px; color: rgba(255,255,255,0.75); max-width: 700px; margin: 0 auto;">
-            A maioria das pessoas vive desequilibrada em pelo menos uma dessas áreas. Você se reconhece?
-        </p>
-        
-        <div class="pain-grid">
-            <div class="card-dor anim-fade-up">
-                <h3>🫀 Corpo</h3>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Tensão crônica nos ombros, pescoço e lombar</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Cansaço que o sono não consegue resolver</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sensação de estar desconectado do próprio corpo</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Falta de energia para as atividades do dia a dia</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Postura comprometida por horas na frente de tela</li>
-                </ul>
-                <div class="promessa italic-text">"O Yoga Galáctico devolve força, leveza e consciência ao seu corpo."</div>
+    <!-- 3. A TRÍADE (METODOLOGIA) -->
+    <section class="triad-dores text-center">
+        <div class="container">
+            <span class="tag-label anim-fade-up">
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                A METODOLOGIA EXCLUSIVA
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+            </span>
+            <h2 class="anim-fade-up" style="margin-bottom: 8px;">A Tríade Galáctica™</h2>
+            <h3 class="anim-fade-up" style="font-size: clamp(18px, 3vw, 24px); color: var(--cor-acento); margin-bottom: 32px; font-weight: normal; font-family: var(--font-body);">
+                Três dimensões. Uma prática. Transformação integral.
+            </h3>
+            
+            <div class="anim-fade-up" style="font-size: 17px; color: rgba(255,255,255,0.75); max-width: 840px; margin: 0 auto;">
+                <p style="margin-bottom: 16px;">No Yoga Galáctico, acreditamos que a verdadeira transformação acontece quando Corpo, Mente e Espírito evoluem juntos.</p>
+                <p style="margin-bottom: 16px;">Você não vive dividido. O corpo influencia a mente. A mente influencia o espírito. E o espírito transforma a forma como você sente, escolhe e vive. Por isso, cada aula, meditação e prática foi criada para atuar de forma integrada nessas três dimensões do seu ser.</p>
+                <p style="font-weight: 600; color: #FFF; margin-top: 32px; font-size: 18px;">Conheça os três pilares que sustentam a jornada do Yoga Galáctico:</p>
+            </div>
+            
+            <div class="pain-grid">
+                <!-- CARD 1 -->
+                <div class="card-dor anim-fade-up">
+                    <h3>🫀 Corpo</h3>
+                    <div style="font-family: var(--font-italic); font-style: italic; font-size: 20px; color: var(--cor-acento); margin-top: -16px; margin-bottom: 20px;">Fortaleça. Liberte. Habite.</div>
+                    
+                    <div style="display: flex; flex-direction: column; flex-grow: 1; text-align: left;">
+                        <p style="color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 24px;">O corpo é o templo através do qual você experiencia a vida. Quando ele está sobrecarregado, rígido ou esquecido, toda a sua energia vital também se enfraquece.</p>
+                        
+                        <p style="color: var(--cor-acento-soft); font-size: 14px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Quando esta dimensão está em desequilíbrio, você pode sentir:</p>
+                        <ul class="list-custom" style="margin-bottom: 24px;">
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Tensão crônica nos ombros, pescoço e lombar</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Cansaço que o sono não consegue resolver</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sensação de estar desconectada do próprio corpo</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Falta de energia para as atividades do dia a dia</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Postura comprometida por horas na frente de telas</li>
+                        </ul>
+                        
+                        <p style="color: var(--cor-acento-soft); font-size: 14px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Através das práticas do Yoga Galáctico, você desenvolve:</p>
+                        <ul class="list-custom" style="margin-bottom: 24px;">
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Mais força, mobilidade e consciência corporal</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Alívio progressivo de tensões físicas</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Respiração mais presente durante o movimento</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Mais vitalidade e presença no corpo</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Uma relação mais amorosa e intuitiva com você mesma</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="promessa italic-text">“Quando o corpo desperta, a energia volta a fluir.”</div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="card-dor anim-fade-up" style="transition-delay: 0.2s;">
+                    <h3>🧠 Mente</h3>
+                    <div style="font-family: var(--font-italic); font-style: italic; font-size: 20px; color: var(--cor-acento); margin-top: -16px; margin-bottom: 20px;">Silencie. Clareie. Expanda.</div>
+                    
+                    <div style="display: flex; flex-direction: column; flex-grow: 1; text-align: left;">
+                        <p style="color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 24px;">Uma mente acelerada dificilmente consegue ouvir a própria alma. Por isso, no Yoga Galáctico, a mente não é combatida — ela é acolhida, conduzida e suavemente reorganizada.</p>
+                        
+                        <p style="color: var(--cor-acento-soft); font-size: 14px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Quando esta dimensão está em desequilíbrio, você pode sentir:</p>
+                        <ul class="list-custom" style="margin-bottom: 24px;">
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Ansiedade constante sem razão aparente</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Dificuldade para desacelerar e estar presente</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Pensamentos em loop que não deixam você dormir</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sensação de estar no automático, sem clareza</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Falta de foco nas decisões e nos propósitos</li>
+                        </ul>
+                        
+                        <p style="color: var(--cor-acento-soft); font-size: 14px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Através das práticas do Yoga Galáctico, você desenvolve:</p>
+                        <ul class="list-custom" style="margin-bottom: 24px;">
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Mais presença no aqui e agora</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Respiração consciente para regular emoções</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Clareza mental para tomar decisões</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Redução gradual da ansiedade e da agitação interna</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Capacidade de atravessar pensamentos sem se perder neles</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="promessa italic-text">“Quando a mente silencia, a sabedoria interior emerge.”</div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="card-dor anim-fade-up" style="transition-delay: 0.4s;">
+                    <h3>✨ Espírito</h3>
+                    <div style="font-family: var(--font-italic); font-style: italic; font-size: 20px; color: var(--cor-acento); margin-top: -16px; margin-bottom: 20px;">Reconecte. Desperte. Floresça.</div>
+                    
+                    <div style="display: flex; flex-direction: column; flex-grow: 1; text-align: left;">
+                        <p style="color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 24px;">Existe uma dimensão em você que vai além da rotina, das obrigações e dos papéis que você ocupa. O espírito é essa parte profunda que busca sentido, conexão e verdade interior.</p>
+                        
+                        <p style="color: var(--cor-acento-soft); font-size: 14px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Quando esta dimensão está em desequilíbrio, você pode sentir:</p>
+                        <ul class="list-custom" style="margin-bottom: 24px;">
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sentimento de vazio mesmo quando tudo parece bem</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Distância de si mesma e dos seus valores mais profundos</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Falta de conexão com algo maior do que a rotina</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Vontade de mudar, mas sem saber por onde começar</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sensação de que falta algo que você não consegue nomear</li>
+                        </ul>
+                        
+                        <p style="color: var(--cor-acento-soft); font-size: 14px; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">Através das práticas do Yoga Galáctico, você desenvolve:</p>
+                        <ul class="list-custom" style="margin-bottom: 24px;">
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Reconexão com sua essência</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Mais escuta interior e presença espiritual</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sensação de propósito e alinhamento</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Expansão da consciência sobre si mesma</li>
+                            <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Coragem para viver com mais verdade e inteireza</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="promessa italic-text">“Quando o espírito desperta, a vida ganha um novo sentido.”</div>
+                </div>
             </div>
 
-            <div class="card-dor anim-fade-up" style="transition-delay: 0.2s;">
-                <h3>🧠 Mente</h3>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Ansiedade constante sem razão aparente</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Dificuldade para desacelerar e estar presente</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Pensamentos em loop que não deixam você dormir</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sensação de estar no automático, sem sentido</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Falta de clareza nas decisões e nos propósitos</li>
-                </ul>
-                <div class="promessa italic-text">"Cada aula é uma pausa que silencia o ruído e afia sua clareza mental."</div>
+            <div class="anim-fade-up" style="margin-top: 48px; font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.6;">
+                <p style="margin-bottom: 8px;"><strong>A Tríade Galáctica™ é o coração do Yoga Galáctico.</strong></p>
+                <p>Ela une movimento, respiração, presença e consciência para que você não apenas pratique yoga — mas viva uma jornada real de transformação.</p>
             </div>
 
-            <div class="card-dor anim-fade-up" style="transition-delay: 0.4s;">
-                <h3>✨ Espírito</h3>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sentimento de vazio mesmo quando tudo "parece" bem</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Distância de si mesmo e dos seus valores mais profundos</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Falta de conexão com algo maior do que a rotina</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Vontade de mudar, mas sem saber como nem por onde</li>
-                    <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sensação de que falta algo que você não consegue nomear</li>
-                </ul>
-                <div class="promessa italic-text">"O Yoga Galáctico reconecta você com quem você realmente é."</div>
-            </div>
+            <p class="anim-fade-up" style="font-size: 18px; margin-top: 32px;">
+                Se você sente que chegou o momento de cuidar de si por inteiro,<br>
+                <span style="font-family: var(--font-display); color: var(--cor-acento); font-size: 32px; display:inline-block; margin-top:8px;">o Yoga Galáctico foi criado para você.</span>
+            </p>
         </div>
-
-        <p class="anim-fade-up" style="font-size: 18px; margin-top: 24px;">
-            Se você se identificou com pelo menos um desses pontos —<br>
-            <span style="font-family: var(--font-display); color: var(--cor-acento); font-size: 32px; display:inline-block; margin-top:8px;">o Yoga Galáctico foi criado para você.</span>
-        </p>
     </section>
 
     <!-- Transição: Escuro -> Claro (Para a Bio movida) -->
@@ -930,12 +997,13 @@
         </div>
     </section>
 
-    <!-- Transição: Claro -> Escuro -->
+<!-- Transição: Claro -> Escuro (CORRIGIDA DEFINITIVA - Antes do Preço) -->
     <div class="wave-divider" style="background-color: var(--cor-fundo-claro);">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-bottom:-1px;">
-            <path d="M0,60 C360,0 1080,0 1440,60 L1440,0 L0,0 Z" fill="#1A1208"/>
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block; margin-bottom: -2px; position: relative; z-index: 5;">
+            <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#1A1208"/>
         </svg>
     </div>
+
 
     <!-- 7. PREÇO ATUALIZADO -->
     <section id="preco" class="price-section">
@@ -1020,10 +1088,11 @@
         </div>
     </section>
 
-    <!-- Transição: Escuro -> Claro -->
+<!-- Transição: Escuro -> Claro (Antes do FAQ) -->
     <div class="wave-divider" style="background-color: var(--cor-escura);">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-top:-1px;">
-            <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#FAF7F2"/>
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block; overflow: visible; position: relative; z-index: 5;">
+            <!-- O vetor agora desce até Y=100, cobrindo qualquer linha de anti-aliasing -->
+            <path d="M0,0 C360,60 1080,60 1440,0 L1440,100 L0,100 Z" fill="#FAF7F2"/>
         </svg>
     </div>
 
@@ -1091,10 +1160,10 @@
         </div>
     </section>
 
-    <!-- Transição: Claro -> Escuro (CTA Final) -->
+<!-- Transição: Claro -> Escuro (CORRIGIDA DEFINITIVA - CTA Final) -->
     <div class="wave-divider" style="background-color: var(--cor-fundo-claro);">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;margin-bottom:-1px;">
-            <path d="M0,60 C360,0 1080,0 1440,60 L1440,0 L0,0 Z" fill="#1A1208"/>
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block; margin-bottom: -2px; position: relative; z-index: 5;">
+            <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#1A1208"/>
         </svg>
     </div>
 
