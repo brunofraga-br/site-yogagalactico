@@ -382,11 +382,12 @@
         }
         .card-modulo:hover { box-shadow: 0 8px 40px rgba(26,18,8,0.18); transform: translateY(-4px); }
         
-        .mod-icon-wrapper {
+	.mod-icon-wrapper {
             width: 56px; height: 56px; border-radius: 50%;
             background: linear-gradient(135deg, var(--cor-escura), var(--cor-primaria));
             border: 2px solid var(--cor-acento); display: flex; align-items: center;
-            justify-content: center; font-size: 24px; margin-bottom: 20px;
+            justify-content: center; font-size: 24px; 
+            margin: 0 auto 20px auto; /* <-- O 'auto' nas laterais garante a centralização perfeita */
         }
         .mod-author { font-family: var(--font-body); font-weight: 500; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #8B6A3E; margin-bottom: 8px; }
         .mod-title { font-family: var(--font-display); font-size: 22px; color: var(--cor-primaria); text-transform: uppercase; margin-bottom: 12px; line-height: 1.2; }
@@ -516,6 +517,25 @@
             .obj-card { flex-direction: column; align-items: center; text-align: center; }
         }
     </style>
+
+<!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '878111598088877');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
 </head>
 <body>
 
@@ -1135,7 +1155,7 @@
                     </ul>
 
                     <div style="margin-top: auto;">
-                        <a href="https://pay.kiwify.com.br/8YLBV7I" class="btn-cta" style="width: 100%; padding: 20px; font-weight: 600; border-radius: 50px; background: transparent; color: var(--cor-acento); border: 1px solid var(--cor-acento);">ASSINAR PLANO MENSAL</a>
+                        <a href="https://pay.kiwify.com.br/8YLBV7I" class="btn-cta" style="width: 100%; padding: 20px; font-weight: 600; border-radius: 50px; background: transparent; color: var(--cor-acento); border: 1px solid var(--cor-acento);" onclick="fbq('trackCustom', 'PlanoMensal');">ASSINAR PLANO MENSAL</a>
                         <div class="secure-text">🔒 Compra 100% segura</div>
                     </div>
                 </div>
@@ -1160,7 +1180,7 @@
                     </ul>
 
                     <div style="margin-top: auto;">
-                        <a href="https://pay.kiwify.com.br/XkF0IBJ" class="btn-cta-gold">ASSINAR PLANO ANUAL</a>
+			<a href="https://pay.kiwify.com.br/2HKlhFr" class="btn-cta-gold" onclick="fbq('trackCustom', 'PlanoAnual');">ASSINAR PLANO ANUAL</a>
                         <div class="secure-text">🔒 Compra 100% segura</div>
                     </div>
                 </div>
