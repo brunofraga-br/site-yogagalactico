@@ -196,7 +196,6 @@
             <h1>Diagnóstico da Tríade Galáctica™</h1>
             <h2>Descubra qual dimensão da sua vida está pedindo mais atenção hoje: Corpo, Mente ou Espírito.</h2>
             
-            <!-- Texto alterado aqui para melhorar a conversão -->
             <p>Com apenas algumas perguntas, esta autoavaliação vai ajudar você a perceber como está sua energia, sua presença e sua conexão interior neste momento.<br><br>Não existe resposta certa ou errada. Apenas um convite para olhar para si com mais carinho.</p>
             
             <button id="btn-start" type="button" class="btn-cta-gold">Começar meu diagnóstico</button>
@@ -231,6 +230,7 @@
             <h1 id="res-title" style="margin-bottom: 24px; font-size: clamp(28px, 4vw, 40px);">Título do Resultado</h1>
             <p id="res-desc" style="color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 24px;">Texto descritivo...</p>
             
+            <!-- RESULTADO EM PERCENTUAL -->
             <div class="result-scores">
                 <div class="score-item">
                     <div class="score-label">Corpo</div>
@@ -451,22 +451,37 @@
             }
 
             function calculateResult() {
-                // Cálculo das somas brutas
+                // Cálculo das somas brutas por dimensão
                 let scoreBody = answers.slice(0, 4).reduce((a, b) => a + b, 0);
                 let scoreMind = answers.slice(4, 8).reduce((a, b) => a + b, 0);
                 let scoreSpirit = answers.slice(8, 12).reduce((a, b) => a + b, 0);
 
-                // Transformação em Porcentagem (Baseado no máximo de 16 pontos por área)
-                let percentBody = Math.round((scoreBody / 16) * 100);
-                let percentMind = Math.round((scoreMind / 16) * 100);
-                let percentSpirit = Math.round((scoreSpirit / 16) * 100);
+                // Nova Lógica: A soma de TODOS os pontos representa 100% da atenção necessária.
+                // Assim os percentuais vão mostrar exatamente COMO essa atenção está distribuída.
+                let totalScore = scoreBody + scoreMind + scoreSpirit;
 
-                // Preencher UI Visual em formato de Porcentagem
+                let percentBody = Math.round((scoreBody / totalScore) * 100);
+                let percentMind = Math.round((scoreMind / totalScore) * 100);
+                let percentSpirit = Math.round((scoreSpirit / totalScore) * 100);
+
+                // Ajuste matemático de segurança para garantir que a soma final seja exatos 100%
+                let diff = 100 - (percentBody + percentMind + percentSpirit);
+                if (diff !== 0) {
+                    if (percentBody >= percentMind && percentBody >= percentSpirit) {
+                        percentBody += diff;
+                    } else if (percentMind >= percentBody && percentMind >= percentSpirit) {
+                        percentMind += diff;
+                    } else {
+                        percentSpirit += diff;
+                    }
+                }
+
+                // Preencher UI Visual com os novos percentuais relativos
                 document.getElementById('score-corpo').innerText = `${percentBody}%`;
                 document.getElementById('score-mente').innerText = `${percentMind}%`;
                 document.getElementById('score-espirito').innerText = `${percentSpirit}%`;
 
-                // Lógica de Desempate (usa as notas originais)
+                // Lógica para saber qual área "vence" e precisa de mais foco (usando a pontuação original bruta)
                 let maxScore = Math.max(scoreBody, scoreMind, scoreSpirit);
                 let resultType = "";
 
