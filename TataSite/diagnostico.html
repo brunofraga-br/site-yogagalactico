@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico da Tríade Galáctica™ | Yoga Galáctico</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '878111598088877');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           FONTES & VARIÁVEIS
+           ========================================================================== */
+        @font-face {
+            font-family: 'Belgant Aesthetic';
+            src: url('Belgant Aesthetic.ttf') format('truetype');
+            font-weight: normal; font-style: normal; font-display: swap;
+        }
+
+        :root {
+            --cor-escura: #1A1208;
+            --cor-escura-2: #2A1F14;
+            --cor-acento: #C8A96E;
+            --cor-acento-soft: #D9C398;
+            --cor-primaria: #3E2B1D;
+            --cor-fundo-claro: #FAF7F2;
+            --cor-texto-suave: #A9A096;
+            --font-display: 'Belgant Aesthetic', 'Playfair Display', serif; 
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* ==========================================================================
+           RESETS E ESTILOS GERAIS
+           ========================================================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(180deg, var(--cor-escura) 0%, var(--cor-escura-2) 100%);
+            color: #FFF;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        
+        /* CABEÇALHO DA MARCA PREMIUM */
+        .brand-header {
+            text-align: center;
+            padding: 50px 24px 10px;
+            font-family: var(--font-display);
+            font-size: clamp(36px, 6vw, 54px);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease forwards;
+        }
+        .brand-yoga { color: #FFF; }
+        .brand-galactico { color: var(--cor-acento); }
+        
+        .logo-o-container { position: relative; display: inline-block; line-height: 1; }
+        .logo-star-inside {
+            position: absolute; top: 46%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0.36em; height: 0.36em;
+        }
+
+        .container {
+            width: 100%; max-width: 800px; margin: 0 auto; padding: 20px 24px 60px;
+            flex: 1; display: flex; flex-direction: column; justify-content: center;
+        }
+        
+        /* ==========================================================================
+           ANIMAÇÕES & UI ELEMENTS
+           ========================================================================== */
+        .fade-in { animation: fadeIn 0.6s ease forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tag-label {
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 8px; font-family: var(--font-body); font-weight: 700;
+            font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--cor-acento); margin-bottom: 24px;
+        }
+
+        .btn-cta-gold {
+            display: inline-block; font-family: var(--font-body); font-weight: 700;
+            font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+            background: var(--cor-acento); color: var(--cor-escura);
+            padding: 20px 40px; border-radius: 50px; transition: all 0.3s;
+            text-align: center; border: none; cursor: pointer; text-decoration: none;
+            box-shadow: 0 10px 30px rgba(200,169,110,0.2);
+            -webkit-appearance: none;
+        }
+        .btn-cta-gold:hover { background: #FFF; transform: scale(1.02); }
+
+        .btn-outline {
+            background: transparent; color: var(--cor-acento);
+            border: 1px solid var(--cor-acento); padding: 12px 24px;
+            border-radius: 50px; font-size: 12px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px; cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover { background: rgba(200,169,110,0.1); }
+
+        /* ==========================================================================
+           TELAS (SCREENS)
+           ========================================================================== */
+        .screen { display: none; text-align: center; }
+        .screen.active { display: block; }
+
+        h1, h2 { font-family: var(--font-display); font-weight: normal; color: #FFF; line-height: 1.2; }
+        
+        /* TELA 1: INTRO */
+        #intro-screen h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; }
+        #intro-screen h2 { font-size: clamp(18px, 3vw, 22px); color: var(--cor-acento); margin-bottom: 32px; font-family: var(--font-body); font-weight: 400;}
+        #intro-screen p { color: rgba(255,255,255,0.8); font-size: 16px; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto;}
+
+        /* TELA 2: QUIZ */
+        .progress-bar-container { width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 4px; margin-bottom: 40px; overflow: hidden; }
+        .progress-bar { height: 100%; background: var(--cor-acento); width: 0%; transition: width 0.4s ease; }
+        
+        #question-title { font-size: clamp(22px, 4vw, 28px); margin-bottom: 32px; min-height: 80px;}
+        
+        .options-grid { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+        .option-card {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(200,169,110,0.2);
+            padding: 20px 24px; border-radius: 16px; cursor: pointer; text-align: left;
+            transition: all 0.3s ease; color: rgba(255,255,255,0.9); font-size: 15px;
+        }
+        .option-card:hover { border-color: var(--cor-acento); background: rgba(200,169,110,0.05); transform: translateY(-2px); }
+        .option-card.selected { border-color: var(--cor-acento); background: rgba(200,169,110,0.15); box-shadow: 0 0 15px rgba(200,169,110,0.2); }
+
+        .quiz-navigation { display: flex; justify-content: space-between; align-items: center; }
+        
+        /* TELA 3: RESULTADO */
+        #result-screen { background: rgba(255,255,255,0.02); border: 1px solid rgba(200,169,110,0.15); padding: 48px 32px; border-radius: 24px; backdrop-filter: blur(10px); }
+        .result-highlight { font-size: 20px; font-family: var(--font-display); color: var(--cor-acento); font-style: italic; margin-bottom: 16px;}
+        .result-scores { display: flex; justify-content: center; gap: 24px; margin: 32px 0; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap;}
+        .score-item { text-align: center; }
+        .score-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--cor-texto-suave); margin-bottom: 4px; }
+        .score-value { font-size: 24px; font-family: var(--font-display); color: var(--cor-acento); }
+        .rec-list { text-align: left; margin: 0 auto 40px; max-width: 400px; }
+        .rec-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.9);}
+        
+        footer { text-align: center; padding: 24px; font-size: 12px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.05); }
+
+        input::placeholder { color: rgba(255,255,255,0.35); }
+    </style>
+</head>
+<body>
+
+    <header class="brand-header">
+        <span class="brand-yoga">
+            Y<span class="logo-o-container">O<svg class="logo-star-inside" viewBox="0 0 32 32" fill="#C8A96E"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span>GA
+        </span>
+        <span class="brand-galactico">
+            GALÁCTIC<span class="logo-o-container">O<svg class="logo-star-inside" viewBox="0 0 32 32" fill="#FFF"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span>
+        </span>
+    </header>
+
+    <div class="container">
+        
+        <!-- ================= TELA 1: INTRODUÇÃO ================= -->
+        <div id="intro-screen" class="screen active fade-in">
+            <span class="tag-label">
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                AUTOAVALIAÇÃO
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+            </span>
+            <h1>Diagnóstico da Tríade Galáctica™</h1>
+            <h2>Descubra qual dimensão da sua vida está pedindo mais atenção hoje: Corpo, Mente ou Espírito.</h2>
+            
+            <p>Com apenas algumas perguntas, esta autoavaliação vai ajudar você a perceber como está sua energia, sua presença e sua conexão interior neste momento.<br><br>Não existe resposta certa ou errada. Apenas um convite para olhar para si com mais carinho.</p>
+            
+            <button id="btn-start" type="button" class="btn-cta-gold">Começar meu diagnóstico</button>
+        </div>
+
+        <!-- ================= TELA 2: QUIZ ================= -->
+        <div id="quiz-screen" class="screen">
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            
+            <h2 id="question-title" class="fade-in">Pergunta</h2>
+            
+            <div id="options-container" class="options-grid fade-in">
+                <!-- Opções geradas via JS -->
+            </div>
+
+            <div class="quiz-navigation fade-in">
+                <button id="btn-back" type="button" class="btn-outline" style="visibility: hidden;">Voltar</button>
+                <span id="question-counter" style="color: var(--cor-texto-suave); font-size: 13px;">1 de 12</span>
+            </div>
+        </div>
+
+        <!-- ================= TELA 3: RESULTADO ================= -->
+        <div id="result-screen" class="screen">
+            <span class="tag-label">
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                SEU DIAGNÓSTICO
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+            </span>
+            
+            <h1 id="res-title" style="margin-bottom: 24px; font-size: clamp(28px, 4vw, 40px);">Título do Resultado</h1>
+            <p id="res-desc" style="color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 24px;">Texto descritivo...</p>
+            
+            <!-- RESULTADO EM PERCENTUAL -->
+            <div class="result-scores">
+                <div class="score-item">
+                    <div class="score-label">Corpo</div>
+                    <div class="score-value" id="score-corpo">0%</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-label">Mente</div>
+                    <div class="score-value" id="score-mente">0%</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-label">Espírito</div>
+                    <div class="score-value" id="score-espirito">0%</div>
+                </div>
+            </div>
+
+            <p style="color: var(--cor-acento); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Sua jornada começa assim:</p>
+            <div id="res-recs" style="text-align: left; max-width: 480px; margin: 0 auto 32px;"></div>
+
+            <div id="res-phrase" class="result-highlight">"Frase final"</div>
+
+            <!-- CAPTURA OPCIONAL DE CONTATO -->
+            <div id="capture-form" style="margin-top: 32px; margin-bottom: 8px; padding: 28px 24px; background: rgba(200,169,110,0.06); border: 1px solid rgba(200,169,110,0.2); border-radius: 20px; text-align: left;">
+                <p style="font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--cor-acento); margin-bottom: 8px; text-align: center;">✦ QUER RECEBER SEU DIAGNÓSTICO? ✦</p>
+                <p style="font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 20px; text-align: center; line-height: 1.6;">Deixe seu contato e enviaremos um resumo do seu resultado — com sugestões de práticas para começar hoje.</p>
+                <div class="capture-fields" style="display: flex; flex-direction: column; gap: 12px;">
+                    <input id="capture-nome" type="text" placeholder="Seu nome (opcional)" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(200,169,110,0.25); border-radius: 12px; padding: 14px 18px; color: #FFF; font-size: 15px; font-family: inherit; outline: none; transition: border 0.3s;" onfocus="this.style.borderColor='rgba(200,169,110,0.6)'" onblur="this.style.borderColor='rgba(200,169,110,0.25)'">
+                    <input id="capture-email" type="email" placeholder="Seu melhor e-mail (opcional)" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(200,169,110,0.25); border-radius: 12px; padding: 14px 18px; color: #FFF; font-size: 15px; font-family: inherit; outline: none; transition: border 0.3s;" onfocus="this.style.borderColor='rgba(200,169,110,0.6)'" onblur="this.style.borderColor='rgba(200,169,110,0.25)'">
+                    <button id="btn-capture" type="button" onclick="submitCapture()" class="btn-cta-gold" style="margin-top: 4px;">Quero receber meu diagnóstico</button>
+                    <button type="button" onclick="skipCapture(event)" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 14px 24px; color: rgba(255,255,255,0.5); font-size: 13px; font-family: inherit; cursor: pointer; transition: all 0.3s; width: 100%;" onmouseover="this.style.borderColor='rgba(255,255,255,0.4)'; this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.color='rgba(255,255,255,0.5)'">CONTINUAR SEM DEIXAR MEU CONTATO</button>
+                    <p style="text-align: center; font-size: 12px; color: rgba(255,255,255,0.35); margin: 0;">Seus dados são privados e não serão compartilhados.</p>
+                </div>
+                <div id="capture-success" style="display:none; text-align:center; padding: 16px 0;">
+                    <p style="color: var(--cor-acento); font-size: 16px; font-weight: 600;">✦ Recebido! Fique de olho no seu e-mail.</p>
+                </div>
+            </div>
+            <a href="index.html" id="btn-final" class="btn-cta-gold" style="margin-top: 8px; display:none;">Conhecer minha Jornada Galáctica</a>
+        </div>
+
+    </div>
+
+    <footer>
+        Este diagnóstico é uma autoavaliação de bem-estar e autoconhecimento inspirada na Metodologia da Tríade Galáctica™.<br>Ele não substitui acompanhamento médico, psicológico ou terapêutico.
+    </footer>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LÓGICA DO DIAGNÓSTICO
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const questions = [
+                // CORPO
+                {
+                    q: "1. Como você sente seu corpo na maior parte dos dias?",
+                    options: [
+                        { text: "A) Leve, disposto e com boa energia.", value: 1 },
+                        { text: "B) Um pouco cansado, mas funcional.", value: 2 },
+                        { text: "C) Tenso, pesado ou com desconfortos frequentes.", value: 3 },
+                        { text: "D) Exausto, rígido ou pedindo pausa há algum tempo.", value: 4 }
+                    ]
+                },
+                {
+                    q: "2. Com que frequência você sente dores, tensão ou rigidez?",
+                    options: [
+                        { text: "A) Raramente.", value: 1 },
+                        { text: "B) Algumas vezes na semana.", value: 2 },
+                        { text: "C) Quase todos os dias.", value: 3 },
+                        { text: "D) Diariamente, a ponto de afetar meu bem-estar.", value: 4 }
+                    ]
+                },
+                {
+                    q: "3. Como está sua relação com movimento e atividade física?",
+                    options: [
+                        { text: "A) Me movimento com regularidade e prazer.", value: 1 },
+                        { text: "B) Tento me movimentar, mas sem constância.", value: 2 },
+                        { text: "C) Tenho dificuldade de manter uma rotina corporal.", value: 3 },
+                        { text: "D) Estou bastante parada e sinto que preciso recomeçar.", value: 4 }
+                    ]
+                },
+                {
+                    q: "4. Quando você pensa no seu corpo hoje, o que mais sente?",
+                    options: [
+                        { text: "A) Gratidão e presença.", value: 1 },
+                        { text: "B) Vontade de cuidar melhor.", value: 2 },
+                        { text: "C) Desconexão ou cobrança.", value: 3 },
+                        { text: "D) Cansaço, desconforto ou afastamento de mim mesma.", value: 4 }
+                    ]
+                },
+                // MENTE
+                {
+                    q: "5. Como está sua mente na maior parte dos dias?",
+                    options: [
+                        { text: "A) Clara, presente e relativamente tranquila.", value: 1 },
+                        { text: "B) Às vezes acelerada, mas consigo me reorganizar.", value: 2 },
+                        { text: "C) Frequentemente agitada, ansiosa ou dispersa.", value: 3 },
+                        { text: "D) Muito acelerada, cansada ou difícil de silenciar.", value: 4 }
+                    ]
+                },
+                {
+                    q: "6. Com que frequência você sente ansiedade, preocupação ou pensamentos repetitivos?",
+                    options: [
+                        { text: "A) Raramente.", value: 1 },
+                        { text: "B) Algumas vezes, em momentos específicos.", value: 2 },
+                        { text: "C) Com frequência durante a semana.", value: 3 },
+                        { text: "D) Quase todos os dias.", value: 4 }
+                    ]
+                },
+                {
+                    q: "7. Como está sua capacidade de descansar de verdade?",
+                    options: [
+                        { text: "A) Consigo relaxar e me desligar quando preciso.", value: 1 },
+                        { text: "B) Tenho alguma dificuldade, mas consigo em alguns momentos.", value: 2 },
+                        { text: "C) Quase sempre estou pensando em algo.", value: 3 },
+                        { text: "D) Mesmo descansando, sinto que minha mente continua ligada.", value: 4 }
+                    ]
+                },
+                {
+                    q: "8. Antes de dormir, sua mente costuma ficar ativa?",
+                    options: [
+                        { text: "A) Raramente.", value: 1 },
+                        { text: "B) Às vezes.", value: 2 },
+                        { text: "C) Frequentemente.", value: 3 },
+                        { text: "D) Quase sempre, dificultando meu sono ou relaxamento.", value: 4 }
+                    ]
+                },
+                // ESPÍRITO
+                {
+                    q: "9. Como está sua conexão consigo mesma neste momento?",
+                    options: [
+                        { text: "A) Sinto-me conectada com quem sou e com minhas escolhas.", value: 1 },
+                        { text: "B) Às vezes me conecto, mas perco isso na rotina.", value: 2 },
+                        { text: "C) Tenho sentido distância de mim mesma.", value: 3 },
+                        { text: "D) Sinto que estou vivendo no automático há bastante tempo.", value: 4 }
+                    ]
+                },
+                {
+                    q: "10. Você sente que sua vida tem espaço para presença, propósito e sentido?",
+                    options: [
+                        { text: "A) Sim, sinto que vivo com intenção.", value: 1 },
+                        { text: "B) Em alguns momentos, mas gostaria de aprofundar.", value: 2 },
+                        { text: "C) Pouco; muitas vezes apenas cumpro tarefas.", value: 3 },
+                        { text: "D) Quase nada; sinto que algo importante está faltando.", value: 4 }
+                    ]
+                },
+                {
+                    q: "11. Com que frequência você reserva momentos para olhar para dentro?",
+                    options: [
+                        { text: "A) Frequentemente.", value: 1 },
+                        { text: "B) Às vezes.", value: 2 },
+                        { text: "C) Raramente.", value: 3 },
+                        { text: "D) Quase nunca.", value: 4 }
+                    ]
+                },
+                {
+                    q: "12. Quando você pensa na sua vida interior hoje, o que mais aparece?",
+                    options: [
+                        { text: "A) Presença e confiança.", value: 1 },
+                        { text: "B) Busca por mais equilíbrio.", value: 2 },
+                        { text: "C) Sensação de vazio ou desconexão.", value: 3 },
+                        { text: "D) Vontade profunda de mudar, mas sem saber por onde começar.", value: 4 }
+                    ]
+                }
+            ];
+
+            let currentQuestion = 0;
+            let answers = new Array(12).fill(0);
+            const bulletSvg = `<svg width="14" height="14" viewBox="0 0 32 32" style="flex-shrink:0"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>`;
+
+            document.getElementById('btn-start').addEventListener('click', startQuiz);
+            document.getElementById('btn-back').addEventListener('click', prevQuestion);
+            document.getElementById('btn-final').addEventListener('click', trackFinalClick);
+
+            function startQuiz() {
+                document.getElementById('intro-screen').classList.remove('active');
+                document.getElementById('quiz-screen').classList.add('active');
+                renderQuestion();
+            }
+
+            function renderQuestion() {
+                const q = questions[currentQuestion];
+                const titleEl = document.getElementById('question-title');
+                const optionsEl = document.getElementById('options-container');
+                const progressEl = document.getElementById('progress-bar');
+                const counterEl = document.getElementById('question-counter');
+                const backBtn = document.getElementById('btn-back');
+
+                titleEl.classList.remove('fade-in');
+                optionsEl.classList.remove('fade-in');
+                void titleEl.offsetWidth; 
+                titleEl.classList.add('fade-in');
+                optionsEl.classList.add('fade-in');
+
+                titleEl.innerText = q.q;
+                counterEl.innerText = `${currentQuestion + 1} de ${questions.length}`;
+                progressEl.style.width = `${((currentQuestion) / questions.length) * 100}%`;
+                
+                backBtn.style.visibility = currentQuestion === 0 ? 'hidden' : 'visible';
+
+                optionsEl.innerHTML = '';
+                q.options.forEach((opt) => {
+                    const btn = document.createElement('div');
+                    btn.className = 'option-card';
+                    if(answers[currentQuestion] === opt.value) btn.classList.add('selected');
+                    btn.innerText = opt.text;
+                    btn.addEventListener('click', () => selectOption(opt.value, btn));
+                    optionsEl.appendChild(btn);
+                });
+            }
+
+            function selectOption(value, element) {
+                answers[currentQuestion] = value;
+                
+                document.querySelectorAll('.option-card').forEach(el => el.classList.remove('selected'));
+                element.classList.add('selected');
+
+                setTimeout(() => {
+                    if (currentQuestion < questions.length - 1) {
+                        currentQuestion++;
+                        renderQuestion();
+                    } else {
+                        calculateResult();
+                    }
+                }, 350);
+            }
+
+            function prevQuestion() {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    renderQuestion();
+                }
+            }
+
+            function calculateResult() {
+                // Cálculo das somas brutas por dimensão
+                let scoreBody = answers.slice(0, 4).reduce((a, b) => a + b, 0);
+                let scoreMind = answers.slice(4, 8).reduce((a, b) => a + b, 0);
+                let scoreSpirit = answers.slice(8, 12).reduce((a, b) => a + b, 0);
+
+                // Nova Lógica: A soma de TODOS os pontos representa 100% da atenção necessária.
+                // Assim os percentuais vão mostrar exatamente COMO essa atenção está distribuída.
+                let totalScore = scoreBody + scoreMind + scoreSpirit;
+
+                let percentBody = Math.round((scoreBody / totalScore) * 100);
+                let percentMind = Math.round((scoreMind / totalScore) * 100);
+                let percentSpirit = Math.round((scoreSpirit / totalScore) * 100);
+
+                // Ajuste matemático de segurança para garantir que a soma final seja exatos 100%
+                let diff = 100 - (percentBody + percentMind + percentSpirit);
+                if (diff !== 0) {
+                    if (percentBody >= percentMind && percentBody >= percentSpirit) {
+                        percentBody += diff;
+                    } else if (percentMind >= percentBody && percentMind >= percentSpirit) {
+                        percentMind += diff;
+                    } else {
+                        percentSpirit += diff;
+                    }
+                }
+
+                // Preencher UI Visual com os novos percentuais relativos
+                document.getElementById('score-corpo').innerText = `${percentBody}%`;
+                document.getElementById('score-mente').innerText = `${percentMind}%`;
+                document.getElementById('score-espirito').innerText = `${percentSpirit}%`;
+
+                // Lógica para saber qual área "vence" e precisa de mais foco (usando a pontuação original bruta)
+                let maxScore = Math.max(scoreBody, scoreMind, scoreSpirit);
+                let resultType = "";
+
+                if (scoreBody === scoreMind && scoreMind === scoreSpirit) {
+                    resultType = "integracao";
+                } else if (scoreSpirit === maxScore) {
+                    resultType = "espirito"; 
+                } else if (scoreMind === maxScore) {
+                    resultType = "mente"; 
+                } else {
+                    resultType = "corpo";
+                }
+
+                renderResultData(resultType);
+                updateFinalButton(resultType);
+                currentResultType = resultType;
+                
+                document.getElementById('quiz-screen').classList.remove('active');
+                document.getElementById('result-screen').classList.add('active');
+                document.getElementById('result-screen').classList.add('fade-in');
+
+                if(typeof fbq === 'function') {
+                    fbq('trackCustom', 'DiagnosticoTriadeConcluido');
+                }
+            }
+
+            function renderResultData(type) {
+                const titleEl = document.getElementById('res-title');
+                const descEl = document.getElementById('res-desc');
+                const recsEl = document.getElementById('res-recs');
+                const phraseEl = document.getElementById('res-phrase');
+
+                if (type === 'corpo') {
+                    titleEl.innerText = "Seu corpo está pedindo mais atenção.";
+                    descEl.innerHTML = "Suas respostas indicam que a dimensão do Corpo pode estar solicitando mais cuidado neste momento.<br><br>Talvez você venha sentindo cansaço, tensão, rigidez ou uma certa distância do próprio corpo. Isso não significa que algo está errado com você. Significa apenas que seu corpo está tentando conversar.<br><br>Na Tríade Galáctica™, o Corpo é o ponto de partida para recuperar vitalidade, presença e força interior.";
+                    recsEl.innerHTML = `
+                        <p style="color:rgba(255,255,255,0.75); font-size:15px; line-height:1.7; margin-bottom:12px;">Sua jornada começa com práticas suaves de movimento e respiração para despertar o corpo, aliviar tensões e recuperar vitalidade. Você vai evoluir progressivamente — do restaurativo ao dinâmico — no seu próprio ritmo.</p>
+                        <p style="color:rgba(255,255,255,0.55); font-size:13px; font-style:italic;">A Tata vai detalhar seu caminho personalizado no seu Encontro de Boas-vindas.</p>`;
+                    phraseEl.innerText = "“Quando o corpo desperta, a energia volta a fluir.”";
+                } 
+                else if (type === 'mente') {
+                    titleEl.innerText = "Sua mente está pedindo mais silêncio e clareza.";
+                    descEl.innerHTML = "Suas respostas indicam que a dimensão da Mente pode estar mais sobrecarregada neste momento.<br><br>Talvez você esteja vivendo dias de ansiedade, pensamentos acelerados, dificuldade de descanso ou sensação de estar sempre ligada.<br><br>Na Tríade Galáctica™, a Mente é acolhida através da respiração, da presença e de práticas que ajudam você a desacelerar por dentro.";
+                    recsEl.innerHTML = `
+                        <p style="color:rgba(255,255,255,0.75); font-size:15px; line-height:1.7; margin-bottom:12px;">Sua jornada começa pelo silêncio interior — meditações guiadas, técnicas de respiração e práticas de presença para desacelerar a mente, reduzir a ansiedade e encontrar clareza no dia a dia.</p>
+                        <p style="color:rgba(255,255,255,0.55); font-size:13px; font-style:italic;">A Tata vai detalhar seu caminho personalizado no seu Encontro de Boas-vindas.</p>`;
+                    phraseEl.innerText = "“Quando a mente silencia, a sabedoria interior emerge.”";
+                } 
+                else if (type === 'espirito') {
+                    titleEl.innerText = "Seu espírito está pedindo reconexão.";
+                    descEl.innerHTML = "Suas respostas indicam que a dimensão do Espírito pode estar chamando por mais presença, sentido e reconexão interior.<br><br>Talvez você esteja sentindo que vive muito no automático, distante de si mesma ou com a sensação de que algo importante está faltando.<br><br>Na Tríade Galáctica™, o Espírito representa o retorno para aquilo que é verdadeiro em você.";
+                    recsEl.innerHTML = `
+                        <p style="color:rgba(255,255,255,0.75); font-size:15px; line-height:1.7; margin-bottom:12px;">Sua jornada começa pela reconexão interior — práticas de respiração, meditações profundas e um programa de 21 dias de autoconhecimento para despertar o que há de mais verdadeiro em você.</p>
+                        <p style="color:rgba(255,255,255,0.55); font-size:13px; font-style:italic;">A Tata vai detalhar seu caminho personalizado no seu Encontro de Boas-vindas.</p>`;
+                    phraseEl.innerText = "“Quando o espírito desperta, a vida ganha um novo sentido.”";
+                } 
+                else if (type === 'integracao') {
+                    titleEl.innerText = "Sua Tríade pede integração.";
+                    descEl.innerHTML = "Suas respostas mostram que Corpo, Mente e Espírito estão pedindo cuidado de forma equilibrada.<br><br>Isso pode indicar um momento importante de reorganização interior, em que não basta cuidar apenas do corpo, apenas da mente ou apenas da espiritualidade.<br><br>A Tríade Galáctica™ foi criada justamente para integrar essas três dimensões em uma jornada única.";
+                    recsEl.innerHTML = `
+                        <p style="color:rgba(255,255,255,0.75); font-size:15px; line-height:1.7; margin-bottom:12px;">Sua jornada abrange as três dimensões ao mesmo tempo — movimento, meditação e respiração integrados numa prática completa. Você vai trabalhar Corpo, Mente e Espírito de forma equilibrada desde o primeiro dia.</p>
+                        <p style="color:rgba(255,255,255,0.55); font-size:13px; font-style:italic;">A Tata vai detalhar seu caminho personalizado no seu Encontro de Boas-vindas.</p>`;
+                    phraseEl.innerText = "“Quando Corpo, Mente e Espírito caminham juntos, a transformação se torna completa.”";
+                }
+            }
+
+            function trackFinalClick() {
+                if(typeof fbq === 'function') {
+                    fbq('trackCustom', 'CliqueResultadoDiagnostico');
+                }
+            }
+
+            function updateFinalButton(type) {
+                const btn = document.getElementById('btn-final');
+                btn.href = 'index.html?perfil=' + type;
+            }
+
+        });
+
+        // ── Captura de contato (global) ──────────────────────────────
+        let currentResultType = '';
+
+        function submitCapture() {
+            const nome  = document.getElementById('capture-nome').value.trim();
+            const email = document.getElementById('capture-email').value.trim();
+            const perfil = currentResultType || new URLSearchParams(window.location.search).get('perfil') || '';
+
+            const payload = { nome, email, perfil, origem: 'diagnostico-triade' };
+
+            document.getElementById('capture-form').querySelector('.capture-fields').style.display = 'none';
+            document.getElementById('capture-success').style.display = 'block';
+
+            if (typeof fbq === 'function') fbq('trackCustom', 'CapturaEmailDiagnostico');
+
+            fetch('https://hook.us2.make.com/tfjmap5mqy0j6zwow44o3b34aw8s6wjz', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                window.location.href = 'index.html?perfil=' + perfil;
+            })
+            .catch(() => {
+                // mesmo se falhar, redireciona após 2s
+                setTimeout(() => {
+                    window.location.href = 'index.html?perfil=' + perfil;
+                }, 2000);
+            });
+        }
+
+        function skipCapture(e) {
+            if (e) e.preventDefault();
+            const perfil = currentResultType || new URLSearchParams(window.location.search).get('perfil') || '';
+            window.location.href = 'index.html?perfil=' + perfil;
+        }
+
+        function showFinalButton() {
+            const btn = document.getElementById('btn-final');
+            btn.style.display = 'block';
+            btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
