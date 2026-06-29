@@ -229,11 +229,10 @@
                 <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
             </span>
             
-            <h1 id="res-title" style="margin-bottom: 24px; font-size: clamp(28px, 4vw, 40px);">Título do Resultado</h1>
-            <p id="res-desc" style="color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 24px;">Texto descritivo...</p>
-            
+            <h1 id="res-title" style="margin-bottom: 16px; font-size: clamp(28px, 4vw, 40px);">Título do Resultado</h1>
+
             <!-- RESULTADO EM PERCENTUAL -->
-            <div class="result-scores">
+            <div class="result-scores" style="margin-bottom: 20px;">
                 <div class="score-item">
                     <div class="score-label">Corpo</div>
                     <div class="score-value" id="score-corpo">0%</div>
@@ -248,15 +247,21 @@
                 </div>
             </div>
 
-            <p style="color: var(--cor-acento); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Sua jornada começa assim:</p>
-            <div id="res-recs" style="text-align: left; max-width: 480px; margin: 0 auto 32px;"></div>
+            <p id="res-desc" style="color: rgba(255,255,255,0.8); font-size: 16px; margin-bottom: 0; line-height: 1.7; max-width: 500px; margin-left: auto; margin-right: auto;">Texto descritivo...</p>
 
-            <div id="res-phrase" class="result-highlight">"Frase final"</div>
+            <div id="res-recs" style="display:none;"></div>
+            <div id="res-phrase" style="display:none;"></div>
+
+            <!-- PONTE — conexão com a solução -->
+            <div style="margin: 28px auto; max-width: 500px; padding: 24px; background: rgba(200,169,110,0.08); border: 1px solid rgba(200,169,110,0.3); border-radius: 20px; text-align: center;">
+                <p style="font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--cor-acento); margin-bottom: 12px;">✦ E AGORA?</p>
+                <p style="color: rgba(255,255,255,0.9); font-size: 16px; line-height: 1.7; margin: 0;">Seu perfil está revelado. O próximo passo é receber da <strong style="color:#FFF;">Tata Vidal</strong> uma indicação personalizada que vai te ajudar a encontrar o equilíbrio da <strong style="color: var(--cor-acento);">Tríade Galáctica™</strong>.</p>
+            </div>
 
             <!-- CAPTURA OPCIONAL DE CONTATO -->
-            <div id="capture-form" style="margin-top: 32px; margin-bottom: 8px; padding: 28px 24px; background: rgba(200,169,110,0.06); border: 1px solid rgba(200,169,110,0.2); border-radius: 20px; text-align: left;">
-                <p style="font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--cor-acento); margin-bottom: 8px; text-align: center;">✦ QUER RECEBER SEU DIAGNÓSTICO? ✦</p>
-                <p style="font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 24px; text-align: center; line-height: 1.6;">Deixe seu contato e enviaremos um resumo do seu resultado — com sugestões de práticas para começar hoje.</p>
+            <div id="capture-form" style="margin-top: 8px; margin-bottom: 8px; padding: 28px 24px; background: rgba(200,169,110,0.06); border: 1px solid rgba(200,169,110,0.2); border-radius: 20px; text-align: left;">
+                <p style="font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--cor-acento); margin-bottom: 8px; text-align: center;">✦ RECEBA SUA INDICAÇÃO PERSONALIZADA ✦</p>
+                <p style="font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 24px; text-align: center; line-height: 1.6;">Deixe seu contato e descubra como a Tata pode guiar sua jornada a partir do seu perfil.</p>
                 <div class="capture-fields" style="display: flex; flex-direction: column; gap: 16px;">
                     <!-- Campo Nome -->
                     <div style="display: flex; flex-direction: column; gap: 6px;">
@@ -549,34 +554,26 @@
 
                 if (type === 'corpo') {
                     titleEl.innerText = "Seu corpo está pedindo mais atenção.";
-                    descEl.innerHTML = "Suas respostas indicam que a dimensão do Corpo pode estar solicitando mais cuidado neste momento.<br><br>Talvez você venha sentindo cansaço, tensão, rigidez ou uma certa distância do próprio corpo. Isso não significa que algo está errado com você. Significa apenas que seu corpo está tentando conversar.<br><br>Na Tríade Galáctica™, o Corpo é o ponto de partida para recuperar vitalidade, presença e força interior.";
-                    recsEl.innerHTML = `
-                        <p style="color:rgba(255,255,255,0.75); font-size:15px; line-height:1.7; margin-bottom:12px;">Sua jornada começa com práticas suaves de movimento e respiração para despertar o corpo, aliviar tensões e recuperar vitalidade. Você vai evoluir progressivamente — do restaurativo ao dinâmico — no seu próprio ritmo.</p>
-                        <p style="color:rgba(255,255,255,0.55); font-size:13px; font-style:italic;">A Tata vai detalhar seu caminho personalizado no seu Encontro de Boas-vindas.</p>`;
+                    descEl.innerHTML = "Suas respostas indicam que seu <strong style='color:#FFF;'>Corpo</strong> está pedindo mais atenção agora — talvez cansaço, tensão ou uma certa distância de si mesma. Isso é o ponto de partida para sua jornada.";
+                    recsEl.innerHTML = '';
                     phraseEl.innerText = "“Quando o corpo desperta, a energia volta a fluir.”";
                 } 
                 else if (type === 'mente') {
                     titleEl.innerText = "Sua mente está pedindo mais silêncio e clareza.";
-                    descEl.innerHTML = "Suas respostas indicam que a dimensão da Mente pode estar mais sobrecarregada neste momento.<br><br>Talvez você esteja vivendo dias de ansiedade, pensamentos acelerados, dificuldade de descanso ou sensação de estar sempre ligada.<br><br>Na Tríade Galáctica™, a Mente é acolhida através da respiração, da presença e de práticas que ajudam você a desacelerar por dentro.";
-                    recsEl.innerHTML = `
-                        <p style="color:rgba(255,255,255,0.75); font-size:15px; line-height:1.7; margin-bottom:12px;">Sua jornada começa pelo silêncio interior — meditações guiadas, técnicas de respiração e práticas de presença para desacelerar a mente, reduzir a ansiedade e encontrar clareza no dia a dia.</p>
-                        <p style="color:rgba(255,255,255,0.55); font-size:13px; font-style:italic;">A Tata vai detalhar seu caminho personalizado no seu Encontro de Boas-vindas.</p>`;
+                    descEl.innerHTML = "Suas respostas indicam que sua <strong style='color:#FFF;'>Mente</strong> está pedindo silêncio agora — ansiedade, pensamentos acelerados ou dificuldade de descansar de verdade. Essa é a dimensão que merece atenção no seu momento.";
+                    recsEl.innerHTML = '';
                     phraseEl.innerText = "“Quando a mente silencia, a sabedoria interior emerge.”";
                 } 
                 else if (type === 'espirito') {
                     titleEl.innerText = "Seu espírito está pedindo reconexão.";
-                    descEl.innerHTML = "Suas respostas indicam que a dimensão do Espírito pode estar chamando por mais presença, sentido e reconexão interior.<br><br>Talvez você esteja sentindo que vive muito no automático, distante de si mesma ou com a sensação de que algo importante está faltando.<br><br>Na Tríade Galáctica™, o Espírito representa o retorno para aquilo que é verdadeiro em você.";
-                    recsEl.innerHTML = `
-                        <p style="color:rgba(255,255,255,0.75); font-size:15px; line-height:1.7; margin-bottom:12px;">Sua jornada começa pela reconexão interior — práticas de respiração, meditações profundas e um programa de 21 dias de autoconhecimento para despertar o que há de mais verdadeiro em você.</p>
-                        <p style="color:rgba(255,255,255,0.55); font-size:13px; font-style:italic;">A Tata vai detalhar seu caminho personalizado no seu Encontro de Boas-vindas.</p>`;
+                    descEl.innerHTML = "Suas respostas indicam que seu <strong style='color:#FFF;'>Espírito</strong> está pedindo reconexão — sensação de vazio, viver no automático ou sentir que algo importante está faltando. Essa é a dimensão que merece atenção agora.";
+                    recsEl.innerHTML = '';
                     phraseEl.innerText = "“Quando o espírito desperta, a vida ganha um novo sentido.”";
                 } 
                 else if (type === 'integracao') {
                     titleEl.innerText = "Sua Tríade pede integração.";
-                    descEl.innerHTML = "Suas respostas mostram que Corpo, Mente e Espírito estão pedindo cuidado de forma equilibrada.<br><br>Isso pode indicar um momento importante de reorganização interior, em que não basta cuidar apenas do corpo, apenas da mente ou apenas da espiritualidade.<br><br>A Tríade Galáctica™ foi criada justamente para integrar essas três dimensões em uma jornada única.";
-                    recsEl.innerHTML = `
-                        <p style="color:rgba(255,255,255,0.75); font-size:15px; line-height:1.7; margin-bottom:12px;">Sua jornada abrange as três dimensões ao mesmo tempo — movimento, meditação e respiração integrados numa prática completa. Você vai trabalhar Corpo, Mente e Espírito de forma equilibrada desde o primeiro dia.</p>
-                        <p style="color:rgba(255,255,255,0.55); font-size:13px; font-style:italic;">A Tata vai detalhar seu caminho personalizado no seu Encontro de Boas-vindas.</p>`;
+                    descEl.innerHTML = "Suas respostas mostram que <strong style='color:#FFF;'>Corpo, Mente e Espírito</strong> estão pedindo atenção de forma integrada — um momento de reorganização interior que pede uma jornada completa.";
+                    recsEl.innerHTML = '';
                     phraseEl.innerText = "“Quando Corpo, Mente e Espírito caminham juntos, a transformação se torna completa.”";
                 }
             }
