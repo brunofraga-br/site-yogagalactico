@@ -669,7 +669,7 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             padding: 12px 4px 28px;
-            margin-top: 40px;
+            margin-top: 14px;
             scrollbar-width: thin;
             scrollbar-color: var(--cor-acento) transparent;
         }
@@ -712,8 +712,18 @@
         .depo-author .depo-name { font-weight: 600; color: var(--cor-primaria); font-size: 15px; line-height: 1.2; }
         .depo-author .depo-role { font-size: 12px; color: var(--cor-texto-suave); letter-spacing: 0.5px; }
         .depo-hint {
-            font-size: 13px; color: var(--cor-texto-suave); font-style: italic;
-            margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;
+            font-family: var(--font-body); font-size: 13px; font-weight: 700;
+            color: var(--cor-primaria); letter-spacing: 0.3px;
+            width: fit-content; margin: 12px auto 0;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            background: rgba(200,169,110,0.16);
+            border: 1px solid rgba(200,169,110,0.5);
+            border-radius: 999px;
+            padding: 9px 20px;
+        }
+        .depo-hint svg { animation: nudge 1.8s ease-in-out infinite; flex-shrink: 0; }
+        @media(max-width: 768px) {
+            .depo-hint { font-size: 13.5px; padding: 9px 16px; }
         }
 
         /* ---- 8.3 PLACEHOLDER DEPOIMENTOS EM VÍDEO ---- */
@@ -831,7 +841,7 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             padding: 12px 4px 28px;
-            margin-top: 40px;
+            margin-top: 14px;
             scrollbar-width: thin;
             scrollbar-color: var(--cor-acento) transparent;
         }
@@ -844,11 +854,20 @@
             scroll-snap-align: start;
         }
         .carousel-hint {
-            font-size: 13px; color: var(--cor-texto-suave); font-style: italic;
-            margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;
+            font-family: var(--font-body); font-size: 13px; font-weight: 700;
+            color: var(--cor-primaria); letter-spacing: 0.3px;
+            width: fit-content; margin: 12px auto 0;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            background: rgba(200,169,110,0.16);
+            border: 1px solid rgba(200,169,110,0.5);
+            border-radius: 999px;
+            padding: 9px 20px;
         }
-        .carousel-hint svg { animation: nudge 1.8s ease-in-out infinite; }
+        .carousel-hint svg { animation: nudge 1.8s ease-in-out infinite; flex-shrink: 0; }
         @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+        @media(max-width: 768px) {
+            .carousel-hint { font-size: 13.5px; padding: 9px 16px; }
+        }
     </style>
 
 <!-- Meta Pixel Code -->
@@ -1297,7 +1316,7 @@
 
         <div class="depo-hint anim-fade-up">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#C8A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            arraste para o lado para ver mais
+            arraste para ver mais
         </div>
 
         <div class="depo-scroller">
@@ -1496,9 +1515,8 @@
 
         <!-- MÓDULOS 1 A 7 EM CARROSSEL HORIZONTAL -->
         <div class="carousel-hint anim-fade-up">
-            <span>7 módulos completos</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#C8A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>arraste para explorar</span>
+            <span>arraste para ver os 7 módulos</span>
         </div>
         <div class="modulos-scroller text-left">
 
@@ -1723,8 +1741,8 @@
             <div class="price-anchor-box anim-fade-up">
                 <div class="pa-title">Se você fosse contratar tudo isso separado</div>
                 <div class="pa-row">
-                    <div class="pa-item">Aulas ao vivo com a Tata <small>online e ao vivo, ~R$100 cada · 4 no mês</small></div>
-                    <div class="pa-price">~R$400/mês</div>
+                    <div class="pa-item">Aulas ao vivo com a Tata <small>online e ao vivo, ~R$200 cada · 4 no mês</small></div>
+                    <div class="pa-price">~R$800/mês</div>
                 </div>
                 <div class="pa-row">
                     <div class="pa-item">Encontro individual de boas-vindas <small>sessão pessoal e ao vivo com a Tata</small></div>
@@ -1740,7 +1758,7 @@
                 </div>
                 <div class="pa-total">
                     <div class="pa-total-label">Valor real somado</div>
-                    <div class="pa-total-value">~R$550/mês</div>
+                    <div class="pa-total-value">~R$950/mês</div>
                 </div>
             </div>
             <div class="price-anchor-punch anim-fade-up">
