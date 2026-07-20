@@ -364,11 +364,28 @@
         .bio .container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .bio h2 { color: var(--cor-primaria); }
         .bio-img {
-            width: 100%; aspect-ratio: 4/5; border-radius: 24px; border: 2px solid var(--cor-acento);
+            width: 100%; aspect-ratio: 4/3.3; border-radius: 24px; border: 2px solid var(--cor-acento);
             background: var(--cor-fundo-palha); box-shadow: 0 20px 60px rgba(26,18,8,0.20);
             display: flex; align-items: center; justify-content: center; color: var(--cor-texto-suave); overflow: hidden;
         }
         .bio-img img { width: 100%; height: 100%; object-fit: cover; }
+        .bio-event-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;
+        }
+        .bio-event-photo {
+            width: 100%; aspect-ratio: 4/3; border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--cor-acento); box-shadow: 0 10px 30px rgba(26,18,8,0.14);
+        }
+        .bio-event-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .bio-event-placeholder {
+            width: 100%; aspect-ratio: 4/3; border-radius: 16px;
+            border: 1.5px dashed rgba(200,169,110,0.55);
+            background: linear-gradient(160deg, rgba(200,169,110,0.06), rgba(200,169,110,0.02));
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+            color: var(--cor-acento); text-align: center; padding: 10px;
+        }
+        .bio-event-placeholder .ph-icon { opacity: 0.7; }
+        .bio-event-placeholder .ph-text { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #8B6A3E; }
 
         /* ENTREGÁVEIS */
         .deliverables { background-color: var(--cor-fundo-medio); }
@@ -430,6 +447,9 @@
         .seal-line3 { font-size: 10px; margin-bottom: 4px;}
         .seal-line2 { font-family: var(--font-display); font-size: 42px; line-height: 1; margin: 4px 0; }
 
+        /* Selo circular compacto: removido dos cards de preço (substituído pela faixa retangular);
+           mantido apenas o selo grande original na seção de Garantia. */
+
         /* PREÇO */
         .price-section { background: linear-gradient(160deg, #1A1208 0%, #2E1A06 60%, #1A1208 100%); color: #FFF; }
         
@@ -470,6 +490,21 @@
         .price-sep { width: 100%; height: 1px; background: rgba(200,169,110,0.25); margin-bottom: 24px; }
         .price-list li { color: #FFF; font-size: 15px; text-align: left; }
         .secure-text { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 16px; }
+
+        .price-guarantee-strip {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            margin-top: 14px;
+            padding: 10px 16px;
+            background: rgba(200,169,110,0.08);
+            border: 1px solid rgba(200,169,110,0.35);
+            border-radius: 12px;
+        }
+        .price-guarantee-strip svg { flex-shrink: 0; }
+        .price-guarantee-strip .pgs-text {
+            font-size: 12.5px; color: rgba(255,255,255,0.85);
+            line-height: 1.3; text-align: left;
+        }
+        .price-guarantee-strip .pgs-text strong { color: var(--cor-acento); }
 
         /* FAQ */
         .faq { background-color: var(--cor-fundo-claro); }
@@ -536,7 +571,8 @@
            ========================================================================== */
         @media(max-width: 1024px) {
             .hero .container, .bio .container { grid-template-columns: 1fr; text-align: center; }
-            .hero-visual, .bio-img { max-width: 450px; margin: 0 auto; }
+            .hero-visual, .bio-img, .bio-event-grid { max-width: 450px; margin: 0 auto; }
+            .bio-event-grid { margin-top: 16px; }
             .triad-badges { justify-content: center; }
             .bio .container { display: flex; flex-direction: column-reverse; }
         }
@@ -547,6 +583,272 @@
             .list-custom li { text-align: left; }
             .obj-card { flex-direction: column; align-items: center; text-align: center; }
         }
+
+        /* ==========================================================================
+           8. BLOCOS DE PROVA SOCIAL (ADITIVOS)
+           ========================================================================== */
+
+        /* ---- 8.1 FAIXA DE AUTORIDADE (vídeo de evento + números) ---- */
+        .authority-band {
+            position: relative;
+            background-color: var(--cor-escura);
+            overflow: hidden;
+            z-index: 10;
+            border-top: 1px solid rgba(200,169,110,0.15);
+            border-bottom: 1px solid rgba(200,169,110,0.15);
+        }
+        .authority-video-wrap {
+            position: absolute; inset: 0; z-index: 1;
+            overflow: hidden;
+        }
+        .authority-video-wrap video,
+        .authority-video-wrap img.authority-poster {
+            width: 100%; height: 100%; object-fit: cover;
+            display: block;
+        }
+        /* Camada escura para o texto respirar por cima do vídeo */
+        .authority-overlay {
+            position: absolute; inset: 0; z-index: 2;
+            background: linear-gradient(180deg, rgba(26,18,8,0.82) 0%, rgba(26,18,8,0.72) 45%, rgba(26,18,8,0.88) 100%);
+        }
+        .authority-content {
+            position: relative; z-index: 3;
+            max-width: 1100px; margin: 0 auto;
+            padding: 72px 24px;
+            text-align: center;
+        }
+        .authority-content h2 {
+            color: #FFF; font-size: clamp(26px, 3.6vw, 42px);
+            margin-bottom: 8px; line-height: 1.15;
+        }
+        .authority-content .authority-sub {
+            color: rgba(255,255,255,0.78); font-size: 16px;
+            max-width: 560px; margin: 0 auto 40px; line-height: 1.6;
+        }
+        .authority-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 940px; margin: 0 auto;
+        }
+        .authority-stat {
+            background: rgba(200,169,110,0.08);
+            border: 1px solid rgba(200,169,110,0.28);
+            border-radius: 18px;
+            padding: 24px 16px;
+            backdrop-filter: blur(3px);
+        }
+        .authority-stat .stat-num {
+            font-family: var(--font-display);
+            font-size: clamp(24px, 3vw, 34px);
+            color: var(--cor-acento);
+            line-height: 1.1; margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+        .authority-stat .stat-label {
+            font-family: var(--font-body); font-size: 12px;
+            letter-spacing: 1px; color: rgba(255,255,255,0.75);
+            text-transform: uppercase; line-height: 1.35;
+        }
+        .authority-stat .stat-sub {
+            font-family: var(--font-italic); font-style: italic;
+            font-size: 12.5px; color: var(--cor-acento-soft);
+            margin-top: 6px; line-height: 1.3;
+        }
+        @media(max-width: 860px) {
+            .authority-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* ---- 8.2 DEPOIMENTOS ESCRITOS (carrossel horizontal) ---- */
+        .social-proof { background-color: var(--cor-fundo-claro); }
+        .social-proof h2 { color: var(--cor-primaria); }
+        .depo-scroller {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 12px 4px 28px;
+            margin-top: 40px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--cor-acento) transparent;
+        }
+        .depo-scroller::-webkit-scrollbar { height: 6px; }
+        .depo-scroller::-webkit-scrollbar-track { background: rgba(200,169,110,0.12); border-radius: 10px; }
+        .depo-scroller::-webkit-scrollbar-thumb { background: var(--cor-acento); border-radius: 10px; }
+        .depo-card {
+            flex: 0 0 340px;
+            max-width: 340px;
+            scroll-snap-align: start;
+            background: #FFFFFF;
+            border: 1px solid var(--cor-fundo-palha);
+            border-radius: 20px;
+            padding: 32px 28px;
+            box-shadow: 0 6px 30px rgba(26,18,8,0.08);
+            display: flex; flex-direction: column;
+            text-align: left;
+        }
+        .depo-quote-mark {
+            font-family: var(--font-display); color: var(--cor-acento);
+            font-size: 48px; line-height: 0.6; margin-bottom: 12px; height: 24px;
+        }
+        .depo-text {
+            color: var(--cor-texto); font-size: 15px; line-height: 1.7;
+            flex-grow: 1; margin-bottom: 24px;
+        }
+        .depo-stars { color: var(--cor-acento); font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+        .depo-author {
+            display: flex; align-items: center; gap: 12px;
+            border-top: 1px solid var(--cor-fundo-palha); padding-top: 18px;
+        }
+        .depo-avatar {
+            width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+            background: linear-gradient(135deg, var(--cor-escura), var(--cor-primaria));
+            border: 1.5px solid var(--cor-acento);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-display); color: var(--cor-acento); font-size: 18px;
+            text-transform: uppercase;
+        }
+        .depo-author .depo-name { font-weight: 600; color: var(--cor-primaria); font-size: 15px; line-height: 1.2; }
+        .depo-author .depo-role { font-size: 12px; color: var(--cor-texto-suave); letter-spacing: 0.5px; }
+        .depo-hint {
+            font-size: 13px; color: var(--cor-texto-suave); font-style: italic;
+            margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+
+        /* ---- 8.3 PLACEHOLDER DEPOIMENTOS EM VÍDEO ---- */
+        .video-testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 940px; margin: 40px auto 0;
+        }
+        .video-testi-card {
+            position: relative;
+            aspect-ratio: 9/16;
+            border-radius: 20px;
+            border: 1px solid rgba(200,169,110,0.3);
+            background: linear-gradient(160deg, #241a0c 0%, #1A1208 100%);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 14px; text-align: center; padding: 24px;
+            overflow: hidden;
+        }
+        .video-testi-card::before {
+            content: '✦'; position: absolute; top: 16px; right: 18px;
+            color: rgba(200,169,110,0.25); font-size: 22px;
+        }
+        .video-testi-play {
+            width: 60px; height: 60px; border-radius: 50%;
+            border: 1.5px solid var(--cor-acento);
+            background: rgba(200,169,110,0.1);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .video-testi-play svg { width: 22px; height: 22px; margin-left: 3px; }
+        .video-testi-card .vt-label {
+            font-family: var(--font-body); font-size: 12px; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--cor-acento);
+        }
+        .video-testi-card .vt-sub { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+        /* Variante com foto/vídeo real (depoimentos preenchidos) */
+        .video-testi-card.has-media { padding: 0; }
+        .video-testi-card.has-media::before { display: none; }
+        .video-testi-card .vt-poster,
+        .video-testi-card .vt-video {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: 1;
+        }
+        .video-testi-card .vt-video { display: none; background: #000; }
+        .video-testi-card .vt-scrim {
+            position: absolute; inset: 0; z-index: 2; pointer-events: none;
+            background: linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.05) 45%, rgba(0,0,0,0.65) 100%);
+        }
+        .video-testi-card .video-testi-play.vt-play-btn {
+            position: relative; z-index: 3; cursor: pointer;
+            background: rgba(26,18,8,0.55); backdrop-filter: blur(2px);
+            transition: transform 0.2s, background 0.2s;
+        }
+        .video-testi-card .video-testi-play.vt-play-btn:hover { transform: scale(1.08); background: rgba(26,18,8,0.75); }
+        .video-testi-card .vt-caption {
+            position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+            padding: 16px 14px 12px; text-align: left;
+            font-family: var(--font-body); font-size: 14px; font-weight: 600;
+            color: #FFF; letter-spacing: 0.3px;
+        }
+        @media(max-width: 768px) {
+            .video-testi-grid { grid-template-columns: 1fr; max-width: 340px; }
+            .video-testi-card { aspect-ratio: 16/10; }
+        }
+
+        /* ---- 8.4 ANCORAGEM DE PREÇO (antes dos cards) ---- */
+        .price-anchor-box {
+            max-width: 720px; margin: 40px auto 8px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(200,169,110,0.35);
+            border-radius: 22px;
+            padding: 32px 36px;
+            text-align: left;
+        }
+        .price-anchor-box .pa-title {
+            font-family: var(--font-body); font-size: 12px; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase; color: var(--cor-acento);
+            text-align: center; margin-bottom: 20px;
+        }
+        .pa-row {
+            display: flex; align-items: baseline; justify-content: space-between;
+            gap: 12px; padding: 12px 0;
+            border-bottom: 1px dashed rgba(200,169,110,0.2);
+        }
+        .pa-row .pa-item { color: rgba(255,255,255,0.85); font-size: 15px; line-height: 1.4; }
+        .pa-row .pa-item small { display: block; color: rgba(255,255,255,0.5); font-size: 12px; }
+        .pa-row .pa-price { color: #FFF; font-family: var(--font-display); font-size: 20px; white-space: nowrap; }
+        .pa-total {
+            display: flex; align-items: baseline; justify-content: space-between;
+            gap: 12px; padding-top: 18px; margin-top: 6px;
+        }
+        .pa-total .pa-total-label { color: rgba(255,255,255,0.8); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .pa-total .pa-total-value { color: rgba(255,255,255,0.6); font-family: var(--font-display); font-size: 22px; text-decoration: line-through; }
+        .price-anchor-punch {
+            max-width: 720px; margin: 0 auto 8px;
+            text-align: center; padding: 20px 24px;
+            font-family: var(--font-italic); font-style: italic;
+            font-size: clamp(18px, 2.4vw, 24px); color: var(--cor-acento-soft);
+            line-height: 1.5;
+        }
+        .price-anchor-punch strong { color: var(--cor-acento); font-style: normal; }
+        @media(max-width: 560px) {
+            .price-anchor-box { padding: 24px 22px; }
+            .pa-row { flex-direction: column; gap: 2px; }
+            .pa-row .pa-price { font-size: 18px; }
+        }
+
+        /* ---- 8.5 MÓDULOS EM CARROSSEL (reduz altura da página) ---- */
+        .modulos-scroller {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 12px 4px 28px;
+            margin-top: 40px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--cor-acento) transparent;
+        }
+        .modulos-scroller::-webkit-scrollbar { height: 6px; }
+        .modulos-scroller::-webkit-scrollbar-track { background: rgba(200,169,110,0.12); border-radius: 10px; }
+        .modulos-scroller::-webkit-scrollbar-thumb { background: var(--cor-acento); border-radius: 10px; }
+        .modulos-scroller .card-modulo {
+            flex: 0 0 320px;
+            max-width: 320px;
+            scroll-snap-align: start;
+        }
+        .carousel-hint {
+            font-size: 13px; color: var(--cor-texto-suave); font-style: italic;
+            margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .carousel-hint svg { animation: nudge 1.8s ease-in-out infinite; }
+        @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
     </style>
 
 <!-- Meta Pixel Code -->
@@ -633,6 +935,47 @@
         </div>
     </section>
 
+    <!-- ===========================================
+         FAIXA DE AUTORIDADE (vídeo de evento real + números)
+         =========================================== -->
+    <section class="authority-band">
+        <div class="authority-video-wrap">
+            <video autoplay muted loop playsinline preload="metadata" poster="autoridade-evento-poster.jpg" aria-hidden="true">
+                <source src="autoridade-evento.mp4" type="video/mp4">
+            </video>
+            <img class="authority-poster" src="autoridade-evento-poster.jpg" alt="" style="display:none;">
+        </div>
+        <div class="authority-overlay"></div>
+        <div class="authority-content">
+            <span class="tag-label anim-fade-up" style="justify-content: center;">
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                NÃO É PROMESSA. É PRÁTICA.
+                <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+            </span>
+            <h2 class="anim-fade-up">Milhares de pessoas já viveram<br>o Yoga da <span style="color: var(--cor-acento);">Tata Vidal</span>.</h2>
+            <p class="authority-sub anim-fade-up">De aulas individuais a grandes encontros e retiros — uma prática que já transformou pessoas por todo o Brasil.</p>
+            <div class="authority-stats anim-fade-up">
+                <div class="authority-stat">
+                    <div class="stat-num">Milhares</div>
+                    <div class="stat-label">de alunas transformadas</div>
+                </div>
+                <div class="authority-stat">
+                    <div class="stat-num">+10 anos</div>
+                    <div class="stat-label">de yoga e prática</div>
+                </div>
+                <div class="authority-stat">
+                    <div class="stat-num">De Norte a Sul</div>
+                    <div class="stat-label">retiros e grandes eventos</div>
+                </div>
+                <div class="authority-stat">
+                    <div class="stat-num">Fundadora</div>
+                    <div class="stat-label">da Galáctica Fitwear</div>
+                    <div class="stat-sub">moda exclusiva para yoga</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ENCONTRO DE BOAS-VINDAS — DESTAQUE PRINCIPAL -->
     <section style="background: linear-gradient(135deg, #1A1208 0%, #2E1A06 60%, #1A1208 100%); padding: 64px 24px; position: relative; overflow: hidden; z-index: 10; border-top: 1px solid rgba(200,169,110,0.15); border-bottom: 1px solid rgba(200,169,110,0.15);">
         <!-- Estrelas decorativas de fundo -->
@@ -707,9 +1050,9 @@
                 <div class="anim-fade-up" style="background: var(--cor-acento); border-radius: 20px; padding: 28px 24px; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 15px 40px rgba(0,0,0,0.4);">
                     <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
                         <div style="font-size: 36px; line-height: 1; flex-shrink: 0;">📡</div>
-                        <h3 style="font-family: var(--font-display); color: var(--cor-escura); font-size: 22px; margin: 0; text-transform: uppercase; font-weight: bold; line-height: 1.1;">Aulas Ao Vivo Quinzenais</h3>
+                        <h3 style="font-family: var(--font-display); color: var(--cor-escura); font-size: 22px; margin: 0; text-transform: uppercase; font-weight: bold; line-height: 1.1;">Aulas Ao Vivo Semanais</h3>
                     </div>
-                    <p style="color: var(--cor-primaria); font-size: 15px; margin: 0; font-weight: 600; line-height: 1.6;">Sinta a energia de praticar em grupo! A cada 15 dias temos um encontro marcado ao vivo com a Tatá. Se não puder participar, não se preocupe: tudo fica gravado e disponível na plataforma.</p>
+                    <p style="color: var(--cor-primaria); font-size: 15px; margin: 0; font-weight: 600; line-height: 1.6;">Sinta a energia de praticar em grupo! Toda semana temos um encontro marcado ao vivo com a Tatá. Se não puder participar, não se preocupe: tudo fica gravado e disponível na plataforma.</p>
                 </div>
 
                 <!-- Destaque 2 -->
@@ -916,8 +1259,217 @@
                 
                 <p style="font-family: var(--font-display); font-size: 24px; color: var(--cor-acento); margin-top: 24px;">Seja bem-vindo ao Yoga Galáctico.</p>
             </div>
-            <div class="bio-img anim-zoom">
-                <img src="foto-tata-vidal.jpg" alt="Tata Vidal — professora de yoga" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            <div class="anim-zoom">
+                <div class="bio-img">
+                    <img src="foto-tata-vidal.jpg" alt="Tata Vidal — professora de yoga" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                </div>
+                <div class="bio-event-grid">
+                    <div class="bio-event-photo">
+                        <img src="evento-turma-1.jpg" alt="Turma de yoga em evento com a Tata Vidal" loading="lazy">
+                    </div>
+                    <div class="bio-event-photo">
+                        <img src="evento-turma-2.jpg" alt="Turma de yoga em evento com a Tata Vidal" loading="lazy">
+                    </div>
+                    <div class="bio-event-photo">
+                        <img src="evento-turma-3.jpg" alt="Turma de yoga em evento na praia com a Tata Vidal" loading="lazy">
+                    </div>
+                    <div class="bio-event-photo">
+                        <img src="evento-turma-4.jpg" alt="Turma de yoga em evento com a Tata Vidal" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         PROVA SOCIAL — DEPOIMENTOS ESCRITOS (CARROSSEL) + VÍDEO
+         =========================================== -->
+    <section class="social-proof container text-center">
+        <span class="tag-label anim-fade-up" style="justify-content: center;">
+            <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+            QUEM JÁ VIVEU, CONTA
+            <svg width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+        </span>
+        <h2 class="anim-fade-up">O que as alunas da Tata dizem</h2>
+        <p class="anim-fade-up" style="color: var(--cor-texto-suave); max-width: 640px; margin: 0 auto;">
+            Palavras reais de quem já praticou com a Tata Vidal — de médicas a quem nunca tinha pisado num tapete de yoga.
+        </p>
+
+        <div class="depo-hint anim-fade-up">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#C8A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            arraste para o lado para ver mais
+        </div>
+
+        <div class="depo-scroller">
+
+            <!-- 1. Jack Pasqualotto -->
+            <div class="depo-card">
+                <div class="depo-quote-mark">"</div>
+                <div class="depo-stars">★★★★★</div>
+                <p class="depo-text">Uma aula galáctica que vou guardar pra sempre no coração. Algumas coisas são pra viver profundamente — foi 100% entrega pro momento. Não tem como explicar.</p>
+                <div class="depo-author">
+                    <div class="depo-avatar">J</div>
+                    <div>
+                        <div class="depo-name">Jack Pasqualotto</div>
+                        <div class="depo-role">Aluna</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Aline -->
+            <div class="depo-card">
+                <div class="depo-quote-mark">"</div>
+                <div class="depo-stars">★★★★★</div>
+                <p class="depo-text">O yoga permite o equilíbrio entre corpo, mente e espírito. Impossível não sair de uma prática se sentindo melhor do que antes. Gratidão por cada prática que me faz ser 1% melhor.</p>
+                <div class="depo-author">
+                    <div class="depo-avatar">A</div>
+                    <div>
+                        <div class="depo-name">Aline Castanho</div>
+                        <div class="depo-role">Aluna</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Fabiana Nardi -->
+            <div class="depo-card">
+                <div class="depo-quote-mark">"</div>
+                <div class="depo-stars">★★★★★</div>
+                <p class="depo-text">Já participei de muitos retiros e falo com propriedade: esse foi o mais marcante. Você é diferenciada, uma nova referência pra mim sobre yoga — e olha que sou "sommelier" de aula de yoga!</p>
+                <div class="depo-author">
+                    <div class="depo-avatar">F</div>
+                    <div>
+                        <div class="depo-name">Fabiana Nardi</div>
+                        <div class="depo-role">Aluna</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Dra. Natália -->
+            <div class="depo-card">
+                <div class="depo-quote-mark">"</div>
+                <div class="depo-stars">★★★★★</div>
+                <p class="depo-text">O yoga te desafia todo momento — te ensina a ter equilíbrio, flexibilidade, a se concentrar no presente e a respirar de forma consciente. Esse aprendizado a gente leva do tapete pra vida.</p>
+                <div class="depo-author">
+                    <div class="depo-avatar">N</div>
+                    <div>
+                        <div class="depo-name">Dra. Natália</div>
+                        <div class="depo-role">Médica ginecologista</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Marlian Catarina -->
+            <div class="depo-card">
+                <div class="depo-quote-mark">"</div>
+                <div class="depo-stars">★★★★★</div>
+                <p class="depo-text">Pude me conectar com todo o poder do yoga. É sobre sentir — nossos pensamentos, nosso foco, nossa flexibilidade. Cada prática é um desafio e uma superação. Gratidão à minha mestre e professora.</p>
+                <div class="depo-author">
+                    <div class="depo-avatar">M</div>
+                    <div>
+                        <div class="depo-name">Marlian Catarina</div>
+                        <div class="depo-role">Aluna</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Junior Peron -->
+            <div class="depo-card">
+                <div class="depo-quote-mark">"</div>
+                <div class="depo-stars">★★★★★</div>
+                <p class="depo-text">Achava que yoga era só um exercício diferente. Com o tempo, virou um meio de me conectar com tudo — uma prática espiritual e mental que trouxe equilíbrio pra minha vida. Hoje não me imagino sem o yoga.</p>
+                <div class="depo-author">
+                    <div class="depo-avatar">J</div>
+                    <div>
+                        <div class="depo-name">Junior Peron</div>
+                        <div class="depo-role">Aluno</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Carol Bertoli -->
+            <div class="depo-card">
+                <div class="depo-quote-mark">"</div>
+                <div class="depo-stars">★★★★★</div>
+                <p class="depo-text">Muito mais que flexibilidade, a yoga mudou minha vida em todos os aspectos — me trouxe mais consciência, mais determinação, mais espiritualidade, e me conectou com minha fé.</p>
+                <div class="depo-author">
+                    <div class="depo-avatar">C</div>
+                    <div>
+                        <div class="depo-name">Carol Bertoli</div>
+                        <div class="depo-role">Aluna</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Dra. Fabi Zarske -->
+            <div class="depo-card">
+                <div class="depo-quote-mark">"</div>
+                <div class="depo-stars">★★★★★</div>
+                <p class="depo-text">Indico o yoga na gestação: trabalha equilíbrio, força, flexibilidade, fortalecimento perineal, controle da respiração e bem-estar. Respiração fluida, mente controlada, corpo equilibrado.</p>
+                <div class="depo-author">
+                    <div class="depo-avatar">F</div>
+                    <div>
+                        <div class="depo-name">Dra. Fabi Zarske</div>
+                        <div class="depo-role">Médica ginecologista</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Andréa -->
+            <div class="depo-card">
+                <div class="depo-quote-mark">"</div>
+                <div class="depo-stars">★★★★★</div>
+                <p class="depo-text">O corpo realiza o que a mente acredita ser capaz. O yoga me proporcionou melhor respiração, mais concentração, menos ansiedade e mais autorregulação — isso me ajuda até na tarefa de ser psiquiatra.</p>
+                <div class="depo-author">
+                    <div class="depo-avatar">A</div>
+                    <div>
+                        <div class="depo-name">Andréa</div>
+                        <div class="depo-role">Médica psiquiatra</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- DEPOIMENTOS EM VÍDEO -->
+        <div style="margin-top: 64px;">
+            <h2 class="anim-fade-up" style="font-size: clamp(24px, 3.4vw, 38px);">Ouça direto de quem viveu</h2>
+            <p class="anim-fade-up" style="color: var(--cor-texto-suave); max-width: 600px; margin: 0 auto;">
+                Depoimentos reais, em vídeo, de alunas e alunos da Tata Vidal.
+            </p>
+            <div class="video-testi-grid anim-fade-up">
+                <div class="video-testi-card has-media">
+                    <img class="vt-poster" src="depo-junior-peron-poster.jpg" alt="Depoimento em vídeo de Junior Peron">
+                    <video class="vt-video" playsinline preload="none" controls poster="depo-junior-peron-poster.jpg">
+                        <source src="depo-junior-peron.mp4" type="video/mp4">
+                    </video>
+                    <div class="vt-scrim"></div>
+                    <button type="button" class="video-testi-play vt-play-btn" aria-label="Reproduzir depoimento de Junior Peron" onclick="playTestiVideo(this)">
+                        <svg viewBox="0 0 24 24" fill="#C8A96E"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <div class="vt-caption">Junior Peron</div>
+                </div>
+                <div class="video-testi-card has-media">
+                    <img class="vt-poster" src="depo-aline-castanho-poster.jpg" alt="Depoimento em vídeo de Aline de Freitas">
+                    <video class="vt-video" playsinline preload="none" controls poster="depo-aline-castanho-poster.jpg">
+                        <source src="depo-aline-castanho.mp4" type="video/mp4">
+                    </video>
+                    <div class="vt-scrim"></div>
+                    <button type="button" class="video-testi-play vt-play-btn" aria-label="Reproduzir depoimento de Aline de Freitas" onclick="playTestiVideo(this)">
+                        <svg viewBox="0 0 24 24" fill="#C8A96E"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <div class="vt-caption">Aline de Freitas</div>
+                </div>
+                <div class="video-testi-card has-media">
+                    <img class="vt-poster" src="depo-marlian-catarina-poster.jpg" alt="Depoimento em vídeo de Marlian Catarina">
+                    <video class="vt-video" playsinline preload="none" controls poster="depo-marlian-catarina-poster.jpg">
+                        <source src="depo-marlian-catarina.mp4" type="video/mp4">
+                    </video>
+                    <div class="vt-scrim"></div>
+                    <button type="button" class="video-testi-play vt-play-btn" aria-label="Reproduzir depoimento de Marlian Catarina" onclick="playTestiVideo(this)">
+                        <svg viewBox="0 0 24 24" fill="#C8A96E"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <div class="vt-caption">Marlian Catarina</div>
+                </div>
             </div>
         </div>
     </section>
@@ -942,32 +1494,28 @@
             <p>Comece pelos fundamentos, aprofunde sua prática e descubra novas formas de se conectar consigo mesma através do Yoga Galáctico.</p>
         </div>
 
-        <div class="deliv-grid text-left">
-            
-            <!-- MÓDULO 1: DESTAQUE INICIAL -->
-            <div class="card-modulo card-destaque anim-fade-up" style="grid-column: 1 / -1; display: flex; flex-direction: column; text-align: left;">
-                <div class="badge-popular">✦ O PONTO DE PARTIDA</div>
-                <div class="mod-icon-wrapper" style="margin: 0 auto 20px;">🌟</div>
-                <div class="mod-author" style="text-align: center;">TATA VIDAL</div>
-                <div class="mod-title" style="text-align: center;">Módulo 1 - Iniciação Galáctica</div>
-                <div class="mod-tag" style="margin: 0 auto 24px;">✨ ESPÍRITO + 🧠 MENTE + 🫀 CORPO</div>
-                
-                <p style="font-size: 16px; margin-bottom: 16px; text-align: center; color: var(--cor-primaria);"><strong>O primeiro passo da sua jornada.</strong></p>
-                <p style="color: var(--cor-texto-suave); font-size: 15px; margin-bottom: 24px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">Aqui você compreenderá os fundamentos do Yoga Galáctico, conhecerá a Metodologia da Tríade Galáctica™ e aprenderá como construir uma prática consistente, respeitando seu momento atual.</p>
-                
-                <div style="width: 100%; height: 1px; background: rgba(200,169,110,0.2); margin-bottom: 24px;"></div>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
-                    <ul class="list-custom" style="margin: 0;">
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Boas-vindas à jornada Yoga Galáctico</li>
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Introdução à Metodologia da Tríade Galáctica™</li>
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Os pilares que sustentam Corpo, Mente e Espírito</li>
-                    </ul>
-                    <ul class="list-custom" style="margin: 0;">
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Como criar sua jornada personalizada</li>
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Orientações para aproveitar ao máximo a plataforma</li>
-                    </ul>
-                </div>
+        <!-- MÓDULOS 1 A 7 EM CARROSSEL HORIZONTAL -->
+        <div class="carousel-hint anim-fade-up">
+            <span>7 módulos completos</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#C8A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>arraste para explorar</span>
+        </div>
+        <div class="modulos-scroller text-left">
+
+            <!-- MÓDULO 1 -->
+            <div class="card-modulo anim-fade-up">
+                <div class="mod-icon-wrapper">🌟</div>
+                <div class="mod-author">TATA VIDAL</div>
+                <div class="mod-title">Módulo 1 - Iniciação Galáctica</div>
+                <div class="mod-tag">✨ ESPÍRITO + 🧠 MENTE + 🫀 CORPO</div>
+                <p style="font-size: 14px; margin-top:-10px; margin-bottom:16px; color:var(--cor-texto-suave);">O primeiro passo da sua jornada.<br><br>Aqui você compreenderá os fundamentos do Yoga Galáctico, conhecerá a Metodologia da Tríade Galáctica™ e aprenderá a construir uma prática consistente.</p>
+                <ul class="list-custom">
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Boas-vindas à jornada Yoga Galáctico</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Introdução à Metodologia da Tríade Galáctica™</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Os pilares que sustentam Corpo, Mente e Espírito</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Como criar sua jornada personalizada</li>
+                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Orientações para aproveitar ao máximo a plataforma</li>
+                </ul>
             </div>
 
             <!-- MÓDULO 2 -->
@@ -1073,6 +1621,10 @@
                 </ul>
             </div>
 
+        </div> <!-- Fim do carrossel de módulos 1-7 -->
+
+        <div class="deliv-grid text-left" style="margin-top: 32px;">
+
             <!-- MODULO ESPECIAL (Mantido Intacto) -->
             <div class="card-modulo card-destaque anim-fade-up" style="grid-column: 1 / -1; display: flex; flex-direction: column; text-align: left;">
                 <div class="badge-popular">✦ INCLUSO NO PLANO ANUAL</div>
@@ -1103,23 +1655,6 @@
                         <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Construção de hábitos que sustentam sua evolução</li>
                     </ul>
                 </div>
-            </div>
-
-            <!-- CARD FINAL -->
-            <div class="card-modulo anim-fade-up">
-                <div class="mod-icon-wrapper">⭐</div>
-                <div class="mod-author">TATA VIDAL</div>
-                <div class="mod-title">A Experiência Completa</div>
-                <div class="mod-tag">AO VIVO + SUPORTE + EVOLUÇÃO CONTÍNUA</div>
-                <p style="font-size: 14px; margin-top:-10px; margin-bottom:16px; color:var(--cor-texto-suave);">O Yoga Galáctico não é uma plataforma estática.<br><br>Você faz parte de uma jornada viva, acompanhada e em constante expansão.</p>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aulas ao vivo quinzenais com Tata Vidal</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Canal para envio de dúvidas e orientações</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Novas aulas adicionadas regularmente</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Novas meditações e práticas especiais</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Conteúdos complementares ao longo da jornada</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Uma experiência que evolui junto com você</li>
-                </ul>
             </div>
 
         </div> <!-- Fim do Grid de Entregáveis -->
@@ -1184,6 +1719,34 @@
                 Corpo mais forte e livre. Mente mais clara e presente. Espírito mais conectado e desperto. Escolha o seu plano abaixo:
             </p>
 
+            <!-- ANCORAGEM DE PREÇO (empilhamento de valor real) -->
+            <div class="price-anchor-box anim-fade-up">
+                <div class="pa-title">Se você fosse contratar tudo isso separado</div>
+                <div class="pa-row">
+                    <div class="pa-item">Aulas ao vivo com a Tata <small>online e ao vivo, ~R$100 cada · 4 no mês</small></div>
+                    <div class="pa-price">~R$400/mês</div>
+                </div>
+                <div class="pa-row">
+                    <div class="pa-item">Encontro individual de boas-vindas <small>sessão pessoal e ao vivo com a Tata</small></div>
+                    <div class="pa-price">~R$100</div>
+                </div>
+                <div class="pa-row">
+                    <div class="pa-item">Biblioteca de meditações e respiração <small>equivalente a apps premium do tipo</small></div>
+                    <div class="pa-price">~R$50/mês</div>
+                </div>
+                <div class="pa-row">
+                    <div class="pa-item">Plataforma completa + novas aulas todo mês <small>7 módulos e conteúdo sempre crescendo</small></div>
+                    <div class="pa-price">incluso</div>
+                </div>
+                <div class="pa-total">
+                    <div class="pa-total-label">Valor real somado</div>
+                    <div class="pa-total-value">~R$550/mês</div>
+                </div>
+            </div>
+            <div class="price-anchor-punch anim-fade-up">
+                Você tem <strong>tudo isso</strong> por uma fração do valor — a partir de <strong>menos de R$3 por dia</strong>.
+            </div>
+
             <div class="pricing-grid">
                 <!-- PLANO MENSAL -->
                 <div class="price-card anim-zoom">
@@ -1201,7 +1764,7 @@
                     <ul class="list-custom price-list" style="margin-bottom: 32px; flex-grow: 1;">
                         <li style="padding: 10px 12px; background: rgba(200,169,110,0.1); border: 1px dashed rgba(200,169,110,0.4); border-radius: 10px; display: block;"><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32" style="display:inline; vertical-align:middle; margin-right:6px;"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg><strong style="color: var(--cor-acento);">⏳ Promoção de lançamento:</strong> Encontro de Boas-vindas + Plano Galáctico™ com Tata Vidal (por tempo limitado)</li>
                         <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Acesso imediato à plataforma</li>
-                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aulas ao vivo quinzenais</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aulas ao vivo semanais</li>
                         <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Canal direto para tirar dúvidas</li>
                         <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Novas aulas adicionadas todos os meses</li>
                         <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Cancele quando quiser, sem multas</li>
@@ -1210,6 +1773,10 @@
 
                     <div style="margin-top: auto;">
                         <a href="https://pay.kiwify.com.br/8YLBV7I" class="btn-cta" style="width: 100%; padding: 20px; font-weight: 600; border-radius: 50px; background: transparent; color: var(--cor-acento); border: 1px solid var(--cor-acento);" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Plano Mensal'}); fbq('trackCustom', 'PlanoMensal');">ASSINAR PLANO MENSAL</a>
+                        <div class="price-guarantee-strip anim-fade-up">
+                            <svg width="20" height="20" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                            <div class="pgs-text"><strong>100% dinheiro de volta</strong> · 7 dias garantido</div>
+                        </div>
                         <div class="secure-text">🔒 Compra 100% segura</div>
                     </div>
                 </div>
@@ -1229,7 +1796,7 @@
                         <li style="margin-top: 8px; padding: 10px 12px; background: rgba(200,169,110,0.12); border: 1px solid rgba(200,169,110,0.4); border-radius: 10px; display: block;"><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32" style="display:inline; vertical-align:middle; margin-right:6px;"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg><strong style="color: var(--cor-acento);">🚀 Despertar Galáctico (21 Dias)</strong> — programa de transformação incluso</li>
                         <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> <strong>2 meses gratuitos</strong> inclusos</li>
                         <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Acesso imediato à plataforma completa</li>
-                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aulas ao vivo quinzenais</li>
+                        <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aulas ao vivo semanais</li>
                         <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Canal direto para tirar dúvidas</li>
                         <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Novas aulas adicionadas todos os meses</li>
                         <li><svg class="svg-bullet" width="16" height="16" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> <strong>BÔNUS:</strong> 20% OFF na Galáctica Fitwear</li>
@@ -1237,6 +1804,10 @@
 
                     <div style="margin-top: auto;">
 			<a href="https://pay.kiwify.com.br/XkF0IBJ" class="btn-cta-gold" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Plano Anual'}); fbq('trackCustom', 'PlanoAnual');">ASSINAR PLANO ANUAL</a>
+                        <div class="price-guarantee-strip anim-fade-up">
+                            <svg width="20" height="20" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
+                            <div class="pgs-text"><strong>100% dinheiro de volta</strong> · 7 dias garantido</div>
+                        </div>
                         <div class="secure-text">🔒 Compra 100% segura</div>
                     </div>
                 </div>
@@ -1380,6 +1951,24 @@
 
     <!-- JAVASCRIPT -->
     <script defer>
+        // Reproduz o depoimento em vídeo ao clicar no play (carrega o vídeo só sob demanda)
+        function playTestiVideo(btn) {
+            const card = btn.closest('.video-testi-card');
+            if (!card) return;
+            const poster = card.querySelector('.vt-poster');
+            const scrim = card.querySelector('.vt-scrim');
+            const caption = card.querySelector('.vt-caption');
+            const video = card.querySelector('.vt-video');
+            if (poster) poster.style.display = 'none';
+            if (scrim) scrim.style.display = 'none';
+            if (caption) caption.style.display = 'none';
+            btn.style.display = 'none';
+            if (video) {
+                video.style.display = 'block';
+                video.play().catch(() => { /* autoplay com som pode exigir interação, já garantida pelo clique */ });
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             
             // 1. Intersection Observer for Animations
@@ -1492,6 +2081,24 @@
                 window.addEventListener('resize', initCanvas);
                 initCanvas();
                 drawStars();
+            }
+
+            // 3b. Fallback do vídeo da faixa de autoridade (mostra poster se o vídeo falhar)
+            const authVideo = document.querySelector('.authority-video-wrap video');
+            if (authVideo) {
+                const authPoster = document.querySelector('.authority-video-wrap img.authority-poster');
+                const showPosterFallback = () => {
+                    if (authPoster) {
+                        authVideo.style.display = 'none';
+                        authPoster.style.display = 'block';
+                    }
+                };
+                authVideo.addEventListener('error', showPosterFallback);
+                // Se o autoplay for bloqueado, ao menos garante o poster de fundo
+                const playAttempt = authVideo.play();
+                if (playAttempt && typeof playAttempt.catch === 'function') {
+                    playAttempt.catch(() => { /* poster do próprio <video> permanece visível */ });
+                }
             }
 
             // 4. Sticky Navbar Logic
