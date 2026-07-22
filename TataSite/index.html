@@ -9,6 +9,19 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-18343049408');
+
+      function gtag_report_conversion(url, sendTo) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': sendTo,
+            'event_callback': callback
+        });
+        return false;
+      }
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1799,7 +1812,7 @@
                     </ul>
 
                     <div style="margin-top: auto;">
-                        <a href="https://pay.kiwify.com.br/8YLBV7I" class="btn-cta" style="width: 100%; padding: 20px; font-weight: 600; border-radius: 50px; background: transparent; color: var(--cor-acento); border: 1px solid var(--cor-acento);" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Plano Mensal'}); fbq('trackCustom', 'PlanoMensal');">ASSINAR PLANO MENSAL</a>
+                        <a href="https://pay.kiwify.com.br/8YLBV7I" class="btn-cta" style="width: 100%; padding: 20px; font-weight: 600; border-radius: 50px; background: transparent; color: var(--cor-acento); border: 1px solid var(--cor-acento);" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Plano Mensal'}); fbq('trackCustom', 'PlanoMensal'); return gtag_report_conversion('https://pay.kiwify.com.br/8YLBV7I', 'AW-18343049408/THu9CM-xgdUcEMDx0qpE');">ASSINAR PLANO MENSAL</a>
                         <div class="price-guarantee-strip anim-fade-up">
                             <svg width="20" height="20" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
                             <div class="pgs-text"><strong>100% dinheiro de volta</strong> · 7 dias garantido</div>
@@ -1830,7 +1843,7 @@
                     </ul>
 
                     <div style="margin-top: auto;">
-			<a href="https://pay.kiwify.com.br/XkF0IBJ" class="btn-cta-gold" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Plano Anual'}); fbq('trackCustom', 'PlanoAnual');">ASSINAR PLANO ANUAL</a>
+			<a href="https://pay.kiwify.com.br/XkF0IBJ" class="btn-cta-gold" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Plano Anual'}); fbq('trackCustom', 'PlanoAnual'); return gtag_report_conversion('https://pay.kiwify.com.br/XkF0IBJ', 'AW-18343049408/kS-eCNKxgdUcEMDx0qpE');">ASSINAR PLANO ANUAL</a>
                         <div class="price-guarantee-strip anim-fade-up">
                             <svg width="20" height="20" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg>
                             <div class="pgs-text"><strong>100% dinheiro de volta</strong> · 7 dias garantido</div>
