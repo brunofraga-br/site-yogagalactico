@@ -21,7 +21,7 @@
     <!-- Preconnect & Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
@@ -43,8 +43,9 @@
             /* Cores de marca */
             --cor-primaria:      #2E1A06;   
             --cor-secundaria:    #8B4A3C;   
-            --cor-acento:        #C8A96E;   
-            --cor-acento-soft:   #E0D0A8;   
+            --cor-acento:        #C8A96E;
+            --cor-acento-soft:   #E0D0A8;
+            --cor-acento-vivo:   #E0A83E;   /* dourado saturado, só para pontos de energia */
 
             /* Texto */
             --cor-texto:         #3D2A1A;   
@@ -148,55 +149,70 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .accent-punch {
+            font-family: var(--font-body);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: var(--cor-escura);
+            background: var(--cor-acento-vivo);
+            padding: 2px 12px;
+            border-radius: 8px;
+            display: inline-block;
+            line-height: 1.25;
+            box-shadow: 0 8px 24px rgba(224,168,62,0.35);
+        }
+
         /* ==========================================================================
            3. UI ELEMENTS (BUTTONS & SVGS)
            ========================================================================== */
         .btn-cta {
             display: inline-block;
-            font-family: var(--font-display);
+            font-family: var(--font-body);
             font-size: 15px;
-            letter-spacing: 1.5px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            background: var(--cor-cta);
-            color: var(--cor-cta-texto);
-            border: 1px solid var(--cor-acento);
+            background: var(--cor-acento-vivo);
+            color: var(--cor-escura);
+            border: none;
             border-radius: 50px;
             padding: 18px 48px;
-            box-shadow: 0 6px 30px rgba(200,169,110,0.35);
+            box-shadow: 0 14px 34px rgba(224,168,62,0.40);
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
         }
         .btn-cta:hover, .btn-cta:focus-visible {
-            background: var(--cor-cta-hover-bg);
-            color: var(--cor-cta-hover-txt);
-            box-shadow: 0 8px 40px rgba(200,169,110,0.50);
+            background: var(--cor-acento);
+            color: var(--cor-escura);
+            box-shadow: 0 16px 40px rgba(224,168,62,0.55);
             transform: translateY(-2px);
             outline: none;
         }
 
         .btn-cta-gold {
             display: inline-block;
-            font-family: var(--font-display);
+            font-family: var(--font-body);
             font-size: 17px;
-            letter-spacing: 1.5px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            background: var(--cor-acento);
-            color: var(--cor-cta);
-            border: 1px solid transparent;
-            font-weight: 600;
+            background: var(--cor-acento-vivo);
+            color: var(--cor-escura);
+            border: none;
             border-radius: 50px;
             padding: 20px 48px;
-            box-shadow: 0 6px 30px rgba(200,169,110,0.35);
+            box-shadow: 0 14px 34px rgba(224,168,62,0.40);
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
             width: 100%;
         }
         .btn-cta-gold:hover, .btn-cta-gold:focus-visible {
-            background: var(--cor-cta);
-            color: var(--cor-acento);
-            border: 1px solid var(--cor-acento);
+            background: var(--cor-acento);
+            color: var(--cor-escura);
+            border: none;
+            box-shadow: 0 16px 40px rgba(224,168,62,0.55);
             outline: none;
         }
 
@@ -922,8 +938,9 @@
             border-radius: 16px; padding: 24px 20px; text-align: center;
         }
         .proof-item .pi-big {
-            font-family: var(--font-display); font-size: 30px; line-height: 1.1;
-            color: var(--cor-primaria); margin-bottom: 6px;
+            font-family: var(--font-body); font-weight: 900; letter-spacing: -0.02em;
+            font-size: 26px; line-height: 1.1;
+            color: #8B6A3E; margin-bottom: 6px;
         }
         .proof-item .pi-label { font-size: 14px; color: var(--cor-texto-suave); line-height: 1.5; }
 
@@ -955,8 +972,14 @@
             border-radius: 14px; padding: 26px 24px;
         }
         .daily-card h4 {
-            font-family: var(--font-italic); font-style: normal; font-weight: 700;
-            font-size: 19px; color: var(--cor-secundaria); margin-bottom: 8px; line-height: 1.3;
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-style: normal;
+            letter-spacing: -0.01em;
+            font-size: 18px;
+            color: var(--cor-primaria);
+            margin-bottom: 8px;
+            line-height: 1.3;
         }
         .daily-card p { font-size: 15px; color: var(--cor-texto-suave); line-height: 1.7; }
 
@@ -972,9 +995,11 @@
             display: flex; align-items: flex-start; gap: 10px;
             background: #FFF; border: 1px solid var(--cor-fundo-palha);
             border-radius: 12px; padding: 16px 20px;
-            font-size: 15.5px; color: var(--cor-texto);
+            font-size: 15.5px; color: var(--cor-primaria);
+            font-weight: 700;
         }
         .for-you-item svg { margin-top: 4px; flex-shrink: 0; }
+        .for-you-item svg path { fill: var(--cor-acento-vivo) !important; }
 
         /* --- BLOCO ESCURO ÚNICO DO MEIO --- */
         .alone {
@@ -1015,7 +1040,7 @@
             letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
         }
         .compare-col .compare-head { color: var(--cor-texto-suave); }
-        .compare-col.highlight .compare-head { color: #8B6A3E; }
+        .compare-col.highlight .compare-head { color: var(--cor-acento-vivo); font-weight: 900; }
         .compare-col ul { list-style: none; }
         .compare-col li {
             font-size: 15px; line-height: 1.6; color: var(--cor-texto);
@@ -1025,7 +1050,8 @@
             content: '·'; position: absolute; left: 6px; top: -2px;
             font-size: 22px; color: var(--cor-texto-suave);
         }
-        .compare-col.highlight li::before { content: '✦'; font-size: 12px; top: 2px; left: 4px; color: var(--cor-acento); }
+        .compare-col.highlight li { font-weight: 700; color: var(--cor-primaria); }
+        .compare-col.highlight li::before { content: '✦'; font-size: 13px; top: 2px; left: 4px; color: var(--cor-acento-vivo); }
 
         /* --- METODOLOGIA REDUZIDA (clara) --- */
         .method-lite { background-color: var(--cor-fundo-medio); }
@@ -1109,15 +1135,18 @@
         /* Botão escuro sobre card claro */
         .btn-cta-dark {
             display: inline-block; width: 100%;
-            font-family: var(--font-display); font-size: 16px; letter-spacing: 1.5px;
+            font-family: var(--font-body); font-size: 16px;
+            font-weight: 800; letter-spacing: 0.5px;
             text-transform: uppercase; text-align: center;
-            background: var(--cor-cta); color: var(--cor-cta-texto);
-            border: 1px solid var(--cor-escura); border-radius: 50px;
+            background: var(--cor-acento-vivo); color: var(--cor-escura);
+            border: none; border-radius: 50px;
             padding: 19px 32px; cursor: pointer; transition: all 0.3s ease;
+            box-shadow: 0 14px 34px rgba(224,168,62,0.40);
         }
         .btn-cta-dark:hover, .btn-cta-dark:focus-visible {
             background: var(--cor-acento); color: var(--cor-escura);
-            border-color: var(--cor-acento);
+            border: none;
+            box-shadow: 0 16px 40px rgba(224,168,62,0.55);
             transform: translateY(-2px); outline: none;
         }
         .btn-cta-outline {
@@ -1213,7 +1242,7 @@
                 </div>
 
                 <h1 class="anim-fade-up" style="animation-delay: 0.2s; font-size: clamp(30px, 4.2vw, 52px); text-transform: none; letter-spacing: 0; line-height: 1.15;">
-                    Práticas de yoga que cabem no seu dia, com uma professora que <span class="gradient-text-gold">acompanha sua evolução</span>.
+                    Práticas de yoga que cabem no seu dia, com uma professora que <span class="accent-punch">acompanha sua evolução</span>.
                 </h1>
 
                 <p class="hero-sub anim-fade-up" style="animation-delay: 0.4s;">
@@ -1952,7 +1981,7 @@
                     <div class="price-highlight-panel">
                         <ul class="list-custom price-highlight-list">
                             <li><svg class="svg-bullet" width="14" height="14" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg><span><strong>Encontro de Boas-vindas</strong> ao vivo e individual com a Tata</span></li>
-                            <li><svg class="svg-bullet" width="14" height="14" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg><span><strong>Plano Galáctico personalizado</strong>, feito para o seu momento</span></li>
+                            <li><svg class="svg-bullet" width="14" height="14" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg><span><strong>Plano personalizado</strong>, feito para o seu momento</span></li>
                             <li><svg class="svg-bullet" width="14" height="14" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg><span><strong>Check-in mensal ao vivo</strong> com a Tata</span></li>
                             <li><svg class="svg-bullet" width="14" height="14" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg><span><strong>Despertar Galáctico</strong> (21 dias) incluso</span></li>
                         </ul>
