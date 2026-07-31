@@ -422,6 +422,28 @@
         }
         .card-modulo li { color: var(--cor-texto); font-size: 14px; }
 
+        .mod-toggle {
+            background: none; border: 1px solid var(--cor-fundo-palha); border-radius: 20px;
+            padding: 7px 16px; font-family: var(--font-body); font-size: 12px; font-weight: 600;
+            color: var(--cor-secundaria); cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+            transition: all 0.2s;
+        }
+        .mod-toggle:hover { border-color: var(--cor-acento); color: var(--cor-primaria); }
+        .mod-toggle-icon { font-size: 15px; line-height: 1; transition: transform 0.3s; }
+        .mod-toggle[aria-expanded="true"] .mod-toggle-icon { transform: rotate(45deg); }
+        .mod-details { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .mod-details.active { max-height: 1600px; }
+        .mod-details-inner { padding-top: 16px; }
+
+        .mod-toggle-destaque {
+            background: var(--cor-acento); border: 1px solid var(--cor-acento); color: var(--cor-escura);
+            border-radius: 999px; padding: 10px 22px; font-family: var(--font-body); font-size: 13px;
+            font-weight: 700; letter-spacing: 0.3px; cursor: pointer; display: flex; align-items: center;
+            gap: 8px; margin: 0 auto; transition: all 0.2s;
+        }
+        .mod-toggle-destaque:hover { background: var(--cor-escura); color: var(--cor-acento); }
+        .mod-toggle-destaque[aria-expanded="true"] .mod-toggle-icon { transform: rotate(45deg); }
+
         .card-destaque {
             background: linear-gradient(135deg, #FFFFFF 0%, var(--cor-fundo-claro) 100%);
             border: 2px solid var(--cor-acento);
@@ -841,41 +863,44 @@
             .pa-row .pa-price { font-size: 18px; }
         }
 
-        /* ---- 8.5 MÓDULOS EM CARROSSEL (reduz altura da página) ---- */
-        .modulos-scroller {
-            display: flex;
-            gap: 24px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            padding: 12px 4px 28px;
-            margin-top: 14px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--cor-acento) transparent;
-        }
-        .modulos-scroller::-webkit-scrollbar { height: 6px; }
-        .modulos-scroller::-webkit-scrollbar-track { background: rgba(200,169,110,0.12); border-radius: 10px; }
-        .modulos-scroller::-webkit-scrollbar-thumb { background: var(--cor-acento); border-radius: 10px; }
-        .modulos-scroller .card-modulo {
-            flex: 0 0 320px;
-            max-width: 320px;
-            scroll-snap-align: start;
-        }
-        .carousel-hint {
+        /* ---- 8.5 MÓDULOS EM LISTA (estilo acordeão, igual ao FAQ) ---- */
+        .modulos-hint {
             font-family: var(--font-body); font-size: 13px; font-weight: 700;
             color: var(--cor-primaria); letter-spacing: 0.3px;
             width: fit-content; margin: 12px auto 0;
-            display: flex; align-items: center; justify-content: center; gap: 8px;
             background: rgba(200,169,110,0.16);
             border: 1px solid rgba(200,169,110,0.5);
             border-radius: 999px;
             padding: 9px 20px;
         }
-        .carousel-hint svg { animation: nudge 1.8s ease-in-out infinite; flex-shrink: 0; }
-        @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
-        @media(max-width: 768px) {
-            .carousel-hint { font-size: 13.5px; padding: 9px 16px; }
+        .modulos-list { max-width: 800px; margin: 32px auto 0; text-align: left; }
+        .mod-accordion {
+            border: 1px solid var(--cor-fundo-palha); border-radius: 14px; margin-bottom: 16px;
+            overflow: hidden; transition: border-color 0.3s; background: #FFF;
         }
+        .mod-accordion:hover { border-left: 3px solid var(--cor-acento); }
+        .mod-accordion.mod-accordion-destaque { border: 1px solid var(--cor-acento); background: linear-gradient(180deg, rgba(200,169,110,0.08), #FFF 55%); }
+        .mod-acc-header {
+            width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+            padding: 18px 24px; display: flex; align-items: center; gap: 16px;
+        }
+        .mod-acc-icon-wrapper {
+            width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+            background: linear-gradient(135deg, var(--cor-escura), var(--cor-primaria));
+            border: 2px solid var(--cor-acento); display: flex; align-items: center; justify-content: center;
+            font-size: 19px;
+        }
+        .mod-acc-title-wrap { flex: 1; }
+        .mod-acc-author { font-family: var(--font-body); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #8B6A3E; margin-bottom: 3px; }
+        .mod-acc-title { font-family: var(--font-display); font-size: 18px; color: var(--cor-primaria); text-transform: uppercase; line-height: 1.25; }
+        .mod-acc-toggle-icon { flex-shrink: 0; transition: transform 0.3s; font-size: 22px; color: var(--cor-acento); }
+        .mod-accordion.mod-open .mod-acc-toggle-icon { transform: rotate(45deg); }
+        .mod-acc-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .mod-accordion.mod-open .mod-acc-body { max-height: 1200px; }
+        .mod-acc-content { padding: 0 24px 22px 24px; }
+        .mod-acc-content p { font-size: 14px; color: var(--cor-texto-suave); margin-bottom: 16px; }
+        .mod-acc-content ul { margin: 0; }
+        .mod-acc-content li { font-size: 14px; }
 
         /* ==========================================================================
            V2, REFORMULAÇÃO (blocos novos e overrides)
@@ -1635,170 +1660,198 @@
             <p>Comece pelos fundamentos, aprofunde sua prática e descubra novas formas de se conectar consigo mesma através do Yoga Galáctico.</p>
         </div>
 
-        <!-- MÓDULOS 1 A 7 EM CARROSSEL HORIZONTAL -->
-        <div class="carousel-hint anim-fade-up">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#C8A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>arraste para ver os 7 módulos</span>
-        </div>
-        <div class="modulos-scroller text-left">
+        <!-- MÓDULOS 1 A 7 EM LISTA -->
+        <div class="modulos-hint anim-fade-up">Clique em cada módulo para conhecer os detalhes</div>
+        <div class="modulos-list">
 
             <!-- MÓDULO 1 -->
-            <div class="card-modulo anim-fade-up">
-                <div class="mod-icon-wrapper">🌟</div>
-                <div class="mod-author">TATA VIDAL</div>
-                <div class="mod-title">Módulo 1 - Iniciação Galáctica</div>
-                <div class="mod-tag">✨ ESPÍRITO + 🧠 MENTE + 🫀 CORPO</div>
-                <p style="font-size: 14px; margin-top:-10px; margin-bottom:16px; color:var(--cor-texto-suave);">O primeiro passo da sua jornada.<br><br>Aqui você compreenderá os fundamentos do Yoga Galáctico, entenderá como corpo, mente e espírito se conectam na prática e aprenderá a construir uma prática consistente.</p>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Boas-vindas à jornada Yoga Galáctico</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Como corpo, mente e espírito se conectam na prática</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Os pilares que sustentam Corpo, Mente e Espírito</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Como criar sua jornada personalizada</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Orientações para aproveitar ao máximo a plataforma</li>
-                </ul>
+            <div class="mod-accordion anim-fade-up">
+                <button type="button" class="mod-acc-header" aria-expanded="false" onclick="toggleModAccordion(this)">
+                    <span class="mod-acc-icon-wrapper">🌟</span>
+                    <span class="mod-acc-title-wrap">
+                        <span class="mod-acc-title">Módulo 1 - Iniciação Galáctica</span>
+                    </span>
+                    <span class="mod-acc-toggle-icon">+</span>
+                </button>
+                <div class="mod-acc-body"><div class="mod-acc-content">
+                    <p>O primeiro passo da sua jornada.<br><br>Aqui você compreenderá os fundamentos do Yoga Galáctico, entenderá como corpo, mente e espírito se conectam na prática e aprenderá a construir uma prática consistente.</p>
+                    <ul class="list-custom">
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Boas-vindas à jornada Yoga Galáctico</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Como corpo, mente e espírito se conectam na prática</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Os pilares que sustentam Corpo, Mente e Espírito</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Como criar sua jornada personalizada</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Orientações para aproveitar ao máximo a plataforma</li>
+                    </ul>
+                </div></div>
             </div>
 
             <!-- MÓDULO 2 -->
-            <div class="card-modulo anim-fade-up">
-                <div class="mod-icon-wrapper">🌱</div>
-                <div class="mod-author">TATA VIDAL</div>
-                <div class="mod-title">Módulo 2 - Despertando o Corpo</div>
-                <div class="mod-tag">🫀 CORPO + 🧠 MENTE</div>
-                <p style="font-size: 14px; margin-top:-10px; margin-bottom:16px; color:var(--cor-texto-suave);">Uma jornada cuidadosamente construída para quem deseja iniciar no yoga de forma acolhedora e consciente.<br><br>Você aprenderá a respirar, movimentar-se e desenvolver presença através de práticas progressivas.</p>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Preparando seu ambiente de prática</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Primeiros fundamentos do yoga</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Olhar para dentro e despertar para si</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Yoga restaurativo</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Mente forte, corpo forte</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sequências progressivas para iniciantes</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aula especial para fortalecimento e alívio da lombar</li>
-                </ul>
+            <div class="mod-accordion anim-fade-up">
+                <button type="button" class="mod-acc-header" aria-expanded="false" onclick="toggleModAccordion(this)">
+                    <span class="mod-acc-icon-wrapper">🌱</span>
+                    <span class="mod-acc-title-wrap">
+                        <span class="mod-acc-title">Módulo 2 - Despertando o Corpo</span>
+                    </span>
+                    <span class="mod-acc-toggle-icon">+</span>
+                </button>
+                <div class="mod-acc-body"><div class="mod-acc-content">
+                    <p>Uma jornada cuidadosamente construída para quem deseja iniciar no yoga de forma acolhedora e consciente.<br><br>Você aprenderá a respirar, movimentar-se e desenvolver presença através de práticas progressivas.</p>
+                    <ul class="list-custom">
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Preparando seu ambiente de prática</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Primeiros fundamentos do yoga</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Olhar para dentro e despertar para si</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Yoga restaurativo</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Mente forte, corpo forte</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sequências progressivas para iniciantes</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Aula especial para fortalecimento e alívio da lombar</li>
+                    </ul>
+                </div></div>
             </div>
 
             <!-- MÓDULO 3 -->
-            <div class="card-modulo anim-fade-up">
-                <div class="mod-icon-wrapper">🌴</div>
-                <div class="mod-author">TATA VIDAL</div>
-                <div class="mod-title">Módulo 3 - Corpo em Expansão</div>
-                <div class="mod-tag">🫀 CORPO + ✨ ESPÍRITO</div>
-                <p style="font-size: 14px; margin-top:-10px; margin-bottom:16px; color:var(--cor-texto-suave);">Práticas especiais gravadas em cenários inspiradores de Bali e Tailândia.<br><br>Uma experiência imersiva que une movimento, presença e conexão interior.</p>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Primeiros passos da jornada interior</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Saudação ao Sol em Bali</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Abertura de peito e expansão energética</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Flow completo de Bali</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Abertura de quadril e liberação emocional</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Experiências de prática em ambientes naturais</li>
-                </ul>
+            <div class="mod-accordion anim-fade-up">
+                <button type="button" class="mod-acc-header" aria-expanded="false" onclick="toggleModAccordion(this)">
+                    <span class="mod-acc-icon-wrapper">🌴</span>
+                    <span class="mod-acc-title-wrap">
+                        <span class="mod-acc-title">Módulo 3 - Corpo em Expansão</span>
+                    </span>
+                    <span class="mod-acc-toggle-icon">+</span>
+                </button>
+                <div class="mod-acc-body"><div class="mod-acc-content">
+                    <p>Práticas especiais gravadas em cenários inspiradores de Bali e Tailândia.<br><br>Uma experiência imersiva que une movimento, presença e conexão interior.</p>
+                    <ul class="list-custom">
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Primeiros passos da jornada interior</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Saudação ao Sol em Bali</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Abertura de peito e expansão energética</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Flow completo de Bali</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Abertura de quadril e liberação emocional</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Experiências de prática em ambientes naturais</li>
+                    </ul>
+                </div></div>
             </div>
 
             <!-- MÓDULO 4 -->
-            <div class="card-modulo anim-fade-up">
-                <div class="mod-icon-wrapper">🧘</div>
-                <div class="mod-author">TATA VIDAL</div>
-                <div class="mod-title">Módulo 4 - Mente (Meditações)</div>
-                <div class="mod-tag">🧠 MENTE + ✨ ESPÍRITO</div>
-                <p style="font-size: 14px; margin-top:-10px; margin-bottom:16px; color:var(--cor-texto-suave);">Um espaço dedicado ao silêncio interior, à presença e ao desenvolvimento da consciência.<br><br>Práticas guiadas para diferentes momentos da sua vida emocional.</p>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Meditação para ansiedade</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Meditação da Lua Cheia</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Meditações para amor-próprio</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Meditações para prosperidade</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Meditações para saúde e bem-estar</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Práticas de presença e conexão interior</li>
-                </ul>
+            <div class="mod-accordion anim-fade-up">
+                <button type="button" class="mod-acc-header" aria-expanded="false" onclick="toggleModAccordion(this)">
+                    <span class="mod-acc-icon-wrapper">🧘</span>
+                    <span class="mod-acc-title-wrap">
+                        <span class="mod-acc-title">Módulo 4 - Meditações</span>
+                    </span>
+                    <span class="mod-acc-toggle-icon">+</span>
+                </button>
+                <div class="mod-acc-body"><div class="mod-acc-content">
+                    <p>Um espaço dedicado ao silêncio interior, à presença e ao desenvolvimento da consciência.<br><br>Práticas guiadas para diferentes momentos da sua vida emocional.</p>
+                    <ul class="list-custom">
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Meditação para ansiedade</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Meditação da Lua Cheia</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Meditações para amor-próprio</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Meditações para prosperidade</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Meditações para saúde e bem-estar</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Práticas de presença e conexão interior</li>
+                    </ul>
+                </div></div>
             </div>
 
             <!-- MÓDULO 5 -->
-            <div class="card-modulo anim-fade-up">
-                <div class="mod-icon-wrapper">🌬️</div>
-                <div class="mod-author">TATA VIDAL</div>
-                <div class="mod-title">Módulo 5 - Espírito (Pranayamas)</div>
-                <div class="mod-tag">✨ ESPÍRITO + 🧠 MENTE</div>
-                <p style="font-size: 14px; margin-top:-10px; margin-bottom:16px; color:var(--cor-texto-suave);">A respiração como ponte entre corpo, mente e espírito.<br><br>Aprenda técnicas tradicionais capazes de ampliar presença, equilíbrio e vitalidade.</p>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Pranayama de Presença</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Nadi Shodhana</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Kapalabhati</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Técnicas respiratórias para equilíbrio emocional</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Práticas para expansão da energia vital</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Exercícios para aprofundar sua conexão interior</li>
-                </ul>
+            <div class="mod-accordion anim-fade-up">
+                <button type="button" class="mod-acc-header" aria-expanded="false" onclick="toggleModAccordion(this)">
+                    <span class="mod-acc-icon-wrapper">🌬️</span>
+                    <span class="mod-acc-title-wrap">
+                        <span class="mod-acc-title">Módulo 5 - Respirações</span>
+                    </span>
+                    <span class="mod-acc-toggle-icon">+</span>
+                </button>
+                <div class="mod-acc-body"><div class="mod-acc-content">
+                    <p>A respiração como ponte entre corpo, mente e espírito.<br><br>Aprenda técnicas tradicionais capazes de ampliar presença, equilíbrio e vitalidade.</p>
+                    <ul class="list-custom">
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Pranayama de Presença</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Nadi Shodhana</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Kapalabhati</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Técnicas respiratórias para equilíbrio emocional</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Práticas para expansão da energia vital</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Exercícios para aprofundar sua conexão interior</li>
+                    </ul>
+                </div></div>
             </div>
 
             <!-- MÓDULO 6 -->
-            <div class="card-modulo anim-fade-up">
-                <div class="mod-icon-wrapper">⚡</div>
-                <div class="mod-author">TATA VIDAL</div>
-                <div class="mod-title">Módulo 6 - Corpo em Movimento (Yoga Power Flow)</div>
-                <div class="mod-tag">🫀 CORPO</div>
-                <p style="font-size: 14px; margin-top:-10px; margin-bottom:16px; color:var(--cor-texto-suave);">Práticas mais dinâmicas para quem deseja desenvolver força, resistência, mobilidade e energia através do movimento consciente.</p>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Despertar da Energia</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Força Interior</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Energia de Expansão</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Flows dinâmicos e energizantes</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sequências para fortalecimento corporal</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Movimento consciente e presença em ação</li>
-                </ul>
+            <div class="mod-accordion anim-fade-up">
+                <button type="button" class="mod-acc-header" aria-expanded="false" onclick="toggleModAccordion(this)">
+                    <span class="mod-acc-icon-wrapper">⚡</span>
+                    <span class="mod-acc-title-wrap">
+                        <span class="mod-acc-title">Módulo 6 - Corpo em Movimento (Yoga Power Flow)</span>
+                    </span>
+                    <span class="mod-acc-toggle-icon">+</span>
+                </button>
+                <div class="mod-acc-body"><div class="mod-acc-content">
+                    <p>Práticas mais dinâmicas para quem deseja desenvolver força, resistência, mobilidade e energia através do movimento consciente.</p>
+                    <ul class="list-custom">
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Despertar da Energia</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Força Interior</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Energia de Expansão</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Flows dinâmicos e energizantes</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Sequências para fortalecimento corporal</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Movimento consciente e presença em ação</li>
+                    </ul>
+                </div></div>
             </div>
 
             <!-- MÓDULO 7 -->
-            <div class="card-modulo anim-fade-up">
-                <div class="mod-icon-wrapper">📐</div>
-                <div class="mod-author">TATA VIDAL</div>
-                <div class="mod-title">Módulo 7 - Oficina de Posturas (Asanas)</div>
-                <div class="mod-tag">🫀 CORPO + TÉCNICA</div>
-                <p style="font-size: 14px; margin-top:-10px; margin-bottom:16px; color:var(--cor-texto-suave);">Aprenda com profundidade as principais posturas do yoga através de explicações detalhadas, progressões e ajustes.<br><br>Ideal para quem deseja evoluir com mais segurança e consciência corporal.</p>
-                <ul class="list-custom">
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Fundamentos das posturas</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Técnicas de alinhamento</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Progressões para posturas desafiadoras</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Ajustes e adaptações</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Fortalecimento específico</li>
-                    <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Desenvolvimento gradual da prática</li>
-                </ul>
+            <div class="mod-accordion anim-fade-up">
+                <button type="button" class="mod-acc-header" aria-expanded="false" onclick="toggleModAccordion(this)">
+                    <span class="mod-acc-icon-wrapper">📐</span>
+                    <span class="mod-acc-title-wrap">
+                        <span class="mod-acc-title">Módulo 7 - Oficina de Posturas (Asanas)</span>
+                    </span>
+                    <span class="mod-acc-toggle-icon">+</span>
+                </button>
+                <div class="mod-acc-body"><div class="mod-acc-content">
+                    <p>Aprenda com profundidade as principais posturas do yoga através de explicações detalhadas, progressões e ajustes.<br><br>Ideal para quem deseja evoluir com mais segurança e consciência corporal.</p>
+                    <ul class="list-custom">
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Fundamentos das posturas</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Técnicas de alinhamento</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Progressões para posturas desafiadoras</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Ajustes e adaptações</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Fortalecimento específico</li>
+                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Desenvolvimento gradual da prática</li>
+                    </ul>
+                </div></div>
             </div>
 
-        </div> <!-- Fim do carrossel de módulos 1-7 -->
-
-        <div class="deliv-grid text-left" style="margin-top: 32px;">
-
-            <!-- MODULO ESPECIAL (Mantido Intacto) -->
-            <div class="card-modulo card-destaque anim-fade-up" style="grid-column: 1 / -1; display: flex; flex-direction: column; text-align: left;">
-                <div class="badge-popular">✦ INCLUSO NO PLANO ENCONTRO</div>
-                <div class="mod-icon-wrapper" style="margin: 0 auto 20px;">🚀</div>
-                <div class="mod-author" style="text-align: center;">TATA VIDAL</div>
-                <div class="mod-title" style="text-align: center;">Módulo Especial: Despertar Galáctico (21 Dias)</div>
-                <div class="mod-tag" style="margin: 0 auto 24px;">🫀 CORPO + 🧠 MENTE + ✨ ESPÍRITO</div>
-                
-                <p style="font-size: 16px; margin-bottom: 16px; text-align: center; color: var(--cor-primaria);"><strong>Uma jornada de transformação para corpo, mente e espírito</strong></p>
-                <p style="color: var(--cor-texto-suave); font-size: 15px; margin-bottom: 16px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">Um aplicativo próprio, com um ritual guiado para cada um dos 21 dias: você recebe uma Carta Galáctica sorteada especialmente para aquele dia, ouve um áudio guiado, faz uma prática complementar e registra sua jornada num diário pessoal. Um dia de cada vez, no seu ritmo — o próximo só libera quando você completa o atual.</p>
-                <p style="color: var(--cor-texto-suave); font-size: 15px; margin-bottom: 16px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">Através de meditações guiadas, reflexões, exercícios e desafios diários, você irá desenvolver hábitos que promovem mais equilíbrio, clareza mental, conexão espiritual e bem-estar.</p>
-                
-                <p style="font-size: 20px; color: var(--cor-secundaria); font-family: var(--font-italic); font-style: italic; text-align: center; margin-bottom: 32px;">Não é apenas um programa. É um convite para despertar uma nova versão de si mesmo.</p>
-                
-                <div style="width: 100%; height: 1px; background: rgba(200,169,110,0.2); margin-bottom: 24px;"></div>
-                
-                <p style="font-weight: 600; margin-bottom: 16px; color: var(--cor-primaria);">O que você vai trabalhar ao longo da jornada?</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
-                    <ul class="list-custom" style="margin: 0;">
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Medos e bloqueios emocionais</li>
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Autenticidade e amor-próprio</li>
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Prosperidade e relação com o dinheiro</li>
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Propósito e direção de vida</li>
-                    </ul>
-                    <ul class="list-custom" style="margin: 0;">
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Consciência dos padrões que limitam seu crescimento</li>
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Equilíbrio entre corpo, mente e espírito</li>
-                        <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Construção de hábitos que sustentam sua evolução</li>
-                    </ul>
-                </div>
+            <!-- MÓDULO ESPECIAL: DESPERTAR GALÁCTICO -->
+            <div class="mod-accordion mod-accordion-destaque anim-fade-up">
+                <button type="button" class="mod-acc-header" aria-expanded="false" onclick="toggleModAccordion(this)">
+                    <span class="mod-acc-icon-wrapper">🚀</span>
+                    <span class="mod-acc-title-wrap">
+                        <span class="mod-acc-title">Módulo Especial: Despertar Galáctico (21 Dias)</span>
+                        <span class="mod-acc-author" style="display: block; margin-top: 4px;">✦ Incluso no Plano Encontro</span>
+                    </span>
+                    <span class="mod-acc-toggle-icon">+</span>
+                </button>
+                <div class="mod-acc-body"><div class="mod-acc-content">
+                    <p style="text-align: center;"><strong>Uma jornada de transformação para corpo, mente e espírito</strong></p>
+                    <p>Um aplicativo próprio, com um ritual guiado para cada um dos 21 dias: você recebe uma Carta Galáctica sorteada especialmente para aquele dia, ouve um áudio guiado, faz uma prática complementar e registra sua jornada num diário pessoal. Um dia de cada vez, no seu ritmo — o próximo só libera quando você completa o atual.</p>
+                    <p>Através de meditações guiadas, reflexões, exercícios e desafios diários, você irá desenvolver hábitos que promovem mais equilíbrio, clareza mental, conexão espiritual e bem-estar.</p>
+                    <p style="font-size: 18px; color: var(--cor-secundaria); font-family: var(--font-italic); font-style: italic; margin: 20px 0;">Não é apenas um programa. É um convite para despertar uma nova versão de si mesmo.</p>
+                    <div style="width: 100%; height: 1px; background: rgba(200,169,110,0.2); margin-bottom: 20px;"></div>
+                    <p style="font-weight: 600; margin-bottom: 12px; color: var(--cor-primaria);">O que você vai trabalhar ao longo da jornada?</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;">
+                        <ul class="list-custom" style="margin: 0;">
+                            <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Medos e bloqueios emocionais</li>
+                            <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Autenticidade e amor-próprio</li>
+                            <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Prosperidade e relação com o dinheiro</li>
+                            <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Propósito e direção de vida</li>
+                        </ul>
+                        <ul class="list-custom" style="margin: 0;">
+                            <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Consciência dos padrões que limitam seu crescimento</li>
+                            <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Equilíbrio entre corpo, mente e espírito</li>
+                            <li><svg class="svg-bullet" width="11" height="11" viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z" fill="#C8A96E"/></svg> Construção de hábitos que sustentam sua evolução</li>
+                        </ul>
+                    </div>
+                </div></div>
             </div>
 
-        </div> <!-- Fim do Grid de Entregáveis -->
+        </div> <!-- Fim da lista de módulos 1-7 + Despertar Galáctico -->
 
         <!-- TEXTO FINAL DA SEÇÃO -->
         <div class="anim-fade-up" style="margin-top: 48px; font-size: 17px; color: var(--cor-texto-suave); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
@@ -2060,6 +2113,27 @@
 
     <!-- JAVASCRIPT -->
     <script defer>
+        // Expande/recolhe os detalhes de um módulo (funciona pros 7 módulos e pro Despertar Galáctico)
+        // Acordeão dos módulos 1-7: abrir um fecha os outros (mesmo padrão do FAQ)
+        function toggleModAccordion(header) {
+            const acc = header.closest('.mod-accordion');
+            if (!acc) return;
+            const isOpen = acc.classList.contains('mod-open');
+            document.querySelectorAll('.mod-accordion').forEach(item => {
+                item.classList.remove('mod-open');
+                const h = item.querySelector('.mod-acc-header');
+                if (h) h.setAttribute('aria-expanded', 'false');
+                const icon = item.querySelector('.mod-acc-toggle-icon');
+                if (icon) icon.textContent = '+';
+            });
+            if (!isOpen) {
+                acc.classList.add('mod-open');
+                header.setAttribute('aria-expanded', 'true');
+                const icon = header.querySelector('.mod-acc-toggle-icon');
+                if (icon) icon.textContent = '−';
+            }
+        }
+
         // Reproduz o depoimento em vídeo ao clicar no play (carrega o vídeo só sob demanda)
         function playTestiVideo(btn) {
             const card = btn.closest('.video-testi-card');
