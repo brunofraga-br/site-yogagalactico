@@ -2382,6 +2382,29 @@
                 });
             }
         });
+
+        // Anexa os cookies do Meta Pixel (_fbc/_fbp) como s1/s2 nos links de checkout do Kiwify
+        function getCookie(name) {
+            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? match[2] : null;
+        }
+
+        function anexarTrackingKiwify() {
+            const fbc = getCookie('_fbc');
+            const fbp = getCookie('_fbp');
+            document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(link) {
+                const url = new URL(link.href);
+                if (fbc) url.searchParams.set('s1', fbc);
+                if (fbp) url.searchParams.set('s2', fbp);
+                link.href = url.toString();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', anexarTrackingKiwify);
+
+        document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(link) {
+            link.addEventListener('mousedown', anexarTrackingKiwify);
+        });
     </script>
 </body>
 
