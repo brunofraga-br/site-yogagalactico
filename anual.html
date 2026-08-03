@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoga Galáctico | Acesso de 12 meses</title>
+<meta name="description" content="Uma trilha guiada de yoga, na ordem certa, com a Tata Vidal acompanhando de perto. Doze meses de acesso, pagamento único.">
+<meta name="robots" content="noindex, follow">
+
+<meta property="og:title" content="Yoga Galáctico | Acesso de 12 meses">
+<meta property="og:description" content="Uma trilha guiada de yoga, na ordem certa, com a Tata Vidal acompanhando de perto. Doze meses de acesso, pagamento único.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="tata-hero.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+    @font-face {
+        font-family: 'Belgant Aesthetic';
+        src: url('Belgant Aesthetic.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    :root {
+        --cor-escura:       #1A1208;
+        --cor-escura-2:     #2E1A06;
+        --cor-acento:       #C8A96E;
+        --cor-acento-soft:  #E0D0A8;
+        --cor-acento-vivo:  #E0A83E;
+        --cor-texto:        #3D2A1A;
+        --cor-texto-suave:  #7A6050;
+        --cor-fundo-claro:  #FAF7F2;
+        --cor-garantia:     #5C7A3E;
+
+        --font-display: 'Belgant Aesthetic', serif;
+        --font-body: 'DM Sans', sans-serif;
+        --font-italic: 'Cormorant Garamond', serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+        margin: 0; padding: 0;
+        font-family: var(--font-body);
+        color: var(--cor-texto);
+        background: var(--cor-fundo-claro);
+        -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 72px 24px; }
+    h1, h2, h3 { margin: 0; }
+    p { margin: 0; }
+
+    .accent-punch {
+        font-family: var(--font-body);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        color: var(--cor-escura);
+        background: var(--cor-acento-vivo);
+        padding: 2px 12px;
+        border-radius: 8px;
+        display: inline-block;
+        line-height: 1.25;
+        box-shadow: 0 8px 24px rgba(224,168,62,0.35);
+    }
+
+    .btn-cta {
+        display: inline-block;
+        font-family: var(--font-body);
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        background: var(--cor-acento-vivo);
+        color: var(--cor-escura);
+        border: none;
+        border-radius: 50px;
+        padding: 20px 44px;
+        box-shadow: 0 14px 34px rgba(224,168,62,0.40);
+        cursor: pointer;
+        transition: all 0.25s ease;
+        text-align: center;
+        text-decoration: none;
+    }
+    .btn-cta:hover {
+        background: var(--cor-acento);
+        box-shadow: 0 16px 40px rgba(224,168,62,0.55);
+        transform: translateY(-2px);
+    }
+
+    /* ---------- SEÇÃO 1: TOPO ---------- */
+    .vsl-hero {
+        background: var(--cor-escura);
+        padding: 28px 24px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    .vsl-logo {
+        text-align: center;
+        margin-bottom: 8px;
+        font-family: var(--font-display);
+        font-size: clamp(26px, 4vw, 40px);
+        color: #FFF;
+        text-transform: uppercase;
+    }
+    .o-star { position: relative; display: inline-block; }
+    .o-star svg {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        width: 0.45em; height: 0.45em; fill: var(--cor-acento);
+    }
+    .o-star.white-star svg { fill: #FFF; }
+    .vsl-hero-grid {
+        max-width: 1160px; margin: 0 auto;
+        display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+        gap: 24px; padding: 24px 0 60px;
+    }
+    .vsl-hero-text { text-align: left; padding-right: 12px; }
+    .vsl-hero h1 {
+        font-family: var(--font-body);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        font-size: clamp(28px, 3.6vw, 44px);
+        line-height: 1.26;
+        color: #FFF;
+        margin-bottom: 18px;
+    }
+    .vsl-sub {
+        font-size: 17px;
+        color: rgba(255,255,255,0.78);
+        max-width: 460px;
+        line-height: 1.6;
+    }
+    .vsl-hero-photo {
+        position: relative; text-align: center;
+        max-width: 480px; margin: 0 auto;
+        aspect-ratio: 4 / 5;
+        mask-image: radial-gradient(ellipse 50% 50% at 50% 48%, black 35%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 48%, black 35%, transparent 100%);
+    }
+    .vsl-hero-photo img {
+        width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%;
+        filter: grayscale(0.7) sepia(0.28) saturate(1.35) contrast(1.05) brightness(0.92);
+    }
+    @media (max-width: 780px) {
+        .vsl-hero-grid { grid-template-columns: 1fr; gap: 4px; padding-bottom: 40px; }
+        .vsl-hero-text { text-align: center; padding-right: 0; }
+        .vsl-sub { margin: 0 auto; }
+        .vsl-hero-photo { order: -1; }
+        .vsl-hero-photo img { max-width: 300px; }
+    }
+
+    .vsl-wave { position: relative; height: 70px; margin-top: -1px; }
+    .vsl-wave svg { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; display: block; }
+
+    /* ---------- VÍDEO (bloco próprio, separado da foto) ---------- */
+    .vsl-video-block { background: var(--cor-fundo-claro); padding: 0 24px 72px; text-align: center; }
+    .vsl-video-label {
+        font-family: var(--font-body); font-weight: 800; font-size: 13px; letter-spacing: 1.5px;
+        text-transform: uppercase; color: var(--cor-acento-vivo); margin-bottom: 16px;
+    }
+    .vsl-player-wrap { max-width: 620px; margin: 0 auto; }
+    .vsl-player {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: linear-gradient(160deg, var(--cor-escura-2), var(--cor-escura));
+        border: 1px solid rgba(224,168,62,0.35);
+        box-shadow: 0 20px 50px rgba(26,18,8,0.25);
+        cursor: pointer;
+        aspect-ratio: 16 / 10;
+        display: flex; align-items: center; justify-content: center;
+    }
+    .vsl-player video { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; filter: grayscale(0.6) sepia(0.2) saturate(1.3); transition: filter 0.5s ease; }
+    .vsl-player.playing video { filter: none; }
+    .vsl-player-label {
+        position: relative; color: rgba(255,255,255,0.55); font-size: 13px;
+        display: flex; flex-direction: column; align-items: center; gap: 14px;
+        transition: opacity 0.4s ease;
+    }
+    .vsl-player.playing .vsl-player-label { opacity: 0; pointer-events: none; }
+    .vsl-play-btn {
+        width: 62px; height: 62px; border-radius: 50%;
+        background: var(--cor-acento-vivo); border: none;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 20px; color: var(--cor-escura); cursor: pointer;
+        box-shadow: 0 10px 28px rgba(224,168,62,0.45);
+        transition: transform 0.2s ease;
+    }
+    .vsl-play-btn:hover { transform: scale(1.07); }
+
+    .vsl-watch-hint {
+        font-size: 13px; color: var(--cor-texto-suave);
+        margin-top: 16px;
+    }
+    .vsl-cta-hero {
+        margin-top: 28px;
+        opacity: 0; transform: translateY(8px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        pointer-events: none;
+    }
+    .vsl-cta-hero.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+    /* ---------- SEÇÃO 3: PROVA SOCIAL ---------- */
+    .vsl-provas { background: var(--cor-escura); }
+    .vsl-provas h2 {
+        font-family: var(--font-body); font-weight: 800; font-size: 26px;
+        color: #FFF; text-align: center; margin-bottom: 40px;
+    }
+    .provas-carousel-wrap {
+        display: flex; align-items: center; gap: 10px;
+        max-width: 980px; margin: 0 auto;
+    }
+    .provas-carousel {
+        display: flex; align-items: flex-start; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+        scroll-behavior: smooth; padding: 4px 4px 10px;
+        scrollbar-width: none;
+    }
+    .provas-carousel::-webkit-scrollbar { display: none; }
+    .provas-carousel img {
+        flex: 0 0 auto; width: 220px; height: auto; max-height: 420px; object-fit: contain;
+        scroll-snap-align: start;
+        border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+    .provas-arrow {
+        flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+        background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.25);
+        color: #FFF; font-size: 20px; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.2s ease;
+    }
+    .provas-arrow:hover { background: rgba(255,255,255,0.22); }
+    @media (max-width: 640px) {
+        .provas-arrow { display: none; }
+        .provas-carousel img { width: 78vw; }
+    }
+
+    /* ---------- BIO DA TATA (seção própria) ---------- */
+    .vsl-bio { background: var(--cor-fundo-medio, #F0E8D5); }
+    .vsl-bio-grid {
+        display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; align-items: center;
+        max-width: 1000px; margin: 0 auto;
+    }
+    .vsl-bio-credencial {
+        display: inline-block; font-family: var(--font-body); font-weight: 800;
+        font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+        color: var(--cor-escura); background: var(--cor-acento-vivo);
+        border-radius: 999px; padding: 6px 16px; margin-bottom: 14px;
+    }
+    .vsl-bio h2 {
+        font-family: var(--font-body); font-weight: 800; font-size: 26px;
+        color: var(--cor-texto); margin-bottom: 18px;
+    }
+    .vsl-bio p { font-size: 15px; color: var(--cor-texto-suave); line-height: 1.65; margin-bottom: 14px; }
+    .vsl-bio p:last-of-type { margin-bottom: 0; }
+    .vsl-bio-assinatura {
+        font-family: var(--font-italic); font-style: italic; font-size: 20px;
+        color: var(--cor-acento-vivo); margin-top: 18px;
+    }
+    .vsl-bio-photo { max-width: 210px; margin-left: auto; }
+    .vsl-bio-photo video {
+        width: 100%; display: block; border-radius: 16px; box-shadow: 0 20px 50px rgba(26,18,8,0.18);
+    }
+    @media (max-width: 780px) {
+        .vsl-bio-grid { grid-template-columns: 1fr; gap: 28px; }
+        .vsl-bio-photo { order: -1; max-width: 220px; margin: 0 auto; }
+    }
+
+    /* ---------- SEÇÃO 4: OFERTA E PREÇO ---------- */
+    .vsl-oferta { text-align: center; }
+    .vsl-oferta h2 {
+        font-family: var(--font-body); font-weight: 900; letter-spacing: -0.01em;
+        font-size: clamp(26px, 3.6vw, 34px); color: var(--cor-texto); margin-bottom: 10px;
+    }
+    .oferta-linha { font-size: 15px; color: var(--cor-texto-suave); margin-bottom: 36px; }
+    .oferta-badge {
+        display: inline-block; font-family: var(--font-body); font-weight: 800;
+        font-size: 12.5px; letter-spacing: 1.2px; text-transform: uppercase;
+        color: var(--cor-escura); background: var(--cor-acento-vivo);
+        border-radius: 999px; padding: 7px 18px; margin-bottom: 18px;
+    }
+    .preco-riscado {
+        font-size: 20px; color: var(--cor-texto-suave); text-decoration: line-through;
+        margin-bottom: 6px;
+    }
+    .preco-grande-wrap {
+        display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;
+    }
+    .preco-grande {
+        font-family: var(--font-body); font-weight: 900; letter-spacing: -0.02em;
+        font-size: clamp(52px, 9vw, 76px); color: var(--cor-texto); line-height: 1;
+    }
+    .preco-desconto {
+        display: inline-block; font-family: var(--font-body); font-weight: 800;
+        font-size: 13px; letter-spacing: 0.3px; color: #FFF; background: var(--cor-garantia);
+        border-radius: 999px; padding: 6px 14px;
+    }
+    .preco-parcelas { font-size: 16px; color: var(--cor-texto-suave); margin-top: 8px; }
+    .oferta-cupom {
+        display: inline-block; font-family: var(--font-body); font-weight: 700;
+        font-size: 12.5px; color: var(--cor-garantia); background: rgba(92,122,62,0.10);
+        border: 1px solid rgba(92,122,62,0.3); border-radius: 999px;
+        padding: 6px 16px; margin-top: 14px;
+    }
+    .oferta-reforco {
+        font-size: 13.5px; color: var(--cor-texto-suave); max-width: 420px;
+        margin: 20px auto 32px; line-height: 1.5;
+    }
+    .oferta-rodape-linha {
+        font-size: 12.5px; color: var(--cor-texto-suave); margin-top: 18px;
+    }
+
+    /* ---------- O QUE ESTÁ INCLUÍDO (dentro da seção de oferta) ---------- */
+    .vsl-incluso {
+        max-width: 640px; margin: 0 auto 56px; text-align: left;
+        background: #FFF; border: 1px solid rgba(61,42,26,0.10); border-radius: 16px;
+        padding: 32px 28px;
+    }
+    .vsl-incluso-titulo {
+        font-family: var(--font-body); font-weight: 800; font-size: 17px;
+        color: var(--cor-texto); text-align: center; margin-bottom: 22px;
+    }
+    .vsl-incluso-list { list-style: none; margin: 0; padding: 0; }
+    .vsl-incluso-list li {
+        display: flex; align-items: flex-start; gap: 12px;
+        font-size: 14.5px; color: var(--cor-texto); line-height: 1.5;
+        margin-bottom: 16px;
+    }
+    .vsl-incluso-list li:last-child { margin-bottom: 0; }
+    .vsl-incluso-list li .check {
+        flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+        background: var(--cor-acento-vivo); color: var(--cor-escura);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 12px; font-weight: 900; margin-top: 1px;
+    }
+    .vsl-incluso-list li strong { color: var(--cor-texto); }
+    .vsl-incluso-list li span.desc { color: var(--cor-texto-suave); }
+
+    .vsl-incluso-imgs {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+        margin-top: 24px;
+    }
+    .vsl-incluso-imgs img {
+        width: 100%; aspect-ratio: 9 / 16; object-fit: cover; object-position: top center;
+        border-radius: 10px; border: 1px solid rgba(61,42,26,0.12);
+        box-shadow: 0 10px 24px rgba(26,18,8,0.14);
+    }
+    .vsl-incluso-img-slot {
+        aspect-ratio: 9 / 16; border-radius: 10px;
+        border: 1.5px dashed rgba(61,42,26,0.25); background: var(--cor-fundo-medio, #F0E8D5);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 10.5px; color: var(--cor-texto-suave); text-align: center; padding: 8px;
+        line-height: 1.4;
+    }
+
+    /* ---------- SEÇÃO 5: GARANTIA ---------- */
+    .vsl-garantia { background: var(--cor-fundo-medio, #F0E8D5); text-align: center; }
+    .vsl-garantia-card {
+        max-width: 480px; margin: 0 auto;
+        background: #FFF; border: 1px solid rgba(92,122,62,0.35);
+        border-radius: 20px; padding: 40px 32px;
+    }
+    .vsl-garantia-seal {
+        width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 18px;
+        background: var(--cor-garantia); color: #FFF;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 26px; font-weight: 900;
+        box-shadow: 0 10px 26px rgba(92,122,62,0.45);
+    }
+    .vsl-garantia h3 {
+        font-family: var(--font-body); font-weight: 800; font-size: 22px;
+        color: var(--cor-garantia); margin-bottom: 14px;
+    }
+    .vsl-garantia p { font-size: 15.5px; color: var(--cor-texto-suave); line-height: 1.6; }
+
+    /* ---------- SEÇÃO 6: FAQ + CTA FINAL ---------- */
+    .vsl-faq h2 {
+        font-family: var(--font-body); font-weight: 800; font-size: 26px;
+        color: var(--cor-texto); text-align: center; margin-bottom: 32px;
+    }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-acc {
+        border-bottom: 1px solid rgba(61,42,26,0.15);
+    }
+    .faq-acc-header {
+        width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+        padding: 18px 4px; display: flex; align-items: center; justify-content: space-between;
+        font-family: var(--font-body); font-weight: 700; font-size: 15.5px; color: var(--cor-texto);
+    }
+    .faq-acc-icon { font-size: 20px; color: var(--cor-acento-vivo); transition: transform 0.3s ease; flex-shrink: 0; margin-left: 12px; }
+    .faq-acc.active .faq-acc-icon { transform: rotate(45deg); }
+    .faq-acc-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-acc.active .faq-acc-body { max-height: 300px; }
+    .faq-acc-body p { padding: 0 4px 18px; font-size: 14.5px; color: var(--cor-texto-suave); line-height: 1.6; }
+
+    .vsl-oferta-condensada {
+        text-align: center; margin-top: 64px; padding-top: 48px;
+        border-top: 1px solid rgba(61,42,26,0.15);
+    }
+    .preco-grande-condensado {
+        font-family: var(--font-body); font-weight: 900; font-size: 44px;
+        color: var(--cor-texto); margin-bottom: 20px;
+    }
+    .vsl-oferta-condensada p { font-size: 13px; color: var(--cor-texto-suave); margin-top: 16px; }
+
+    .vsl-footer {
+        text-align: center; padding: 32px 24px; font-size: 12.5px; color: var(--cor-texto-suave);
+        background: var(--cor-fundo-claro); border-top: 1px solid rgba(61,42,26,0.1);
+    }
+    .vsl-footer a { color: var(--cor-texto-suave); }
+</style>
+</head>
+<body>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18343049408"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18343049408');
+</script>
+<!-- End Google tag -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '878111598088877');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- ============================================================
+     SEÇÃO 1: TOPO — HEADLINE + FOTO
+     ============================================================ -->
+<section class="vsl-hero">
+    <div class="vsl-logo">
+        Y<span class="o-star">O<svg viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span>GA
+        <span style="color: var(--cor-acento); margin-left: 10px;">GALÁCTIC<span class="o-star white-star">O<svg viewBox="0 0 32 32"><path d="M16 0 L19.5 12.5 L32 16 L19.5 19.5 L16 32 L12.5 19.5 L0 16 L12.5 12.5 Z"/></svg></span></span>
+    </div>
+    <div class="vsl-hero-grid">
+        <div class="vsl-hero-text">
+            <h1>Um jeito mais leve de levar a vida, com <span class="accent-punch">Yoga, Respiração e Meditação</span></h1>
+            <p class="vsl-sub">Práticas que ajudam a desacelerar a mente e voltar pro presente, no seu ritmo.</p>
+        </div>
+        <div class="vsl-hero-photo">
+            <img src="vsl-assets/hero-photo.webp" alt="Tata Vidal em prática de yoga" loading="eager">
+        </div>
+    </div>
+    <div class="vsl-wave">
+        <svg viewBox="0 0 1600 70" preserveAspectRatio="none">
+            <path d="M0,35 C400,90 1200,-20 1600,35 L1600,70 L0,70 Z" fill="var(--cor-fundo-claro)"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- ============================================================
+     VÍDEO — bloco próprio, separado da foto
+     ============================================================ -->
+<section class="vsl-video-block">
+    <div class="vsl-video-label">Um recado da Tata</div>
+    <div class="vsl-player-wrap">
+        <div class="vsl-player" id="vslPlayer">
+            <video id="vslVideo" preload="none" playsinline>
+                <!-- AJUSTAR: fonte real da VSL pendente. Adicionar <source src="URL_DO_VIDEO" type="video/mp4"> -->
+            </video>
+            <div class="vsl-player-label">
+                <button class="vsl-play-btn" id="vslPlayBtn" aria-label="Assistir vídeo" type="button">▶</button>
+                <span>Assista antes de decidir</span>
+            </div>
+        </div>
+        <p class="vsl-watch-hint">São 4 minutos.</p>
+        <a href="#oferta" class="btn-cta vsl-cta-hero" id="vslCtaHero">Quero meu acesso de 12 meses</a>
+    </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 3: PROVA SOCIAL
+     ============================================================ -->
+<section class="vsl-provas">
+    <div class="container">
+        <h2>O que dizem as alunas</h2>
+        <div class="provas-carousel-wrap">
+            <button type="button" class="provas-arrow provas-arrow-prev" id="provasPrev" aria-label="Depoimento anterior">‹</button>
+            <div class="provas-carousel" id="provasCarousel">
+                <img src="vsl-assets/depo-marlian.webp" loading="lazy" alt="Depoimento de aluna sobre o Yoga Galáctico">
+                <img src="vsl-assets/depo-jack.webp" loading="lazy" alt="Depoimento de aluna sobre o Yoga Galáctico">
+                <img src="vsl-assets/depo-aline.webp" loading="lazy" alt="Depoimento de aluna sobre o Yoga Galáctico">
+                <img src="vsl-assets/depo-andrea.webp" loading="lazy" alt="Depoimento de aluna sobre o Yoga Galáctico">
+                <img src="vsl-assets/depo-fabi.webp" loading="lazy" alt="Depoimento de aluna sobre o Yoga Galáctico">
+            </div>
+            <button type="button" class="provas-arrow provas-arrow-next" id="provasNext" aria-label="Próximo depoimento">›</button>
+        </div>
+    </div>
+    <div class="vsl-wave">
+        <svg viewBox="0 0 1600 70" preserveAspectRatio="none">
+            <path d="M0,35 C400,90 1200,-20 1600,35 L1600,70 L0,70 Z" fill="var(--cor-fundo-medio, #F0E8D5)"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- ============================================================
+     BIO DA TATA (seção própria, resumo da página de vendas)
+     ============================================================ -->
+<section class="vsl-bio">
+    <div class="container">
+        <div class="vsl-bio-grid">
+            <div>
+                <div class="vsl-bio-credencial">✦ Criadora do Método da Tríade Galáctica: Corpo, Mente e Espírito</div>
+                <h2>Conheça a sua guia</h2>
+                <p>Sou Tata Vidal. Antes do yoga, construí mais de 20 anos de carreira corporativa — até que esse caminho deixou de fazer sentido.</p>
+                <p>Foi numa fase de crises pessoais que o yoga virou uma jornada de autoconhecimento: me formei no Brasil e aprofundei a prática em retiros e imersões em Bali e na Tailândia.</p>
+                <p>Foi dessa caminhada que nasceu o Yoga Galáctico: um método construído sobre a Tríade Galáctica — Corpo, Mente e Espírito.</p>
+                <p class="vsl-bio-assinatura">Seja bem-vinda ao Yoga Galáctico.</p>
+            </div>
+            <div class="vsl-bio-photo">
+                <video autoplay muted loop playsinline preload="metadata" poster="bio-tata-ensinando-poster.jpg">
+                    <source src="bio-tata-ensinando.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 4: OFERTA E PREÇO
+     ============================================================ -->
+<section id="oferta" class="vsl-oferta container">
+    <h2>Doze meses de acesso</h2>
+    <p class="oferta-linha">Pagamento único. Não renova sozinho. Não tem mensalidade.</p>
+
+    <div class="vsl-incluso">
+        <div class="vsl-incluso-titulo">O que está incluído</div>
+        <ul class="vsl-incluso-list">
+            <li><span class="check">✓</span><span><strong>Trilha completa de yoga</strong>, <span class="desc">do zero ao avançado, na ordem certa</span></span></li>
+            <li><span class="check">✓</span><span><strong>Práticas de respiração</strong>, <span class="desc">para acalmar, ganhar energia e dormir melhor</span></span></li>
+            <li><span class="check">✓</span><span><strong>Meditações guiadas</strong>, <span class="desc">para acalmar e focar a mente</span></span></li>
+            <li><span class="check">✓</span><span><strong>Aulas ao vivo</strong>, <span class="desc">pra praticar junto com a Tata em tempo real</span></span></li>
+            <li><span class="check">✓</span><span><strong>Encontros ao vivo com a Tata</strong>, <span class="desc">pra tirar dúvida e aprofundar</span></span></li>
+            <li><span class="check">✓</span><span><strong>Comunidade exclusiva</strong>, <span class="desc">pra praticar junto, não sozinha</span></span></li>
+            <li><span class="check">✓</span><span><strong>Acesso pelo celular ou computador</strong>, <span class="desc">no seu tempo, por 12 meses</span></span></li>
+        </ul>
+        <div class="vsl-incluso-imgs">
+            <img src="vsl-assets/previa1.webp" loading="lazy" alt="Prévia da plataforma Yoga Galáctico">
+            <img src="vsl-assets/previa2.webp" loading="lazy" alt="Prévia de uma aula dentro da plataforma">
+            <img src="vsl-assets/previa3.webp" loading="lazy" alt="Prévia do módulo Yoga Flow Bali na plataforma">
+        </div>
+    </div>
+
+    <div class="oferta-badge">✦ Oferta de lançamento</div>
+    <div class="preco-riscado">R$394</div>
+    <div class="preco-grande-wrap">
+        <div class="preco-grande">R$197</div>
+        <span class="preco-desconto">50% de desconto</span>
+    </div>
+    <div class="preco-parcelas">ou 12x de R$20,37</div>
+    <p class="oferta-cupom">Cupom "LANCAMENTO" já aplicado no checkout</p>
+
+    <p class="oferta-reforco">Parcelamento no cartão, não é assinatura.</p>
+
+    <a href="#" class="btn-cta cta-checkout" data-plano="Anual">Quero meu acesso de 12 meses</a>
+
+    <p class="oferta-rodape-linha">Pagamento seguro · Compra única</p>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 5: GARANTIA
+     ============================================================ -->
+<section class="vsl-garantia">
+    <div class="container">
+        <div class="vsl-garantia-card">
+            <div class="vsl-garantia-seal">✓</div>
+            <h3>7 dias de garantia</h3>
+            <p>Entra, faz as práticas, olha tudo. Se não for pra você,<br>me escreve e eu devolvo o valor inteiro. Sem pergunta.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 6: FAQ CURTO + CTA FINAL
+     ============================================================ -->
+<section class="vsl-faq container">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-list">
+        <div class="faq-acc">
+            <button type="button" class="faq-acc-header" onclick="toggleFaq(this)">
+                Preciso ter experiência em yoga?
+                <span class="faq-acc-icon">+</span>
+            </button>
+            <div class="faq-acc-body"><p>Não. A trilha começa do básico e evolui na ordem certa, no seu ritmo.</p></div>
+        </div>
+        <div class="faq-acc">
+            <button type="button" class="faq-acc-header" onclick="toggleFaq(this)">
+                Por quanto tempo eu tenho acesso?
+                <span class="faq-acc-icon">+</span>
+            </button>
+            <div class="faq-acc-body"><p>Doze meses a partir da compra, com pagamento único.</p></div>
+        </div>
+        <div class="faq-acc">
+            <button type="button" class="faq-acc-header" onclick="toggleFaq(this)">
+                Isso renova automático depois de um ano?
+                <span class="faq-acc-icon">+</span>
+            </button>
+            <div class="faq-acc-body"><p>Não. É uma compra única. Ninguém te cobra de novo depois que os 12 meses terminam.</p></div>
+        </div>
+        <div class="faq-acc">
+            <button type="button" class="faq-acc-header" onclick="toggleFaq(this)">
+                E se eu não tiver tempo de praticar todo dia?
+                <span class="faq-acc-icon">+</span>
+            </button>
+            <div class="faq-acc-body"><p>Sem problema. Você pratica no seu tempo, no dia que tiver 15 minutos ou uma hora.</p></div>
+        </div>
+        <div class="faq-acc">
+            <button type="button" class="faq-acc-header" onclick="toggleFaq(this)">
+                Como funciona a garantia?
+                <span class="faq-acc-icon">+</span>
+            </button>
+            <div class="faq-acc-body"><p>7 dias após a compra. Se não for pra você, é só escrever e o valor inteiro é devolvido, sem perguntas.</p></div>
+        </div>
+    </div>
+
+    <div class="vsl-oferta-condensada">
+        <div class="preco-grande-condensado">R$197</div>
+        <a href="#" class="btn-cta cta-checkout" data-plano="Anual">Quero meu acesso de 12 meses</a>
+        <p>7 dias de garantia · Pagamento seguro</p>
+    </div>
+</section>
+
+<footer class="vsl-footer">
+    <p>Yoga Galáctico · contato@yogagalactico.com.br</p>
+</footer>
+
+<script defer>
+// ===================== CONSTANTES EDITÁVEIS =====================
+// AJUSTAR antes de publicar:
+const CHECKOUT_URL = "https://pay.kiwify.com.br/H03d8Er?coupon=LANCAMENTO";
+const GOOGLE_ADS_CONVERSAO_ANUAL = "";   // AW-18343049408/XXXXXXXXXX — criar conversão separada desta página no Google Ads
+// ==================================================================
+
+if (CHECKOUT_URL) {
+    document.querySelectorAll('.cta-checkout').forEach(function(a) { a.href = CHECKOUT_URL; });
+}
+
+document.querySelectorAll('.cta-checkout').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+        if (!CHECKOUT_URL) e.preventDefault();
+        fbq('track', 'InitiateCheckout', {content_name: 'Yoga Galactico Anual', value: 197, currency: 'BRL'});
+        if (typeof gtag === 'function' && GOOGLE_ADS_CONVERSAO_ANUAL) {
+            gtag('event', 'conversion', {'send_to': GOOGLE_ADS_CONVERSAO_ANUAL, 'value': 197.0, 'currency': 'BRL'});
+        }
+    });
+});
+
+// ===================== VSL: PLAY, RETENÇÃO E OFERTA =====================
+(function() {
+    const video = document.getElementById('vslVideo');
+    const player = document.getElementById('vslPlayer');
+    const playBtn = document.getElementById('vslPlayBtn');
+    const ctaHero = document.getElementById('vslCtaHero');
+    const OFERTA_SEGUNDOS = 200; // 3:20 — quando a Tata começa a falar de preço
+
+    const marcos = { played: false, p25: false, p50: false, p75: false, oferta: false };
+
+    function mostrarCta() {
+        ctaHero.classList.add('visible');
+        if (!marcos.oferta) {
+            marcos.oferta = true;
+            fbq('trackCustom', 'VSL_Oferta');
+            sessionStorage.setItem('vsl_watched', '1');
+        }
+    }
+
+    if (sessionStorage.getItem('vsl_watched') === '1') {
+        mostrarCta();
+    }
+
+    function iniciarPlay() {
+        player.classList.add('playing');
+        video.play().catch(function() {});
+        if (!marcos.played) {
+            marcos.played = true;
+            fbq('trackCustom', 'VSL_Play');
+        }
+    }
+
+    playBtn.addEventListener('click', iniciarPlay);
+    video.addEventListener('click', function() {
+        if (!player.classList.contains('playing')) iniciarPlay();
+    });
+
+    video.addEventListener('timeupdate', function() {
+        if (video.duration) {
+            const pct = (video.currentTime / video.duration) * 100;
+            if (pct >= 25 && !marcos.p25) { marcos.p25 = true; fbq('trackCustom', 'VSL_25'); }
+            if (pct >= 50 && !marcos.p50) { marcos.p50 = true; fbq('trackCustom', 'VSL_50'); }
+            if (pct >= 75 && !marcos.p75) { marcos.p75 = true; fbq('trackCustom', 'VSL_75'); }
+        }
+        if (video.currentTime >= OFERTA_SEGUNDOS) mostrarCta();
+    });
+
+    // Fallback: caso o player não exponha timeupdate/duration corretamente
+    let fallbackTimer = null;
+    playBtn.addEventListener('click', function() {
+        if (!fallbackTimer) fallbackTimer = setTimeout(mostrarCta, OFERTA_SEGUNDOS * 1000);
+    });
+})();
+
+// ===================== CARROSSEL DE DEPOIMENTOS =====================
+(function() {
+    const track = document.getElementById('provasCarousel');
+    const prev = document.getElementById('provasPrev');
+    const next = document.getElementById('provasNext');
+    if (!track || !prev || !next) return;
+    function step() {
+        const img = track.querySelector('img');
+        return img ? img.getBoundingClientRect().width + 16 : 300;
+    }
+    prev.addEventListener('click', function() { track.scrollBy({left: -step(), behavior: 'smooth'}); });
+    next.addEventListener('click', function() { track.scrollBy({left: step(), behavior: 'smooth'}); });
+})();
+
+// ===================== FAQ (accordion simples) =====================
+function toggleFaq(header) {
+    const acc = header.closest('.faq-acc');
+    const isOpen = acc.classList.contains('active');
+    document.querySelectorAll('.faq-acc').forEach(function(item) {
+        item.classList.remove('active');
+        const icon = item.querySelector('.faq-acc-icon');
+        if (icon) icon.textContent = '+';
+    });
+    if (!isOpen) {
+        acc.classList.add('active');
+        const icon = header.querySelector('.faq-acc-icon');
+        if (icon) icon.textContent = '−';
+    }
+}
+</script>
+
+</body>
+</html>
