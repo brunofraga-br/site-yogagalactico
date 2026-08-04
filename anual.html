@@ -171,7 +171,7 @@
         .vsl-video-block { padding-top: 4px; }
         .vsl-video-label { margin-bottom: 10px; }
     }
-    .vsl-wave svg { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; display: block; }
+    .vsl-wave svg { position: absolute; bottom: -2px; left: 0; width: 100%; height: calc(100% + 2px); display: block; }
 
     /* ---------- VÍDEO (bloco próprio, separado da foto) ---------- */
     .vsl-video-block { background: var(--cor-fundo-claro); padding: 0 24px 72px; text-align: center; }
@@ -214,12 +214,21 @@
         margin-top: 16px;
     }
     .vsl-cta-hero {
+        margin-top: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, margin-top 0.5s ease;
+    }
+    .vsl-cta-hero.visible {
         margin-top: 28px;
+        max-height: 120px;
+    }
+    .vsl-cta-hero-btn {
         opacity: 0; transform: translateY(8px);
         transition: opacity 0.5s ease, transform 0.5s ease;
         pointer-events: none;
     }
-    .vsl-cta-hero.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .vsl-cta-hero.visible .vsl-cta-hero-btn { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
     /* ---------- BLOCO: O QUE VOCÊ PRECISA HOJE ---------- */
     .vsl-hoje { background: var(--cor-fundo-claro); text-align: center; }
@@ -508,7 +517,7 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
             <img src="vsl-assets/hero-photo.webp" alt="Tata Vidal em prática de yoga" loading="eager">
         </div>
     </div>
-    <div class="vsl-wave" style="background: var(--cor-fundo-claro);">
+    <div class="vsl-wave">
         <svg viewBox="0 0 1600 70" preserveAspectRatio="none">
             <path d="M0,35 C400,90 1200,-20 1600,35 L1600,70 L0,70 Z" fill="var(--cor-fundo-claro)"></path>
         </svg>
@@ -531,7 +540,9 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
             </div>
         </div>
         <p class="vsl-watch-hint">São 6 minutos.</p>
-        <a href="#oferta" class="btn-cta vsl-cta-hero" id="vslCtaHero">Quero começar minha prática</a>
+        <div class="vsl-cta-hero" id="vslCtaHero">
+            <a href="#oferta" class="btn-cta vsl-cta-hero-btn">Quero começar minha prática</a>
+        </div>
     </div>
 </section>
 
@@ -583,7 +594,7 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
             <button type="button" class="provas-arrow provas-arrow-next" id="provasNext" aria-label="Próximo depoimento">›</button>
         </div>
     </div>
-    <div class="vsl-wave" style="background: var(--cor-fundo-medio, #F0E8D5);">
+    <div class="vsl-wave">
         <svg viewBox="0 0 1600 70" preserveAspectRatio="none">
             <path d="M0,35 C400,90 1200,-20 1600,35 L1600,70 L0,70 Z" fill="var(--cor-fundo-medio, #F0E8D5)"></path>
         </svg>
