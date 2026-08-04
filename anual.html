@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yoga Galáctico | Acesso de 12 meses</title>
-<meta name="description" content="Doze meses de acesso ao Yoga Galáctico por R$197 (50% off). Práticas de yoga, respiração e meditação com a Tata Vidal.">
+<meta name="description" content="Doze meses de acesso ao Yoga Galáctico por R$297 (50% off). Práticas de yoga, respiração e meditação com a Tata Vidal.">
 <meta name="robots" content="noindex, follow">
 
 <meta property="og:title" content="Yoga Galáctico | Acesso de 12 meses">
-<meta property="og:description" content="Doze meses de acesso ao Yoga Galáctico por R$197 (50% off). Práticas de yoga, respiração e meditação com a Tata Vidal.">
+<meta property="og:description" content="Doze meses de acesso ao Yoga Galáctico por R$297 (50% off). Práticas de yoga, respiração e meditação com a Tata Vidal.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yogagalactico.com.br/anual">
 <meta property="og:image" content="https://yogagalactico.com.br/tata-hero.png">
@@ -16,7 +16,7 @@
 <meta property="og:image:height" content="489">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yoga Galáctico | Acesso de 12 meses">
-<meta name="twitter:description" content="Doze meses de acesso ao Yoga Galáctico por R$197 (50% off). Práticas de yoga, respiração e meditação com a Tata Vidal.">
+<meta name="twitter:description" content="Doze meses de acesso ao Yoga Galáctico por R$297 (50% off). Práticas de yoga, respiração e meditação com a Tata Vidal.">
 <meta name="twitter:image" content="https://yogagalactico.com.br/tata-hero.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,7 +69,9 @@
         background: var(--cor-acento-vivo);
         padding: 2px 12px;
         border-radius: 8px;
-        display: inline-block;
+        display: inline;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
         line-height: 1.25;
         box-shadow: 0 8px 24px rgba(224,168,62,0.35);
     }
@@ -101,13 +103,14 @@
     /* ---------- SEÇÃO 1: TOPO ---------- */
     .vsl-hero {
         background: var(--cor-escura);
-        padding: 28px 24px 0;
+        padding-top: 28px;
         position: relative;
         overflow: hidden;
     }
     .vsl-logo {
         text-align: center;
         margin-bottom: 8px;
+        padding: 0 24px;
         font-family: var(--font-display);
         font-size: clamp(26px, 4vw, 40px);
         color: #FFF;
@@ -122,7 +125,7 @@
     .vsl-hero-grid {
         max-width: 1160px; margin: 0 auto;
         display: grid; grid-template-columns: 1fr 1fr; align-items: center;
-        gap: 24px; padding: 24px 0 60px;
+        gap: 24px; padding: 24px 24px 60px;
     }
     .vsl-hero-text { text-align: left; padding-right: 12px; }
     .vsl-hero h1 {
@@ -152,14 +155,22 @@
         filter: grayscale(0.7) sepia(0.28) saturate(1.35) contrast(1.05) brightness(0.92);
     }
     @media (max-width: 780px) {
-        .vsl-hero-grid { grid-template-columns: 1fr; gap: 4px; padding-bottom: 40px; }
+        .vsl-hero { padding-top: 18px; }
+        .vsl-logo { margin-bottom: 4px; }
+        .vsl-hero-grid { grid-template-columns: 1fr; gap: 4px; padding: 14px 24px 22px; }
         .vsl-hero-text { text-align: center; padding-right: 0; }
-        .vsl-sub { margin: 0 auto; }
-        .vsl-hero-photo { order: -1; }
-        .vsl-hero-photo img { max-width: 300px; }
+        .vsl-hero h1 { font-size: 24px; line-height: 1.22; margin-bottom: 10px; }
+        .vsl-sub { margin: 0 auto; font-size: 15px; }
+        .vsl-hero-photo { order: -1; max-width: 280px; aspect-ratio: 6 / 5; }
+        .vsl-hero-photo img { max-width: 280px; }
     }
 
     .vsl-wave { position: relative; height: 70px; margin-top: -1px; }
+    @media (max-width: 780px) {
+        .vsl-wave { height: 46px; }
+        .vsl-video-block { padding-top: 4px; }
+        .vsl-video-label { margin-bottom: 10px; }
+    }
     .vsl-wave svg { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; display: block; }
 
     /* ---------- VÍDEO (bloco próprio, separado da foto) ---------- */
@@ -209,6 +220,36 @@
         pointer-events: none;
     }
     .vsl-cta-hero.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+    /* ---------- BLOCO: O QUE VOCÊ PRECISA HOJE ---------- */
+    .vsl-hoje { background: var(--cor-fundo-claro); text-align: center; }
+    .vsl-hoje h2 {
+        font-family: var(--font-body); font-weight: 800; font-size: 26px;
+        color: var(--cor-texto); margin-bottom: 14px;
+    }
+    .vsl-hoje-intro {
+        max-width: 560px; margin: 0 auto 40px; font-size: 15px;
+        color: var(--cor-texto-suave); line-height: 1.6;
+    }
+    .vsl-hoje-grid {
+        display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+        text-align: left;
+    }
+    .vsl-hoje-card {
+        background: #FFF; border: 1px solid rgba(61,42,26,0.10);
+        border-radius: 14px; padding: 22px 18px;
+    }
+    .vsl-hoje-titulo {
+        font-family: var(--font-body); font-weight: 700; font-size: 15px;
+        color: var(--cor-texto); margin-bottom: 8px;
+    }
+    .vsl-hoje-card p { font-size: 13.5px; color: var(--cor-texto-suave); line-height: 1.5; }
+    @media (max-width: 900px) {
+        .vsl-hoje-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+        .vsl-hoje-grid { grid-template-columns: 1fr; }
+    }
 
     /* ---------- SEÇÃO 3: PROVA SOCIAL ---------- */
     .vsl-provas { background: var(--cor-escura); }
@@ -321,9 +362,9 @@
 
     /* ---------- O QUE ESTÁ INCLUÍDO (dentro da seção de oferta) ---------- */
     .vsl-incluso {
-        max-width: 640px; margin: 0 auto 56px; text-align: left;
+        max-width: 760px; margin: 0 auto 56px; text-align: left;
         background: #FFF; border: 1px solid rgba(61,42,26,0.10); border-radius: 16px;
-        padding: 32px 28px;
+        padding: 32px 36px;
     }
     .vsl-incluso-titulo {
         font-family: var(--font-body); font-weight: 800; font-size: 17px;
@@ -460,8 +501,8 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
     </div>
     <div class="vsl-hero-grid">
         <div class="vsl-hero-text">
-            <h1>Um jeito mais leve de levar a vida, com <span class="accent-punch">Yoga, Respiração e Meditação</span></h1>
-            <p class="vsl-sub">Práticas que ajudam a desacelerar a mente e voltar pro presente, no seu ritmo.</p>
+            <h1><span class="accent-punch">Yoga, Respiração e Meditação</span> com alguém te mostrando por onde começar</h1>
+            <p class="vsl-sub">Práticas guiadas pra desacelerar a mente, soltar o corpo e dormir melhor, no seu ritmo.</p>
         </div>
         <div class="vsl-hero-photo">
             <img src="vsl-assets/hero-photo.webp" alt="Tata Vidal em prática de yoga" loading="eager">
@@ -478,7 +519,7 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
      VÍDEO — bloco próprio, separado da foto
      ============================================================ -->
 <section class="vsl-video-block">
-    <div class="vsl-video-label">Um recado da Tata</div>
+    <div class="vsl-video-label">Por que talvez você ainda não tenha criado uma prática que funcione</div>
     <div class="vsl-player-wrap">
         <div class="vsl-player" id="vslPlayer">
             <video id="vslVideo" preload="none" playsinline>
@@ -486,11 +527,41 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
             </video>
             <div class="vsl-player-label">
                 <button class="vsl-play-btn" id="vslPlayBtn" aria-label="Assistir vídeo" type="button">▶</button>
-                <span>Assista antes de decidir</span>
+                <span>Descubra por onde começar</span>
             </div>
         </div>
-        <p class="vsl-watch-hint">São 4 minutos.</p>
-        <a href="#oferta" class="btn-cta vsl-cta-hero" id="vslCtaHero">Quero meu acesso de 12 meses</a>
+        <p class="vsl-watch-hint">São 6 minutos.</p>
+        <a href="#oferta" class="btn-cta vsl-cta-hero" id="vslCtaHero">Quero começar minha prática</a>
+    </div>
+</section>
+
+<!-- ============================================================
+     O QUE VOCÊ PRECISA HOJE
+     ============================================================ -->
+<section class="vsl-hoje container">
+    <h2>Encontre uma prática pro que você precisa hoje</h2>
+    <p class="vsl-hoje-intro">Você não precisa escolher entre dezenas de aulas sem saber qual fazer. As práticas são organizadas pelo que o seu corpo e a sua mente estão pedindo.</p>
+    <div class="vsl-hoje-grid">
+        <div class="vsl-hoje-card">
+            <div class="vsl-hoje-titulo">Acalmar a mente</div>
+            <p>Pros dias em que a cabeça não desliga e tudo parece rápido demais.</p>
+        </div>
+        <div class="vsl-hoje-card">
+            <div class="vsl-hoje-titulo">Soltar o corpo</div>
+            <p>Pra tensão nos ombros, nas costas, no quadril, no corpo que passou o dia parado.</p>
+        </div>
+        <div class="vsl-hoje-card">
+            <div class="vsl-hoje-titulo">Dormir melhor</div>
+            <p>Práticas curtas pro fim do dia, pra desacelerar antes de deitar.</p>
+        </div>
+        <div class="vsl-hoje-card">
+            <div class="vsl-hoje-titulo">Recuperar energia</div>
+            <p>Pros dias em que o corpo está pesado e falta disposição pra começar.</p>
+        </div>
+        <div class="vsl-hoje-card">
+            <div class="vsl-hoje-titulo">Começar do zero</div>
+            <p>Sem flexibilidade, sem experiência, sem precisar acompanhar ninguém.</p>
+        </div>
     </div>
 </section>
 
@@ -528,9 +599,9 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
             <div>
                 <div class="vsl-bio-credencial">✦ Criadora do Método da Tríade Galáctica: Corpo, Mente e Espírito</div>
                 <h2>Conheça a sua guia</h2>
-                <p>Sou Tata Vidal. Antes do yoga, construí mais de 20 anos de carreira corporativa — até que esse caminho deixou de fazer sentido.</p>
+                <p>Sou Tata Vidal. Antes do yoga, construí mais de 20 anos de carreira corporativa, até que esse caminho deixou de fazer sentido.</p>
                 <p>Foi numa fase de crises pessoais que o yoga virou uma jornada de autoconhecimento: me formei no Brasil e aprofundei a prática em retiros e imersões em Bali e na Tailândia.</p>
-                <p>Foi dessa caminhada que nasceu o Yoga Galáctico: um método construído sobre a Tríade Galáctica — Corpo, Mente e Espírito.</p>
+                <p>Foi dessa caminhada que nasceu o Yoga Galáctico, um método construído sobre a Tríade Galáctica: Corpo, Mente e Espírito.</p>
                 <p class="vsl-bio-assinatura">Seja bem-vinda ao Yoga Galáctico.</p>
             </div>
             <div class="vsl-bio-photo">
@@ -552,11 +623,11 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
     <div class="vsl-incluso">
         <div class="vsl-incluso-titulo">O que está incluído</div>
         <ul class="vsl-incluso-list">
-            <li><span class="check">✓</span><span><strong>Trilha completa de yoga</strong>, <span class="desc">do zero ao avançado, na ordem certa</span></span></li>
-            <li><span class="check">✓</span><span><strong>Práticas de respiração</strong>, <span class="desc">para acalmar, ganhar energia e dormir melhor</span></span></li>
-            <li><span class="check">✓</span><span><strong>Meditações guiadas</strong>, <span class="desc">para acalmar e focar a mente</span></span></li>
-            <li><span class="check">✓</span><span><strong>Aulas ao vivo</strong>, <span class="desc">pra praticar junto com a Tata em tempo real</span></span></li>
-            <li><span class="check">✓</span><span><strong>Encontros ao vivo com a Tata</strong>, <span class="desc">pra tirar dúvida e aprofundar</span></span></li>
+            <li><span class="check">✓</span><span><strong>Trilha progressiva de yoga</strong>, <span class="desc">pra começar pelas bases e evoluir com segurança, no seu ritmo</span></span></li>
+            <li><span class="check">✓</span><span><strong>Práticas de respiração</strong>, <span class="desc">pra acalmar, ganhar energia e dormir melhor</span></span></li>
+            <li><span class="check">✓</span><span><strong>Meditações guiadas</strong>, <span class="desc">pra quando a cabeça não desliga</span></span></li>
+            <li><span class="check">✓</span><span><strong>Práticas curtas e aulas completas</strong>, <span class="desc">pros dias em que você tem 15 minutos e pros dias em que quer aprofundar</span></span></li>
+            <li><span class="check">✓</span><span><strong>Encontros ao vivo com a Tata</strong>, <span class="desc">pra tirar dúvida e aprofundar junto</span></span></li>
             <li><span class="check">✓</span><span><strong>Comunidade exclusiva</strong>, <span class="desc">pra praticar junto, não sozinha</span></span></li>
             <li><span class="check">✓</span><span><strong>Acesso pelo celular ou computador</strong>, <span class="desc">no seu tempo, por 12 meses</span></span></li>
         </ul>
@@ -568,19 +639,19 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
     </div>
 
     <div class="oferta-badge">✦ Oferta de lançamento</div>
-    <div class="preco-riscado">R$394</div>
+    <div class="preco-riscado">R$594</div>
     <div class="preco-grande-wrap">
-        <div class="preco-grande">R$197</div>
+        <div class="preco-grande">R$297</div>
         <span class="preco-desconto">50% de desconto</span>
     </div>
-    <div class="preco-parcelas">ou 12x de R$20,37</div>
-    <p class="oferta-cupom">Cupom "LANCAMENTO" já aplicado no checkout</p>
+    <div class="preco-parcelas">ou 12x de R$30,72</div>
+    <p class="oferta-cupom">O desconto já é aplicado automaticamente no checkout</p>
 
     <p class="oferta-reforco">Parcelamento no cartão, não é assinatura.</p>
 
-    <a href="#" class="btn-cta cta-checkout" data-plano="Anual">Quero meu acesso de 12 meses</a>
+    <a href="#" class="btn-cta cta-checkout" data-plano="Anual">Quero começar minha prática</a>
 
-    <p class="oferta-rodape-linha">Pagamento seguro · Compra única</p>
+    <p class="oferta-rodape-linha">12 meses de acesso · Pagamento único · 7 dias de garantia</p>
 </section>
 
 <!-- ============================================================
@@ -637,12 +708,33 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
             </button>
             <div class="faq-acc-body"><p>7 dias após a compra. Se não for pra você, é só escrever e o valor inteiro é devolvido, sem perguntas.</p></div>
         </div>
+        <div class="faq-acc">
+            <button type="button" class="faq-acc-header" onclick="toggleFaq(this)">
+                Preciso ser flexível pra começar?
+                <span class="faq-acc-icon">+</span>
+            </button>
+            <div class="faq-acc-body"><p>Não. Flexibilidade é consequência da prática, não requisito pra começar. As práticas iniciais têm adaptação pra corpo rígido e para quem nunca fez yoga.</p></div>
+        </div>
+        <div class="faq-acc">
+            <button type="button" class="faq-acc-header" onclick="toggleFaq(this)">
+                Como eu vou saber qual aula fazer?
+                <span class="faq-acc-icon">+</span>
+            </button>
+            <div class="faq-acc-body"><p>As práticas são organizadas por trilha e por necessidade. Você entra e já sabe por onde começar, e escolhe pelo que está sentindo naquele dia.</p></div>
+        </div>
+        <div class="faq-acc">
+            <button type="button" class="faq-acc-header" onclick="toggleFaq(this)">
+                Preciso praticar todos os dias?
+                <span class="faq-acc-icon">+</span>
+            </button>
+            <div class="faq-acc-body"><p>Não. A proposta é criar uma prática possível pra sua rotina real, não uma rotina perfeita. Constância vale mais que intensidade.</p></div>
+        </div>
     </div>
 
     <div class="vsl-oferta-condensada">
-        <div class="preco-grande-condensado">R$197</div>
-        <a href="#" class="btn-cta cta-checkout" data-plano="Anual">Quero meu acesso de 12 meses</a>
-        <p>7 dias de garantia · Pagamento seguro</p>
+        <div class="preco-grande-condensado">R$297</div>
+        <a href="#" class="btn-cta cta-checkout" data-plano="Anual">Quero começar minha prática</a>
+        <p>12 meses de acesso · Pagamento único · 7 dias de garantia</p>
     </div>
 </section>
 
