@@ -337,34 +337,66 @@
         display: inline-block; font-family: var(--font-body); font-weight: 800;
         font-size: 12.5px; letter-spacing: 1.2px; text-transform: uppercase;
         color: var(--cor-escura); background: var(--cor-acento-vivo);
-        border-radius: 999px; padding: 7px 18px; margin-bottom: 18px;
+        border-radius: 999px; padding: 7px 18px; margin-bottom: 22px;
+    }
+    .preco-card {
+        position: relative;
+        max-width: 420px; margin: 0 auto 28px;
+        background: linear-gradient(180deg, #FFFFFF, var(--cor-fundo-claro));
+        border: 2px solid var(--cor-acento-vivo);
+        border-radius: 26px;
+        padding: 40px 30px 32px;
+        box-shadow: 0 26px 60px rgba(26,18,8,0.14);
+    }
+    .preco-selo {
+        position: absolute; top: -18px; right: 18px;
+        font-family: var(--font-body); font-weight: 900; font-size: 15px;
+        color: #FFF; background: var(--cor-garantia);
+        padding: 10px 16px; border-radius: 999px;
+        transform: rotate(6deg);
+        box-shadow: 0 10px 22px rgba(92,122,62,0.45);
+    }
+    .preco-de {
+        font-family: var(--font-body); font-size: 15px; color: var(--cor-texto-suave);
+        margin-bottom: 2px;
     }
     .preco-riscado {
-        font-size: 20px; color: var(--cor-texto-suave); text-decoration: line-through;
-        margin-bottom: 6px;
+        font-weight: 700; color: var(--cor-texto-suave); text-decoration: line-through;
     }
     .preco-grande-wrap {
-        display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;
+        display: flex; align-items: flex-start; justify-content: center; gap: 4px;
+        margin-top: 4px;
+    }
+    .preco-moeda {
+        font-family: var(--font-body); font-weight: 800; font-size: 26px;
+        color: var(--cor-texto); margin-top: 16px;
     }
     .preco-grande {
-        font-family: var(--font-body); font-weight: 900; letter-spacing: -0.02em;
-        font-size: clamp(52px, 9vw, 76px); color: var(--cor-texto); line-height: 1;
+        font-family: var(--font-body); font-weight: 900; letter-spacing: -0.03em;
+        font-size: clamp(58px, 11vw, 88px); color: var(--cor-texto); line-height: 1;
     }
     .preco-desconto {
         display: inline-block; font-family: var(--font-body); font-weight: 800;
         font-size: 13px; letter-spacing: 0.3px; color: #FFF; background: var(--cor-garantia);
         border-radius: 999px; padding: 6px 14px;
     }
-    .preco-parcelas { font-size: 16px; color: var(--cor-texto-suave); margin-top: 8px; }
+    .preco-economia {
+        display: inline-block; margin-top: 12px;
+        font-family: var(--font-body); font-weight: 800; font-size: 13.5px;
+        color: var(--cor-garantia); background: rgba(92,122,62,0.12);
+        border-radius: 999px; padding: 7px 16px;
+    }
+    .preco-parcelas { font-size: 16px; color: var(--cor-texto-suave); margin-top: 16px; }
     .oferta-cupom {
         display: inline-block; font-family: var(--font-body); font-weight: 700;
         font-size: 12.5px; color: var(--cor-garantia); background: rgba(92,122,62,0.10);
         border: 1px solid rgba(92,122,62,0.3); border-radius: 999px;
         padding: 6px 16px; margin-top: 14px;
     }
+    .preco-card .btn-cta { width: 100%; margin-top: 26px; }
     .oferta-reforco {
         font-size: 13.5px; color: var(--cor-texto-suave); max-width: 420px;
-        margin: 20px auto 32px; line-height: 1.5;
+        margin: 14px auto 0; line-height: 1.5;
     }
     .oferta-rodape-linha {
         font-size: 12.5px; color: var(--cor-texto-suave); margin-top: 18px;
@@ -457,9 +489,17 @@
         text-align: center; margin-top: 64px; padding-top: 48px;
         border-top: 1px solid rgba(61,42,26,0.15);
     }
+    .preco-condensado-de {
+        font-family: var(--font-body); font-size: 14px; color: var(--cor-texto-suave);
+        margin-bottom: 6px;
+    }
+    .preco-grande-condensado-wrap {
+        display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+        margin-bottom: 22px;
+    }
     .preco-grande-condensado {
         font-family: var(--font-body); font-weight: 900; font-size: 44px;
-        color: var(--cor-texto); margin-bottom: 20px;
+        color: var(--cor-texto);
     }
     .vsl-oferta-condensada p { font-size: 13px; color: var(--cor-texto-suave); margin-top: 16px; }
 
@@ -652,17 +692,20 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
     </div>
 
     <div class="oferta-badge">✦ Oferta de lançamento</div>
-    <div class="preco-riscado">R$594</div>
-    <div class="preco-grande-wrap">
-        <div class="preco-grande">R$297</div>
-        <span class="preco-desconto">50% de desconto</span>
+
+    <div class="preco-card">
+        <span class="preco-selo">-50%</span>
+        <div class="preco-de">De <span class="preco-riscado">R$594</span> por</div>
+        <div class="preco-grande-wrap">
+            <span class="preco-moeda">R$</span><span class="preco-grande">297</span>
+        </div>
+        <div class="preco-economia">Você economiza R$297</div>
+        <div class="preco-parcelas">ou 12x de R$30,72</div>
+        <p class="oferta-cupom">O desconto já é aplicado automaticamente no checkout</p>
+
+        <a href="#" class="btn-cta cta-checkout" data-plano="Anual">Quero começar minha prática</a>
+        <p class="oferta-reforco">Parcelamento no cartão, não é assinatura.</p>
     </div>
-    <div class="preco-parcelas">ou 12x de R$30,72</div>
-    <p class="oferta-cupom">O desconto já é aplicado automaticamente no checkout</p>
-
-    <p class="oferta-reforco">Parcelamento no cartão, não é assinatura.</p>
-
-    <a href="#" class="btn-cta cta-checkout" data-plano="Anual">Quero começar minha prática</a>
 
     <p class="oferta-rodape-linha">12 meses de acesso · Pagamento único · 7 dias de garantia</p>
 </section>
@@ -745,7 +788,11 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
     </div>
 
     <div class="vsl-oferta-condensada">
-        <div class="preco-grande-condensado">R$297</div>
+        <div class="preco-condensado-de">De <span class="preco-riscado">R$594</span> por</div>
+        <div class="preco-grande-condensado-wrap">
+            <div class="preco-grande-condensado">R$297</div>
+            <span class="preco-desconto">50% OFF</span>
+        </div>
         <a href="#" class="btn-cta cta-checkout" data-plano="Anual">Quero começar minha prática</a>
         <p>12 meses de acesso · Pagamento único · 7 dias de garantia</p>
     </div>
