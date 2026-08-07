@@ -387,10 +387,17 @@
         border-radius: 999px; padding: 7px 16px;
     }
     .preco-parcelas {
-        font-family: var(--font-body); font-size: 18px; font-weight: 700;
-        color: var(--cor-texto); margin-top: 16px;
+        font-family: var(--font-body); font-size: 16px; font-weight: 600;
+        color: var(--cor-texto-suave); margin-top: 18px;
     }
-    .preco-parcelas strong { font-weight: 900; color: var(--cor-acento-vivo); }
+    .preco-parcelas strong {
+        display: inline-block;
+        font-weight: 900; font-size: 18px; color: var(--cor-escura);
+        background: var(--cor-acento-vivo);
+        padding: 5px 14px; border-radius: 8px;
+        margin-left: 2px;
+        box-shadow: 0 6px 16px rgba(224,168,62,0.4);
+    }
     .oferta-cupom {
         display: inline-block; font-family: var(--font-body); font-weight: 700;
         font-size: 12.5px; color: var(--cor-garantia); background: rgba(92,122,62,0.10);
@@ -704,7 +711,7 @@ src="https://www.facebook.com/tr?id=878111598088877&ev=PageView&noscript=1"
             <span class="preco-moeda">R$</span><span class="preco-grande">297</span>
         </div>
         <div class="preco-economia">Você economiza R$297</div>
-        <div class="preco-parcelas">ou <strong>12x de R$30,72</strong></div>
+        <div class="preco-parcelas">ou apenas <strong>12x de R$30,72</strong></div>
         <p class="oferta-cupom">O desconto já é aplicado automaticamente no checkout</p>
 
         <a href="#" class="btn-cta cta-checkout" data-plano="Anual">Quero começar minha prática</a>
